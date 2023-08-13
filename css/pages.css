@@ -1,0 +1,607 @@
+@charset "UTF-8";
+
+/* =====================================================================
+** TOP
+===================================================================== */
+.top {
+    grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
+}
+
+.top h1 {
+    display: none;
+}
+
+/* main
+========================================================= */
+.top main {
+    display: grid;
+    grid-template-areas:
+        "hero"
+        "ABOUT"
+        "SKILL"
+        "WORKS"
+        "CONTACT";
+    padding-block-start: 5em;
+    padding-inline: 0;
+}
+
+.top main > section:not(:nth-of-type(1)) {
+    padding-inline: 1em;
+}
+
+/* =============== hero =============== */
+.top main > section:nth-of-type(1) {
+    display: grid;
+    grid-area: hero;
+    align-items: center;
+    margin-block-start: 0;
+    text-align: center;
+    background-image: url(../images/white-simple-textured-design-background.jpg);
+    block-size: calc(100vh - 5em); /* header 5em */
+}
+
+.top main > section:nth-of-type(1) > div > h2 {
+    display: none;
+}
+
+.top main > section:nth-of-type(1) > div > p:nth-of-type(1) > img {
+    inline-size: min(75%, calc(var(--logic-px) * 600));
+    object-fit: contain;
+}
+
+/* --------------- Scroll --------------- */
+.top main > section:nth-of-type(1) > div:last-of-type {
+    position: absolute;
+    top: 92.5%;
+    left: 50%;
+    font-size: 0.7em;
+    color: #333;
+    writing-mode: vertical-rl;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.top main > section:nth-of-type(1) > div:last-of-type::before {
+    right: 50%;
+    bottom: -120px;
+    display: block;
+    width: 1px;
+    height: 70px;
+    content: "";
+    background-color: rgb(0 0 0 / 50%);
+    transform: translateX(-50%);
+}
+
+.top main > section:nth-of-type(1) > div:last-of-type::before {
+    animation: scroll 3s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: scale(1, 0);
+        transform-origin: 0 0;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        transform-origin: 0 0;
+    }
+
+    50.1% {
+        transform: scale(1, 1);
+        transform-origin: 0 100%;
+    }
+
+    100% {
+        transform: scale(1, 0);
+        transform-origin: 0 100%;
+    }
+}
+
+/* ------------------ ABOUT ------------------ */
+.top main > section:nth-of-type(2) {
+    grid-area: ABOUT;
+    margin-block-start: 0;
+}
+
+/* ------------------ SKILL ------------------ */
+.top main > section:nth-of-type(3) {
+    grid-area: SKILL;
+}
+
+/* ------------------ WORKS ------------------ */
+.top main > section:nth-of-type(4) {
+    grid-area: WORKS;
+}
+
+.top main > section:nth-of-type(4) > h2 {
+    inline-size: 100%;
+}
+
+.top main > section:nth-of-type(4) > div > article {
+    display: grid;
+    grid-template-areas:
+        "image"
+        "title"
+        "list"
+        "skills"
+        "links";
+    grid-template-rows: repeat(5, auto);
+    align-content: start;
+    margin-block: 1em;
+    border: 1px solid black;
+}
+
+.top main > section:nth-of-type(4) > div > article > img {
+    grid-area: image;
+    inline-size: 100%;
+    aspect-ratio: 3/2;
+}
+
+.top main > section:nth-of-type(4) > div > article > *:not(img) {
+    padding-inline: 1em;
+    margin-block-end: 1em;
+}
+
+.top main > section:nth-of-type(4) > div > article > h3 {
+    grid-area: title;
+}
+
+.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(1) {
+    grid-area: list;
+}
+
+.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(1) > li::before {
+    content: "#";
+}
+
+.top main > section:nth-of-type(4) > div > article > p {
+    grid-area: skills;
+}
+
+.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) {
+    grid-area: links;
+}
+
+.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li {
+    margin-block: 1em;
+}
+
+.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li::before {
+    padding-block: 0.5em;
+    margin-inline-end: 0.3em;
+    color: var(--color-link);
+    content: "→";
+}
+
+.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li > a {
+    padding-inline-end: 0.5em;
+    font-size: 0.9em;
+}
+
+.top main > section:nth-of-type(4) > p {
+    grid-column: 1/4;
+}
+
+/* ------------------ CONTACT ------------------ */
+.top main > section:nth-of-type(5) {
+    grid-area: CONTACT;
+}
+
+.top main > section:nth-of-type(5) > ul {
+    display: flex;
+    justify-content: center;
+    margin-block: 1em;
+}
+
+.top main > section:nth-of-type(5) > ul > li > a {
+    display: grid;
+    align-items: center;
+    margin-inline: 1em;
+    text-align: center;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 50%;
+    inline-size: 3em;
+    block-size: 3em;
+}
+
+.top main > section:nth-of-type(5) > ul > li > a:hover {
+    text-decoration: none;
+}
+
+.top main > section:nth-of-type(5) > ul > li > a > i {
+    font-size: calc(var(--logic-px) * 24);
+    color: #fff;
+}
+
+/* Twitter非表示*/
+.top main > section:nth-of-type(5) > ul > li:nth-of-type(2) {
+    display: none;
+}
+
+/* =====================================================================
+** ABOUT
+===================================================================== */
+
+.about main {
+    display: block;
+}
+
+/* ------------------ 概要 ------------------ */
+.about main > article:nth-of-type(1) {
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "photo name"
+        "photo job"
+        "photo birth"
+        "photo live";
+    row-gap: 1em;
+    align-items: center;
+    margin-inline: auto;
+    inline-size: min(100%, calc(var(--logic-px) * 800));
+}
+
+.about main > article:nth-of-type(1) > h2 {
+    display: none;
+    grid-area: title;
+}
+
+.about main > article:nth-of-type(1) > img {
+    grid-area: photo;
+    aspect-ratio: 1 / 1;
+    inline-size: 100%;
+    object-fit: cover;
+    max-block-size: calc(var(--logic-px) * 210);
+}
+
+.about main > article:nth-of-type(1) > p:nth-of-type(1) {
+    grid-area: name;
+}
+
+.about main > article:nth-of-type(1) > p:nth-of-type(2) {
+    grid-area: job;
+}
+
+.about main > article:nth-of-type(1) > p:nth-of-type(3) {
+    grid-area: birth;
+}
+
+.about main > article:nth-of-type(1) > p:nth-of-type(4) {
+    grid-area: live;
+}
+
+/* ------------------ 自己PR ------------------ */
+.about p {
+    margin-block-end: 0;
+}
+
+/* ------------------ 経歴 ------------------ */
+
+.about main > article:nth-of-type(3) > div::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: 2px;
+    content: "";
+    background-color: #000;
+}
+
+.about main > article:nth-of-type(3) > div > dl {
+    padding-inline-start: 80px;
+    margin-block: 2em;
+}
+
+.about main > article:nth-of-type(3) > div > dl::before {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    background-color: #fff;
+    border: 4px solid #000;
+    border-radius: 100%;
+    inline-size: 16px;
+    block-size: 16px;
+    inset-inline-start: calc(40px - 11px);
+}
+
+.about main > article:nth-of-type(3) > div > dl > dt {
+    margin-block-end: 0.5em;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.about main > article:nth-of-type(3) > div > dl > dd {
+    inline-size: 100%;
+}
+
+/* ------------------ 趣味 ------------------ */
+
+.about main > article:nth-of-type(4) > section:nth-of-type(2n+1) {
+    display: grid;
+    grid-template-areas:
+        "icon title"
+        "icon text";
+    grid-template-columns: 1fr 1fr;
+    margin-block: 1.5em;
+}
+
+.about main > article:nth-of-type(4) > section:nth-of-type(2n) {
+    display: grid;
+    grid-template-areas:
+        "title icon"
+        "text icon";
+    grid-template-columns: 1fr 1fr;
+    text-align: end;
+}
+
+.about main > article:nth-of-type(4) > section > h3 {
+    grid-area: title;
+    margin-block-start: 0;
+    margin-block-end: 0.5em;
+}
+
+.about main > article:nth-of-type(4) > section > i {
+    grid-area: icon;
+    margin-block: auto;
+    font-size: 3em;
+    text-align: center;
+}
+
+.about main > article:nth-of-type(4) > section > p {
+    grid-area: text;
+}
+
+/* =====================================================================
+** SKILLS
+===================================================================== */
+
+.skills .skill-grid section {
+    align-content: start;
+}
+
+.skills .skill-grid section > ul > li {
+    font-size: 0.9em;
+}
+
+.skills .skill-grid section > img {
+    grid-area: icon;
+    justify-content: center;
+    margin-inline: auto;
+    inline-size: 50%;
+    block-size: auto;
+}
+
+.skills main > section:nth-of-type(1) > h2 {
+    display: none;
+}
+
+.skills main > section:nth-of-type(1) > p {
+    margin-block-end: 0.5em;
+}
+
+.skills main > section:not(:nth-of-type(1)) > h2 {
+    margin-block: 1em;
+}
+
+/* =====================================================================
+** WORKS
+===================================================================== */
+
+.works main > div {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    row-gap: 0;
+}
+
+.works main > div > article {
+    border: 1px solid rgba(0 0 0 / 15%);
+}
+
+.works main > div > article > h2 {
+    display: none;
+}
+
+.works main > div > article > figure > img {
+    inline-size: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+}
+
+.works main > div > article > figure > figcaption > p {
+    margin-block-end: 1em;
+    font-weight: bold;
+}
+
+.works main > div > article > figure > figcaption > dl {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8em;
+}
+
+.works main > div > article > figure > figcaption > dl > dt {
+    inline-size: 35%;
+    margin-block: 0.5em;
+    line-height: 1.6em;
+}
+
+.works main > div > article > figure > figcaption > dl > dd {
+    inline-size: 65%;
+    margin-block: 0.5em;
+    line-height: 1.6em;
+}
+
+.works main > div > article > figure > figcaption > dl > dt::after {
+    content: "：";
+}
+
+.works main > div > article > ul {
+    display: flex;
+    margin-block: 1em;
+    margin-inline: 1em;
+}
+
+.works main > div > article > ul > li {
+    margin-inline-end: 1.5em;
+}
+
+.works main > div > article > ul > li > i {
+    font-size: 0.8em;
+    color: var(--color-link);
+}
+
+.works main > div > article > ul > li > a {
+    margin-inline-start: 0.2em;
+    font-size: 0.8em;
+}
+
+/* =====================================================================
+** MEDIA QUERY DESIGN B(Tablet)
+===================================================================== */
+
+@media screen and (min-width: 600px) {
+    /* タブレット用レイアウト 600px以上の範囲に収めるデザインはこの中に記述 */
+
+    /* TOP
+    ========================================================= */
+
+    /* ------------------ WORKS ------------------ */
+
+    .top main > section:nth-of-type(4) > div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1em;
+    }
+
+    /* ------------------ CONTACT ------------------ */
+    .top main > section:nth-of-type(5) > p > br {
+        display: none;
+    }
+    
+
+    /* ------------------ ABOUT job ------------------ */
+
+    .about main > article:nth-of-type(1) > p:nth-of-type(2) > br {
+        display: none;
+    }
+
+    /* ------------------ 経歴 ------------------ */
+    .about main > article:nth-of-type(3) {
+        display: grid;
+        justify-content: center;
+    }
+
+    /* ------------------ 趣味 ------------------ */
+
+    .about main > article:nth-of-type(4) > section:nth-of-type(2n+1) {
+        grid-template-columns: 30% 70%;
+    }
+
+    .about main > article:nth-of-type(4) > section:nth-of-type(2n) {
+        grid-template-areas:
+            "icon title"
+            "icon text";
+        grid-template-columns: 30% 70%;
+        text-align: start;
+    }
+
+    .about main > article:nth-of-type(4) > section > i {
+        margin-inline-end: 2em;
+        text-align: end;
+    }
+
+    /* WORKS
+    ========================================================= */
+
+    .works main > div {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1em;
+    }
+}
+
+/* =====================================================================
+** MEDIA QUERY DESIGN C(PC)
+===================================================================== */
+
+@media screen and (min-width: 1025px) {
+    .skill-grid section {
+        grid-template-columns: 75%;
+    }
+
+    /* TOP
+    ========================================================= */
+    .top main {
+        grid-template-areas:
+            "hero hero hero"
+            ". ABOUT ."
+            ". SKILL ."
+            ". WORKS ."
+            ". CONTACT .";
+        grid-template-columns: 1fr clamp(1025px, 80%, 1720px) 1fr;
+    }
+
+    /* ------------------ WORKS ------------------ */
+
+    .top main > section:nth-of-type(4) > h2, p:last-of-type {
+        grid-column: 1 / span 3;
+    }
+
+    .top main > section:nth-of-type(4) div {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1em;
+    }
+
+    .top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li {
+        margin-block: 0;
+    }
+
+    /* ABOUT
+    ========================================================= */
+
+    /* ------------------ 自己PR ------------------ */
+
+    .about main > article:nth-of-type(2) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2em;
+    }
+
+    .about main > article:nth-of-type(2) > h2 {
+        grid-column: 1 / span 3;
+    }
+
+    /* ------------------ 経歴 ------------------ */
+
+    .about main > article:nth-of-type(3) {
+        display: block;
+        inline-size: 800px;
+        margin-inline: auto;
+    }
+
+    .about main > article:nth-of-type(3) > div::before {
+        left: 50%;
+    }
+
+    .about main > article:nth-of-type(3) > div > dl:nth-of-type(2n+1) {
+        padding-inline-start: 55%;
+    }
+
+    .about main > article:nth-of-type(3) > div > dl:nth-of-type(2n) {
+        padding-inline-end: 55%;
+        text-align: end;
+    }
+
+    .about main > article:nth-of-type(3) > div > dl::before {
+        inset-inline-start: calc(50% - 10px);
+    }
+
+    /* WORKS
+    ========================================================= */
+
+    .works main > div {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

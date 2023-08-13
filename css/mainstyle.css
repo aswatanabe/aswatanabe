@@ -1,0 +1,472 @@
+@charset "UTF-8";
+
+/* =====================================================================
+** GENERAL STYLES
+===================================================================== */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1em;
+}
+
+:root {
+    --base-w: 320px;
+    --logic-px: calc(var(--base-w) / 320);
+    --color-link: #3490b7;
+    --color-hover: #2285b1;
+    --color-button-color: #ccc;
+    --color-button-link: #3d9ec8;
+    --color-button-hover: #a0c4d3;
+
+    font-family:
+        Verdana,
+        "游ゴシック",
+        YuGothic,
+        "ヒラギノ角ゴ ProN W3",
+        "Hiragino Kaku Gothic ProN",
+        "メイリオ",
+        Meiryo,
+        sans-serif;
+    font-size: max(calc(var(--logic-px) * 16), 14px);
+    line-height: 1.5em;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    margin-block-start: 4em;
+    font-size: 1.6em;
+    line-height: 2em;
+    text-align: center;
+}
+
+h2 {
+    margin-block: 1.5em;
+    font-size: 1.4em;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+h3 {
+    margin-block-start: 1.5em;
+    margin-block-end: 1em;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 1em;
+    line-height: 1.3em;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:is(:hover, :focus) {
+    color: var(--color-hover);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* =====================================================================
+** UTILITIES
+===================================================================== */
+
+/* button
+========================================================= */
+.button a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    inline-size: calc(var(--logic-px) * 200);
+    padding: 1em 2em;
+    margin-block-start: 3em;
+    margin-inline: auto;
+    font-size: calc(var(--logic-px) * 18);
+    font-weight: normal;
+    color: #000;
+    background-color: var(--color-button-color);
+    transition: 0.3s;
+}
+
+.button a::before {
+    position: absolute;
+    inset-block-start: -5px;
+    inset-inline-start: -5px;
+    inline-size: calc(100% - 4px);
+    block-size: calc(100% - 4px);
+    content: "";
+    border: 2px solid var(--color-button-link);
+    transition: 0.2s;
+}
+
+.button a::after {
+    block-size: 5px;
+    inline-size: 5px;
+    content: "";
+    border-block-start: 3px solid #333;
+    border-inline-end: 3px solid #333;
+    transform: rotate(45deg);
+}
+
+.button a:hover::before {
+    inset-block-start: 0;
+    inset-inline-start: 0;
+}
+
+.button a:hover {
+    text-decoration: none;
+    background-color: var(--color-button-hover);
+}
+
+/* skills
+========================================================= */
+
+.skill-grid {
+    display: grid;
+    grid-area: SKILL;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.skill-grid section {
+    display: grid;
+    grid-template-areas:
+        "icon"
+        "h3"
+        "p";
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.skill-grid section > i {
+    grid-area: icon;
+    font-size: calc(var(--logic-px) * 24);
+}
+
+.skill-grid section > h3 {
+    grid-area: h3;
+    margin-block: 1em;
+    font-size: calc(var(--logic-px) * 16);
+}
+
+.skill-grid section > ul {
+    font-size: calc(var(--logic-px) * 14);
+}
+
+.skill-grid section > ul > li {
+    text-align: start;
+}
+
+.skill-grid section > p {
+    margin-block-end: 0;
+}
+
+/* ホバーで文字表示
+========================================================= */
+.hover-text {
+    position: absolute;
+    inset: 0;
+    padding-block-start: 20%;
+    padding-inline: 2em;
+    color: #fff; /* 白文字 */
+    background: rgba(0 0 0 / 50%);
+    opacity: 0; /* この切替で表示非表示（非表示状態） */
+    transition: all 0.6s ease; /* ふわっとアニメーション */
+}
+
+.hover-text:hover {
+    opacity: 1;
+}
+
+/* =====================================================================
+** SITEWIDE
+===================================================================== */
+
+header, main, footer, section, article, figcaption, div, nav, ul, li, dl, dt, dd, p {
+    position: relative;
+    overflow: hidden;
+}
+
+/* header
+========================================================= */
+
+header {
+    position: fixed;
+    z-index: 2000;
+    background-color: #fff;
+    block-size: 5em;
+    inline-size: 100%;
+}
+
+header > nav {
+    display: flex;
+    grid-area: header;
+    align-items: center;
+    block-size: 100%;
+    padding-inline: 1em;
+}
+
+header > nav > h2 {
+    display: none;
+}
+
+header > nav > p > img {
+    margin-block-start: 0.5em;
+    inline-size: auto;
+    block-size: 90%;
+}
+
+header > nav > div > div > ul {
+    align-items: center;
+}
+
+header > nav > div > div > ul > li > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: lighter;
+    color: #000;
+}
+
+/* ---------- hamburger menu ---------- */
+#burger {
+    position: fixed;
+    inset-block-start: 0.5em;
+    inset-inline-end: 0.5em;
+    z-index: 1000;
+}
+
+#burger-btn {
+    z-index: 999;
+    cursor: pointer;
+    background-color: var(--color-button-color);
+    inline-size: 3em;
+    block-size: 3em;
+}
+
+#burger-btn > span {
+    position: absolute;
+    inset-inline-start: 25%;
+    display: block;
+    inline-size: 50%;
+    block-size: 3px;
+    background-color: #fff;
+    transition: transform 0.4s ease-in-out, top 0.3s ease, bottom 0.3s ease;
+}
+
+#burger-btn > span:nth-child(1) {
+    inset-block-start: 25%;
+}
+
+#burger-btn > span:nth-child(2) {
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+}
+
+#burger-btn > span:nth-child(3) {
+    inset-block-end: 25%;
+}
+
+#burger-menu {
+    position: fixed;
+    display: grid; /* for "align-items center" */
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+    background-color: rgb(255 255 255 / 85%);
+    opacity: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    transition: transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#burger-menu ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#burger-menu a {
+    display: block;
+    padding: 30px 0;
+    color: rgb(0 0 0);
+    transition: opacity 0.6s ease;
+}
+
+#burger-menu a:is(:hover, :focus) {
+    opacity: 0.6;
+}
+
+.is-open #burger-btn > span:nth-child(1) {
+    inset-block-start: 50%;
+    transform: rotate(45deg) translateY(-50%);
+}
+
+.is-open #burger-btn > span:nth-child(2) {
+    inline-size: 0;
+}
+
+.is-open #burger-btn > span:nth-child(3) {
+    inset-block-start: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+}
+
+.is-open #burger-menu {
+    z-index: 998;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.is-open #burger-menu a {
+    z-index: 999;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.burger-blur {
+    filter: blur(2px);
+}
+
+/* main
+========================================================= */
+
+main {
+    padding-inline: 1em;
+}
+
+main > section, article {
+    margin-block: 2em;
+}
+
+/* footer
+========================================================= */
+footer {
+    background-color: #000;
+}
+
+footer > section {
+    margin-block-end: 1em;
+}
+
+footer > section > h2 {
+    display: none;
+}
+
+footer > section > ul {
+    display: flex;
+    justify-content: center;
+    padding-block-start: 1em;
+    font-size: 0.9em;
+}
+
+footer > section > ul > li:not(:last-of-type) {
+    margin-inline-end: 2.5em;
+}
+
+footer > section > ul > li > a {
+    color: #fff;
+}
+
+footer > section > ul > li > a:is(:hover, :focus) {
+    text-decoration: none;
+}
+
+footer > section > ul > li > a > i {
+    font-size: calc(var(--logic-px) * 18);
+    color: #fff;
+}
+
+/* Twitter非表示*/
+footer > section:nth-of-type(2) > ul > li:nth-of-type(2) {
+    display: none;
+}
+
+footer > small {
+    display: block;
+    margin-block: 2em;
+    font-size: 0.8em;
+    color: #fff;
+    text-align: center;
+    inline-size: 100%;
+}
+
+/* =====================================================================
+** MEDIA QUERY
+===================================================================== */
+
+/* DESIGN B(Tablet)
+========================================================= */
+@media screen and (min-width: 600px) {
+    /* タブレット用レイアウト 600px以上の範囲に収めるデザインはこの中に記述 */
+
+    /* ------------------ header ------------------ */
+
+    header > nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header > nav > div > div:nth-of-type(2) > ul {
+        display: flex;
+    }
+
+    header > nav > div > div:nth-of-type(2) > ul > li {
+        padding-inline-end: 2em;
+    }
+
+    /* ------------------ SKILL ------------------ */
+    .skill-grid {
+        display: grid;
+        grid-area: SKILL;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1em;
+    }
+}
+
+/* DESIGN C(Laptop)
+========================================================= */
+@media screen and (min-width: 1025px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            ". main ."
+            "footer footer footer";
+        grid-template-columns: 1fr clamp(1025px, 80%, 1720px) 1fr;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    footer > section {
+        margin-block-end: 0;
+    }
+}
