@@ -5,9 +5,9 @@
 ===================================================================== */
 .top {
     grid-template-areas:
-        "header header header"
-        "main main main"
-        "footer footer footer";
+        'header header header'
+        'main main main'
+        'footer footer footer';
 }
 
 .top h1 {
@@ -19,11 +19,11 @@
 .top main {
     display: grid;
     grid-template-areas:
-        "hero"
-        "ABOUT"
-        "SKILL"
-        "WORKS"
-        "CONTACT";
+        'hero'
+        'ABOUT'
+        'SKILL'
+        'WORKS'
+        'CONTACT';
     padding-block-start: 5em;
     padding-inline: 0;
 }
@@ -69,7 +69,7 @@
     display: block;
     width: 1px;
     height: 70px;
-    content: "";
+    content: '';
     background-color: rgb(0 0 0 / 50%);
     transform: translateX(-50%);
 }
@@ -123,11 +123,11 @@
 .top main > section:nth-of-type(4) > div > article {
     display: grid;
     grid-template-areas:
-        "image"
-        "title"
-        "list"
-        "skills"
-        "links";
+        'image'
+        'title'
+        'list'
+        'skills'
+        'links';
     grid-template-rows: repeat(5, auto);
     align-content: start;
     margin-block: 1em;
@@ -153,8 +153,14 @@
     grid-area: list;
 }
 
-.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(1) > li::before {
-    content: "#";
+.top
+    main
+    > section:nth-of-type(4)
+    > div
+    > article
+    > ul:nth-of-type(1)
+    > li::before {
+    content: '#';
 }
 
 .top main > section:nth-of-type(4) > div > article > p {
@@ -169,14 +175,27 @@
     margin-block: 1em;
 }
 
-.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li::before {
+.top
+    main
+    > section:nth-of-type(4)
+    > div
+    > article
+    > ul:nth-of-type(2)
+    > li::before {
     padding-block: 0.5em;
     margin-inline-end: 0.3em;
     color: var(--color-link);
-    content: "→";
+    content: '→';
 }
 
-.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li > a {
+.top
+    main
+    > section:nth-of-type(4)
+    > div
+    > article
+    > ul:nth-of-type(2)
+    > li
+    > a {
     padding-inline-end: 0.5em;
     font-size: 0.9em;
 }
@@ -234,11 +253,11 @@
 .about main > article:nth-of-type(1) {
     display: grid;
     grid-template-areas:
-        "title title"
-        "photo name"
-        "photo job"
-        "photo birth"
-        "photo live";
+        'title title'
+        'photo name'
+        'photo job'
+        'photo birth'
+        'photo live';
     row-gap: 1em;
     align-items: center;
     margin-inline: auto;
@@ -287,7 +306,7 @@
     bottom: 0;
     left: 40px;
     width: 2px;
-    content: "";
+    content: '';
     background-color: #000;
 }
 
@@ -299,7 +318,7 @@
 .about main > article:nth-of-type(3) > div > dl::before {
     position: absolute;
     display: inline-block;
-    content: "";
+    content: '';
     background-color: #fff;
     border: 4px solid #000;
     border-radius: 100%;
@@ -320,11 +339,11 @@
 
 /* ------------------ 趣味 ------------------ */
 
-.about main > article:nth-of-type(4) > section:nth-of-type(2n+1) {
+.about main > article:nth-of-type(4) > section:nth-of-type(2n + 1) {
     display: grid;
     grid-template-areas:
-        "icon title"
-        "icon text";
+        'icon title'
+        'icon text';
     grid-template-columns: 1fr 1fr;
     margin-block: 1.5em;
 }
@@ -332,8 +351,8 @@
 .about main > article:nth-of-type(4) > section:nth-of-type(2n) {
     display: grid;
     grid-template-areas:
-        "title icon"
-        "text icon";
+        'title icon'
+        'text icon';
     grid-template-columns: 1fr 1fr;
     text-align: end;
 }
@@ -435,7 +454,7 @@
 }
 
 .works main > div > article > figure > figcaption > dl > dt::after {
-    content: "：";
+    content: '：';
 }
 
 .works main > div > article > ul {
@@ -480,7 +499,6 @@
     .top main > section:nth-of-type(5) > p > br {
         display: none;
     }
-    
 
     /* ------------------ ABOUT job ------------------ */
 
@@ -496,14 +514,14 @@
 
     /* ------------------ 趣味 ------------------ */
 
-    .about main > article:nth-of-type(4) > section:nth-of-type(2n+1) {
+    .about main > article:nth-of-type(4) > section:nth-of-type(2n + 1) {
         grid-template-columns: 30% 70%;
     }
 
     .about main > article:nth-of-type(4) > section:nth-of-type(2n) {
         grid-template-areas:
-            "icon title"
-            "icon text";
+            'icon title'
+            'icon text';
         grid-template-columns: 30% 70%;
         text-align: start;
     }
@@ -535,17 +553,18 @@
     ========================================================= */
     .top main {
         grid-template-areas:
-            "hero hero hero"
-            ". ABOUT ."
-            ". SKILL ."
-            ". WORKS ."
-            ". CONTACT .";
+            'hero hero hero'
+            '. ABOUT .'
+            '. SKILL .'
+            '. WORKS .'
+            '. CONTACT .';
         grid-template-columns: 1fr clamp(1025px, 80%, 1720px) 1fr;
     }
 
     /* ------------------ WORKS ------------------ */
 
-    .top main > section:nth-of-type(4) > h2, p:last-of-type {
+    .top main > section:nth-of-type(4) > h2,
+    p:last-of-type {
         grid-column: 1 / span 3;
     }
 
@@ -554,7 +573,13 @@
         column-gap: 1em;
     }
 
-    .top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li {
+    .top
+        main
+        > section:nth-of-type(4)
+        > div
+        > article
+        > ul:nth-of-type(2)
+        > li {
         margin-block: 0;
     }
 
@@ -585,7 +610,7 @@
         left: 50%;
     }
 
-    .about main > article:nth-of-type(3) > div > dl:nth-of-type(2n+1) {
+    .about main > article:nth-of-type(3) > div > dl:nth-of-type(2n + 1) {
         padding-inline-start: 55%;
     }
 
