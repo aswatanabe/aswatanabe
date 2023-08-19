@@ -3,12 +3,6 @@
 /* =====================================================================
 ** TOP
 ===================================================================== */
-.top {
-    grid-template-areas:
-        'header header header'
-        'main main main'
-        'footer footer footer';
-}
 
 .top h1 {
     display: none;
@@ -43,61 +37,55 @@
     block-size: calc(100vh - 5em); /* header 5em */
 }
 
-.top main > section:nth-of-type(1) > div > h2 {
-    display: none;
+.top main > section:nth-of-type(1) > div > div {
+    margin-block-start: 25%;
 }
 
-.top main > section:nth-of-type(1) > div > p:nth-of-type(1) > img {
-    inline-size: min(75%, calc(var(--logic-px) * 600));
-    object-fit: contain;
+.top main > section:nth-of-type(1) > div > div > p {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.top main > section:nth-of-type(1) > div > div > h2 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.top main > section:nth-of-type(1) > div > ul {
+    inline-size: min(60%, var(--logic-px) * 300);
+    margin-block-end: 15%;
+    margin-inline: auto;
+}
+
+.top main > section:nth-of-type(1) > div > ul > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 0.5em;
+    text-align: left;
+    background-color: #fff; /*spanと色を合わせる*/
+}
+
+.top main > section:nth-of-type(1) > div > ul > li::after {
+    position: absolute;
+    inset-block-start: 50%;
+    z-index: 1;
+    display: block;
+    inline-size: 100%;
+    content: '';
+    border-bottom: dotted 2px black;
+}
+
+.top main > section:nth-of-type(1) > div > ul > li > span {
+    z-index: 2;
+    padding: 0.5em;
+    background-color: #fff; /*liと色を合わせる*/
 }
 
 /* --------------- Scroll --------------- */
-.top main > section:nth-of-type(1) > div:last-of-type {
-    position: absolute;
-    top: 92.5%;
-    left: 50%;
-    font-size: 0.7em;
-    color: #333;
-    writing-mode: vertical-rl;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.top main > section:nth-of-type(1) > div:last-of-type::before {
-    right: 50%;
-    bottom: -120px;
-    display: block;
-    width: 1px;
-    height: 70px;
-    content: '';
-    background-color: rgb(0 0 0 / 50%);
-    transform: translateX(-50%);
-}
-
-.top main > section:nth-of-type(1) > div:last-of-type::before {
-    animation: scroll 3s cubic-bezier(1, 0, 0, 1) infinite;
-}
-
-@keyframes scroll {
-    0% {
-        transform: scale(1, 0);
-        transform-origin: 0 0;
-    }
-
-    50% {
-        transform: scale(1, 1);
-        transform-origin: 0 0;
-    }
-
-    50.1% {
-        transform: scale(1, 1);
-        transform-origin: 0 100%;
-    }
-
-    100% {
-        transform: scale(1, 0);
-        transform-origin: 0 100%;
-    }
+.top main > section:nth-of-type(1) > div > p:last-of-type {
+    display: none;
 }
 
 /* ------------------ ABOUT ------------------ */
@@ -487,6 +475,10 @@
     /* TOP
     ========================================================= */
 
+    .top main > section:nth-of-type(1) > div > div > p {
+        font-size: 2.1em;
+    }
+
     /* ------------------ WORKS ------------------ */
 
     .top main > section:nth-of-type(4) > div {
@@ -551,7 +543,15 @@
 
     /* TOP
     ========================================================= */
+    .top {
+        grid-template-areas:
+            'header header header'
+            'main main main'
+            'footer footer footer';
+    }
+
     .top main {
+        display: grid;
         grid-template-areas:
             'hero hero hero'
             '. ABOUT .'
@@ -559,6 +559,88 @@
             '. WORKS .'
             '. CONTACT .';
         grid-template-columns: 1fr clamp(1025px, 80%, 1720px) 1fr;
+    }
+
+    .top main > section:nth-of-type(1) {
+        grid-area: hero;
+    }
+
+    .top main > section:nth-of-type(1) > div {
+        margin: 0 auto;
+        inline-size: clamp(1025px, 80%, 1100px);
+        block-size: 100%;
+    }
+
+    .top main > section:nth-of-type(1) > div > div {
+        position: absolute;
+        inset-inline-end: 5%;
+        inset-block-start: -20%;
+        align-content: end;
+        text-align: end;
+    }
+
+    .top main > section:nth-of-type(1) > div > div > p {
+        font-size: 2.5em;
+    }
+
+    .top main > section:nth-of-type(1) > div > div > h2 {
+        text-align: end;
+    }
+
+    .top main > section:nth-of-type(1) > div > ul {
+        position: absolute;
+        inline-size: 30%;
+        inset-inline-start: 5%;
+        inset-block-end: -10%;
+    }
+
+    /* --------------- Scroll --------------- */
+    .top main > section:nth-of-type(1) > div > p:last-of-type {
+        display: block;
+        position: absolute;
+        top: 92.5%;
+        left: 50%;
+        font-size: 0.7em;
+        color: #333;
+        writing-mode: vertical-rl;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .top main > section:nth-of-type(1) > div > p:last-of-type::before {
+        right: 50%;
+        bottom: -120px;
+        display: block;
+        width: 1px;
+        height: 70px;
+        content: '';
+        background-color: rgb(0 0 0 / 50%);
+        transform: translateX(-50%);
+    }
+
+    .top main > section:nth-of-type(1) > div > p:last-of-type::before {
+        animation: scroll 3s cubic-bezier(1, 0, 0, 1) infinite;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: scale(1, 0);
+            transform-origin: 0 0;
+        }
+
+        50% {
+            transform: scale(1, 1);
+            transform-origin: 0 0;
+        }
+
+        50.1% {
+            transform: scale(1, 1);
+            transform-origin: 0 100%;
+        }
+
+        100% {
+            transform: scale(1, 0);
+            transform-origin: 0 100%;
+        }
     }
 
     /* ------------------ WORKS ------------------ */

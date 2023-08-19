@@ -225,14 +225,18 @@ header {
     background-color: #fff;
     block-size: 5em;
     inline-size: 100%;
+    display: flex; /* navを中央に */
+    justify-content: center; /* navを中央に */
 }
 
 header > nav {
     display: flex;
     grid-area: header;
     align-items: center;
+    inline-size: min(100%, 1720px);
     block-size: 100%;
     padding-inline: 1em;
+    margin: 0 auto; /* navを中央に */
 }
 
 header > nav > h2 {
