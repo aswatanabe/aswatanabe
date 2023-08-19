@@ -20,8 +20,7 @@
     --color-button-link: #3d9ec8;
     --color-button-hover: #a0c4d3;
 
-    font-family: Verdana, '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3',
-        'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+    font-family: Verdana, '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
     font-size: max(calc(var(--logic-px) * 16), 14px);
     line-height: 1.5em;
     scroll-behavior: smooth;
@@ -179,16 +178,16 @@ a:is(:hover, :focus) {
 .hover-text {
     position: absolute;
     inset: 0;
+
+    /* ホバーを画像サイズに合わせる */
+    inline-size: 100%;
+    aspect-ratio: 3/2;
     padding-block-start: 15%;
     padding-inline: 2em;
     color: #fff; /* 白文字 */
     background: rgba(0 0 0 / 50%);
     opacity: 0; /* この切替で表示非表示（非表示状態） */
     transition: all 0.6s ease; /* ふわっとアニメーション */
-
-    /* ホバーを画像サイズに合わせる */
-    inline-size: 100%;
-    aspect-ratio: 3/2;
     object-fit: cover;
 }
 
@@ -227,11 +226,11 @@ p {
 header {
     position: fixed;
     z-index: 2000;
-    background-color: #fff;
-    block-size: 5em;
-    inline-size: 100%;
     display: flex; /* navを中央に */
     justify-content: center; /* navを中央に */
+    inline-size: 100%;
+    background-color: #fff;
+    block-size: 5em;
 }
 
 header > nav {
@@ -249,8 +248,8 @@ header > nav > h2 {
 }
 
 header > nav > p > img {
-    margin-block-start: 0.5em;
     inline-size: auto;
+    margin-block-start: 0.5em;
     block-size: 90%;
 }
 
@@ -277,9 +276,9 @@ header > nav > div > div > ul > li > a {
 
 #burger-btn {
     z-index: 999;
+    inline-size: 3em;
     cursor: pointer;
     background-color: var(--color-button-color);
-    inline-size: 3em;
     block-size: 3em;
 }
 
@@ -311,17 +310,17 @@ header > nav > div > div > ul > li > a {
 
 #burger-menu {
     position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
     display: grid; /* for "align-items center" */
     align-items: center;
+    inline-size: 100%;
     text-align: center;
     pointer-events: none;
     background-color: rgb(255 255 255 / 85%);
     opacity: 0;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inline-size: 100%;
-    block-size: 100%;
     transition: transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    block-size: 100%;
 }
 
 #burger-menu ul {
@@ -421,25 +420,25 @@ footer > section > ul > li > a > i {
     color: #fff;
 }
 
-/* Twitter非表示*/
+/* Twitter非表示 */
 footer > section:nth-of-type(2) > ul > li:nth-of-type(2) {
     display: none;
 }
 
 footer > small {
     display: block;
+    inline-size: 100%;
     margin-block: 2em;
     font-size: 0.8em;
     color: #fff;
     text-align: center;
-    inline-size: 100%;
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ** MEDIA QUERY DESIGN B(Tablet)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-@media screen and (min-width: 600px) {
+@media screen and (width >= 600px) {
     /* タブレット用レイアウト 600px以上の範囲に収めるデザインはこの中に記述 */
 
     /* =====================================================================
@@ -503,7 +502,7 @@ footer > small {
 ** SITEWIDE
 ===================================================================== */
 
-@media screen and (min-width: 1025px) {
+@media screen and (width >= 1025px) {
     body {
         display: grid;
         grid-template-areas:

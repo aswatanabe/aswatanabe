@@ -33,7 +33,7 @@
     align-items: center;
     margin-block-start: 0;
     text-align: center;
-    background-image: url(../images/white-simple-textured-design-background.jpg);
+    background-image: url('../images/white-simple-textured-design-background.jpg');
     block-size: calc(100vh - 5em); /* header 5em */
 }
 
@@ -47,9 +47,9 @@
 }
 
 .top main > section:nth-of-type(1) > div > div > h2 {
-    text-align: center;
     font-size: 1.2em;
     font-weight: normal;
+    text-align: center;
 }
 
 .top main > section:nth-of-type(1) > div > ul {
@@ -64,7 +64,7 @@
     justify-content: space-between;
     margin-block: 0.5em;
     text-align: left;
-    background-color: #fff; /*spanと色を合わせる*/
+    background-color: #fff; /* spanと色を合わせる */
 }
 
 .top main > section:nth-of-type(1) > div > ul > li::after {
@@ -80,7 +80,7 @@
 .top main > section:nth-of-type(1) > div > ul > li > span {
     z-index: 2;
     padding: 0.5em;
-    background-color: #fff; /*liと色を合わせる*/
+    background-color: #fff; /* liと色を合わせる */
 }
 
 /* --------------- Scroll --------------- */
@@ -144,13 +144,7 @@
     grid-area: list;
 }
 
-.top
-    main
-    > section:nth-of-type(4)
-    > div
-    > article
-    > ul:nth-of-type(1)
-    > li::before {
+.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(1) > li::before {
     content: '#';
 }
 
@@ -166,27 +160,14 @@
     margin-block: 1em;
 }
 
-.top
-    main
-    > section:nth-of-type(4)
-    > div
-    > article
-    > ul:nth-of-type(2)
-    > li::before {
+.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li::before {
     padding-block: 0.5em;
     margin-inline-end: 0.3em;
     color: var(--color-link);
     content: '→';
 }
 
-.top
-    main
-    > section:nth-of-type(4)
-    > div
-    > article
-    > ul:nth-of-type(2)
-    > li
-    > a {
+.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li > a {
     padding-inline-end: 0.5em;
     font-size: 0.9em;
 }
@@ -210,12 +191,12 @@
 .top main > section:nth-of-type(5) > ul > li > a {
     display: grid;
     align-items: center;
+    inline-size: 3em;
     margin-inline: 1em;
     text-align: center;
     background-color: #000;
     border: 1px solid #000;
     border-radius: 50%;
-    inline-size: 3em;
     block-size: 3em;
 }
 
@@ -228,7 +209,7 @@
     color: #fff;
 }
 
-/* Twitter非表示*/
+/* Twitter非表示 */
 .top main > section:nth-of-type(5) > ul > li:nth-of-type(2) {
     display: none;
 }
@@ -240,6 +221,7 @@
 .about main {
     display: block;
 }
+
 /* 概要
 ===================================================================== */
 .about main > article:nth-of-type(1) {
@@ -252,8 +234,8 @@
         'photo live';
     row-gap: 1em;
     align-items: center;
-    margin-inline: auto;
     inline-size: min(100%, calc(var(--logic-px) * 800));
+    margin-inline: auto;
 }
 
 .about main > article:nth-of-type(1) > h2 {
@@ -263,8 +245,8 @@
 
 .about main > article:nth-of-type(1) > img {
     grid-area: photo;
-    aspect-ratio: 1 / 1;
     inline-size: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     max-block-size: calc(var(--logic-px) * 210);
 }
@@ -290,6 +272,7 @@
 .about p {
     margin-block-end: 0;
 }
+
 /* 経歴
 ===================================================================== */
 
@@ -310,14 +293,14 @@
 
 .about main > article:nth-of-type(3) > div > dl::before {
     position: absolute;
+    inset-inline-start: calc(40px - 11px);
     display: inline-block;
+    inline-size: 16px;
     content: '';
     background-color: #fff;
     border: 4px solid #000;
     border-radius: 100%;
-    inline-size: 16px;
     block-size: 16px;
-    inset-inline-start: calc(40px - 11px);
 }
 
 .about main > article:nth-of-type(3) > div > dl > dt {
@@ -382,8 +365,8 @@
 .skills .skill-grid section > img {
     grid-area: icon;
     justify-content: center;
-    margin-inline: auto;
     inline-size: 50%;
+    margin-inline: auto;
     block-size: auto;
 }
 
@@ -474,7 +457,7 @@
 ** MEDIA QUERY DESIGN B(Tablet)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-@media screen and (min-width: 600px) {
+@media screen and (width >= 600px) {
     /* タブレット用レイアウト 600px以上の範囲に収めるデザインはこの中に記述 */
 
     /* =====================================================================
@@ -493,6 +476,7 @@
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1em;
     }
+
     /* CONTACT
     ===================================================================== */
     .top main > section:nth-of-type(5) > p > br {
@@ -544,7 +528,7 @@
 ** MEDIA QUERY DESIGN C(PC)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-@media screen and (min-width: 1025px) {
+@media screen and (width >= 1025px) {
     .skill-grid section {
         grid-template-columns: 75%;
     }
@@ -575,15 +559,15 @@
     }
 
     .top main > section:nth-of-type(1) > div {
-        margin: 0 auto;
         inline-size: clamp(1025px, 80%, 1100px);
+        margin: 0 auto;
         block-size: 100%;
     }
 
     .top main > section:nth-of-type(1) > div > div {
         position: absolute;
-        inset-inline-end: 5%;
         inset-block-start: -20%;
+        inset-inline-end: 5%;
         align-content: end;
         text-align: end;
     }
@@ -598,17 +582,17 @@
 
     .top main > section:nth-of-type(1) > div > ul {
         position: absolute;
-        inline-size: 30%;
-        inset-inline-start: 5%;
         inset-block-end: -10%;
+        inset-inline-start: 5%;
+        inline-size: 30%;
     }
 
     /* --------------- Scroll --------------- */
     .top main > section:nth-of-type(1) > div > p:last-of-type {
-        display: block;
         position: absolute;
         top: 92.5%;
         left: 50%;
+        display: block;
         font-size: 0.7em;
         color: #333;
         writing-mode: vertical-rl;
@@ -651,6 +635,7 @@
             transform-origin: 0 100%;
         }
     }
+
     /* WORKS
     ===================================================================== */
 
@@ -664,13 +649,7 @@
         column-gap: 1em;
     }
 
-    .top
-        main
-        > section:nth-of-type(4)
-        > div
-        > article
-        > ul:nth-of-type(2)
-        > li {
+    .top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li {
         margin-block: 0;
     }
 
