@@ -19,6 +19,7 @@
     --color-button-color: #ccc;
     --color-button-link: #3d9ec8;
     --color-button-hover: #a0c4d3;
+    --color-icon-bg: #afafb0;
 
     font-family: Verdana, '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
     font-size: max(calc(var(--logic-px) * 16), 14px);
@@ -34,7 +35,7 @@ h1 {
 }
 
 h2 {
-    margin-block: 1.5em;
+    margin-block: 3em;
     font-size: 1.4em;
     line-height: 1.8em;
     text-align: center;
@@ -79,6 +80,10 @@ a:is(:hover, :focus) {
 /* button
 ===================================================================== */
 
+.button {
+    margin-block: 3em;
+}
+
 .button a {
     position: relative;
     display: flex;
@@ -86,7 +91,7 @@ a:is(:hover, :focus) {
     justify-content: space-between;
     inline-size: calc(var(--logic-px) * 200);
     padding: 1em 2em;
-    margin-block-start: 3em;
+    margin-block-start: 0.5em;
     margin-inline: auto;
     font-size: calc(var(--logic-px) * 18);
     font-weight: normal;
@@ -202,7 +207,20 @@ a:is(:hover, :focus) {
 /* 初期化
 ===================================================================== */
 
-header, main, footer, section, article, figcaption, div, nav, ul, li, dl, dt, dd, p {
+header,
+main,
+footer,
+section,
+article,
+figcaption,
+div,
+nav,
+ul,
+li,
+dl,
+dt,
+dd,
+p {
     position: relative;
     overflow: hidden;
 }
@@ -363,7 +381,8 @@ main {
     padding-inline: 1em;
 }
 
-main > section, article {
+main > section,
+article {
     margin-block: 2em;
 }
 
@@ -374,10 +393,6 @@ footer {
     background-color: #000;
 }
 
-footer > section {
-    margin-block-end: 1em;
-}
-
 footer > section > h2 {
     display: none;
 }
@@ -385,12 +400,12 @@ footer > section > h2 {
 footer > section > ul {
     display: flex;
     justify-content: center;
-    padding-block-start: 1em;
+    margin-block-start: 3em;
     font-size: 0.9em;
 }
 
 footer > section > ul > li:not(:last-of-type) {
-    margin-inline-end: 2.5em;
+    margin-inline-end: 3em;
 }
 
 footer > section > ul > li > a {
@@ -402,7 +417,7 @@ footer > section > ul > li > a:is(:hover, :focus) {
 }
 
 footer > section > ul > li > a > i {
-    font-size: calc(var(--logic-px) * 18);
+    font-size: calc(var(--logic-px) * 24);
     color: #fff;
 }
 
@@ -414,7 +429,7 @@ footer > section:nth-of-type(2) > ul > li:nth-of-type(2) {
 footer > small {
     display: block;
     inline-size: 100%;
-    margin-block: 2em;
+    margin-block: 4em 2em;
     font-size: 0.8em;
     color: #fff;
     text-align: center;
@@ -426,26 +441,6 @@ footer > small {
 
 @media screen and (width >= 600px) {
     /* タブレット用レイアウト 600px以上の範囲に収めるデザインはこの中に記述 */
-
-    /* =====================================================================
-    ** SITEWIDE
-    ===================================================================== */
-
-    /* header
-    ===================================================================== */
-
-    header > nav {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    header > nav > div > div:nth-of-type(2) > ul {
-        display: flex;
-    }
-
-    header > nav > div > div:nth-of-type(2) > ul > li {
-        padding-inline-end: 2em;
-    }
 
     /* =====================================================================
     ** UTILITIES
@@ -466,6 +461,26 @@ footer > small {
 
     .hover-text {
         padding-block-start: 10px;
+    }
+
+    /* =====================================================================
+    ** SITEWIDE
+    ===================================================================== */
+
+    /* header
+    ===================================================================== */
+
+    header > nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header > nav > div > div:nth-of-type(2) > ul {
+        display: flex;
+    }
+
+    header > nav > div > div:nth-of-type(2) > ul > li {
+        padding-inline-end: 2em;
     }
 }
 

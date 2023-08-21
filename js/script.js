@@ -55,12 +55,12 @@ window.addEventListener('scroll', () => {
     if (inner_width <= 1025) {
         stickyList.style.position = 'absolute';
         stickyList.style.inlineSize = '100%';
-        stickyList.style.top = '450px';
+        stickyList.style.top = '480px'; //#sticky-list-wrapperのtopに合わせる
     } else if (inner_width >= 1025 && scroll_y >= 400) {
         stickyList.style.position = 'absolute';
         stickyList.style.top = '850px';
     } else if (inner_width >= 1025 && scroll_y < 400) {
         stickyList.style.position = 'fixed';
-        stickyList.style.top = '450px';
+        stickyList.style.top = '480px'; //#sticky-list-wrapperのtopに合わせる
     }
 });
