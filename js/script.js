@@ -1,55 +1,66 @@
-// $(window).on('load resize', function(){
-//     const winW = $(window).width();
-//     let devW = 600;
-//     if (winW <= devW) {
-//         $('nav > div').attr('id','burger');
-//         $('nav > div > div:nth-of-type(1)').attr('id','burger-btn');
-//         $('nav > div > div:nth-of-type(2)').attr('id','burger-menu');
-//     } else {
-//         $('nav > div').removeAttr('id');
-//         $('nav > div > div').removeAttr('id');
-//     }
-// });
+/************************************************************************
+ハンバーガーメニュー
+************************************************************************/
 
-function changeBurger(){
+/*--nav：テキストとハンバーガーメニューの切り替え------------------------ */
 
+window.addEventListener('load', changeBurger);
+window.addEventListener('resize', changeBurger);
+
+function changeBurger() {
     const winW = window.innerWidth;
     let deviceW = 600;
 
-    if (winW <= deviceW) { //600px以下なら
+    if (winW <= deviceW) {
+        //600px以下なら
         document.querySelector('nav > div').setAttribute('id', 'burger');
         document.querySelector('nav > div > div:nth-of-type(1)').setAttribute('id', 'burger-btn');
         document.querySelector('nav > div > div:nth-of-type(2)').setAttribute('id', 'burger-menu');
-    } else { //600pxより大きいなら
+    } else {
+        //600pxより大きいなら
         document.querySelector('nav > div').removeAttribute('id');
         document.querySelector('nav > div > div:nth-of-type(1)').removeAttribute('id');
         document.querySelector('nav > div > div:nth-of-type(2)').removeAttribute('id');
     }
-
 }
 
-window.addEventListener('resize', changeBurger);   
-window.addEventListener('load', changeBurger);
+/*--ハンバーガーメニューを開いたときの動き------------------------ */
 
-// $(document).on('click','#burger',function() {
-//     $(this).toggleClass('is-open');
-//     $('main').toggleClass('burger-blur');
-// });
 const burger = document.getElementById('burger');
+const burgerBlur = document.querySelectorAll('.burger-blur');
+const mainElements = document.querySelectorAll('main');
 
-burger.addEventListener('click', function() {
+burger.addEventListener('click', function () {
     this.classList.toggle('is-open');
-    querySelectorAll('main').classList.toggle('burger-blur');
+    mainElements.forEach(main => main.classList.toggle('burger-blur'));
 });
 
-// $(document).on('click','.burger-blur', function() {
-//     $('#burger').removeClass('is-open');
-//     $('main').removeClass('burger-blur');
-// });
-const burgerBlur = document.getElementsByClassName('burger-blur');
-console.log(burger);
+burgerBlur.forEach(blurElement => {
+    blurElement.addEventListener('click', function () {
+        burger.classList.remove('is-open');
+        mainElements.forEach(main => main.classList.remove('burger-blur'));
+    });
+});
 
-burgerBlur.addEventListener('click', function() {
-    getElementById('burger').classList.remove('is-open');
-    querySelectorAll('main').classList.remove('burger-blur');
+/************************************************************************
+メインビジュアルのリストを追随・解除
+************************************************************************/
+
+const stickyList = document.getElementById('sticky-list-wrapper');
+
+window.addEventListener('scroll', () => {
+    const scroll_y = window.scrollY;
+    const inner_width = window.innerWidth;
+
+    if (inner_width <= 1025) {
+        stickyList.style.position = 'absolute';
+        stickyList.style.inlineSize = '100%';
+        stickyList.style.top = '450px';
+    } else if (inner_width >= 1025 && scroll_y >= 400) {
+        stickyList.style.position = 'absolute';
+        stickyList.style.top = '850px';
+    } else if (inner_width >= 1025 && scroll_y < 400) {
+        stickyList.style.position = 'fixed';
+        stickyList.style.top = '450px';
+    }
 });

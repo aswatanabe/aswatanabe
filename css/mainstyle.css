@@ -202,20 +202,7 @@ a:is(:hover, :focus) {
 /* 初期化
 ===================================================================== */
 
-header,
-main,
-footer,
-section,
-article,
-figcaption,
-div,
-nav,
-ul,
-li,
-dl,
-dt,
-dd,
-p {
+header, main, footer, section, article, figcaption, div, nav, ul, li, dl, dt, dd, p {
     position: relative;
     overflow: hidden;
 }
@@ -376,8 +363,7 @@ main {
     padding-inline: 1em;
 }
 
-main > section,
-article {
+main > section, article {
     margin-block: 2em;
 }
 
