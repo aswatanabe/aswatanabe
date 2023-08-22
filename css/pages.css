@@ -884,40 +884,28 @@
     ** ABOUT
     ===================================================================== */
 
-    /* 自己PR
-    ===================================================================== */
-    .about main > article:nth-of-type(2) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 2em;
-    }
-
-    .about main > article:nth-of-type(2) > h2 {
-        grid-column: 1 / span 3;
-    }
-
     /* 経歴
     ===================================================================== */
-    .about main > article:nth-of-type(3) {
+    .about main > section:nth-of-type(3) {
         display: block;
         inline-size: 800px;
         margin-inline: auto;
     }
 
-    .about main > article:nth-of-type(3) > div::before {
+    .about main > section:nth-of-type(3) > div::before {
         left: 50%;
     }
 
-    .about main > article:nth-of-type(3) > div > dl:nth-of-type(2n + 1) {
+    .about main > section:nth-of-type(3) > div > dl:nth-of-type(2n + 1) {
         padding-inline-start: 55%;
     }
 
-    .about main > article:nth-of-type(3) > div > dl:nth-of-type(2n) {
+    .about main > section:nth-of-type(3) > div > dl:nth-of-type(2n) {
         padding-inline-end: 55%;
         text-align: end;
     }
 
-    .about main > article:nth-of-type(3) > div > dl::before {
+    .about main > section:nth-of-type(3) > div > dl::before {
         inset-inline-start: calc(50% - 10px);
     }
 
