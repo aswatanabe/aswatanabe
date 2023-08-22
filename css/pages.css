@@ -212,6 +212,7 @@
 
 .top main > section:nth-of-type(5) > div > section {
     text-align: center;
+    margin: 2em;
 }
 
 .top main > section:nth-of-type(5) > div > section > * {
@@ -233,8 +234,14 @@
     margin: auto;
 }
 
-.top main > section:nth-of-type(5) > div > section > p > img {
-    inline-size: 60%;
+.top main > section:nth-of-type(5) > div > section > p:nth-of-type(1) {
+    block-size: 3em;
+}
+
+.top main > section:nth-of-type(5) > div > section > p:nth-of-type(1) > i {
+    block-size: 100%;
+    inline-size: 100%;
+    font-size: 2.5em;
 }
 
 /* CONTACT
@@ -522,106 +529,98 @@
 }
 
 /* =====================================================================
-** SKILLS
-===================================================================== */
-
-.skills .skill-grid section {
-    align-content: start;
-}
-
-.skills .skill-grid section > ul > li {
-    font-size: 0.9em;
-}
-
-.skills .skill-grid section > img {
-    grid-area: icon;
-    justify-content: center;
-    inline-size: 50%;
-    margin-inline: auto;
-    block-size: auto;
-}
-
-.skills main > section:nth-of-type(1) > h2 {
-    display: none;
-}
-
-.skills main > section:nth-of-type(1) > p {
-    margin-block-end: 0.5em;
-}
-
-.skills main > section:not(:nth-of-type(1)) > h2 {
-    margin-block: 1em;
-}
-
-/* =====================================================================
 ** WORKS
 ===================================================================== */
 
-.works main > div {
+.works main > h1 {
+    color: transparent;
+    block-size: 10em;
+    margin-inline: 2em; /*WORKSページのmargin*/
+    background-image: url('../images/white-simple-textured-design-background.jpg');
+}
+
+.works main > section {
+    margin-inline: 2em; /*WORKSページのmargin*/
+}
+
+/* タブ
+===================================================================== */
+
+.works main > section:nth-of-type(1) {
+    display: flex;
+    margin-block-start: -1em;
+    align-items: center; /* 垂直方向中央揃え */
+    justify-content: center; /* 水平方向中央揃え */
+}
+
+.works main > section:nth-of-type(1) > h2 {
+    margin-block: 0;
+    font-size: 1.1em;
+    margin-inline-end: 1.2em;
+}
+
+.works main > section:nth-of-type(1) > ul {
+    display: flex;
+    font-size: 1.1em;
+}
+
+.works main > section:nth-of-type(1) > ul > li {
+    margin-inline: 0.5em;
+    display: flex;
+    align-items: center; /* 垂直方向中央揃え */
+    justify-content: center; /* 水平方向中央揃え */
+}
+
+/* 作品
+===================================================================== */
+
+.works main > section:nth-of-type(2) > article {
     display: grid;
-    grid-template-rows: repeat(1, 1fr);
-    row-gap: 0;
+    grid-template-areas:
+        'THUMB'
+        'TITLE'
+        'DESC'
+        'DETAIL'
+        'TABLE';
+    margin-block: 8em;
 }
 
-.works main > div > article {
-    border: 1px solid rgba(0 0 0 / 15%);
+.works main > section:nth-of-type(2) > article > a {
+    grid-area: THUMB;
 }
 
-.works main > div > article > h2 {
-    display: none;
-}
-
-.works main > div > article > figure > img {
+.works main > section:nth-of-type(2) > article > a > img {
     inline-size: 100%;
     aspect-ratio: 3/2;
     object-fit: cover;
 }
 
-.works main > div > article > figure > figcaption > p {
-    margin-block-end: 1em;
+.works main > section:nth-of-type(2) > article > h3 {
+    grid-area: TITLE;
+    font-size: 0.8em;
+    margin-block: 0.5em;
+}
+
+.works main > section:nth-of-type(2) > article > p:nth-of-type(1) {
+    grid-area: DESC;
     font-weight: bold;
-}
-
-.works main > div > article > figure > figcaption > dl {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 0.8em;
-}
-
-.works main > div > article > figure > figcaption > dl > dt {
-    inline-size: 35%;
     margin-block: 0.5em;
-    line-height: 1.6em;
 }
 
-.works main > div > article > figure > figcaption > dl > dd {
-    inline-size: 65%;
-    margin-block: 0.5em;
-    line-height: 1.6em;
+.works main > section:nth-of-type(2) > article > p:nth-of-type(2) {
+    grid-area: DETAIL;
 }
 
-.works main > div > article > figure > figcaption > dl > dt::after {
-    content: '：';
-}
-
-.works main > div > article > ul {
-    display: flex;
+.works main > section:nth-of-type(2) > article > dl {
+    grid-area: TABLE;
+    display: grid;
+    grid-template-columns: 25% 70%;
+    gap: 0.8em 2em;
+    font-size: 0.9em;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     margin-block: 1em;
-    margin-inline: 1em;
-}
-
-.works main > div > article > ul > li {
-    margin-inline-end: 1.5em;
-}
-
-.works main > div > article > ul > li > i {
-    font-size: 0.8em;
-    color: var(--color-link);
-}
-
-.works main > div > article > ul > li > a {
-    margin-inline-start: 0.2em;
-    font-size: 0.8em;
+    padding-block: 0.5em;
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -749,10 +748,11 @@
     ** WORKS
     ===================================================================== */
 
-    .works main > div {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 1em;
+    .works main > section:nth-of-type(2) {
+        margin-inline: auto;
+        inline-size: clamp(0px, 80%, 780px);
     }
+        
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -926,7 +926,20 @@
     ** WORKS
     ===================================================================== */
 
-    .works main > div {
-        grid-template-columns: repeat(3, 1fr);
+    .works main > section:nth-of-type(2) > article {
+        display: grid;
+        grid-template-areas:
+            'THUMB TITLE'
+            'THUMB DESC'
+            'THUMB DETAIL'
+            'TABLE TABLE';
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1em;
+        inline-size: 100%;
     }
+
+    .works main > section:nth-of-type(2) > article > dl {
+        grid-template-columns: 10% 85%;
+    }    
+
 }
