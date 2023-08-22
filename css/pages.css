@@ -39,8 +39,9 @@
 }
 
 .top main > section:nth-of-type(1) > div > p {
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: bold;
+    inline-size: 100%;
 }
 
 .top main > section:nth-of-type(1) > div > h2 {
@@ -276,6 +277,10 @@
     display: none;
 }
 
+.about main > section:not(:nth-of-type(2)) {
+    margin-inline: 2em; /*ABOUTページのmargin*/
+}
+
 /* 概要
 ===================================================================== */
 
@@ -348,12 +353,14 @@
 
 /*キャッチコピー*/
 .about main > section:nth-of-type(2) > section:nth-of-type(1) {
+    margin-inline: 2em; /*ABOUTページのmargin*/
     margin-block: 5em;
 }
 
 .about main > section:nth-of-type(2) > section:nth-of-type(1) > p:nth-of-type(1) {
     font-size: 1.3em;
     margin-block: 0.3em;
+    font-weight: bold;
 }
 
 .about main > section:nth-of-type(2) > section:nth-of-type(1) > p:nth-of-type(2) {
@@ -363,6 +370,21 @@
 /*自己PR*/
 .about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
     margin-block: 2.2em;
+    margin-inline: 2em; /*ABOUTページのmargin*/
+}
+
+/*背景*/
+.about main > section:nth-of-type(2) > section:nth-of-type(2)::before {
+    content: '';
+    position: absolute;
+    width: 70%; /*背景の幅を変更*/
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-image: url('../images/white-simple-textured-design-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
 }
 
 .about main > section:nth-of-type(2) > section:nth-of-type(2) > section > h4 {
@@ -686,21 +708,11 @@
 
     /*背景*/
     .about main > section:nth-of-type(2) > section:nth-of-type(2)::before {
-        content: '';
-        position: absolute;
-        width: 50%;
-        height: 100%;
-        right: 0;
-        top: 0;
-        background-image: url('../images/white-simple-textured-design-background.jpg');
-        background-size: cover;
-        background-position: center center;
-        z-index: -1;
+        width: 60%; /*背景の幅を変更*/
     }
 
-    .about main > section:nth-of-type(2) > section:nth-of-type(2) > h4,
-    p {
-        inline-size: 70%;
+    .about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
+        inline-size: 60%;
     }
 
     /* 経歴
@@ -803,6 +815,7 @@
     }
 
     #sticky-list {
+        inline-size: min(30%, var(--logic-px) * 400);
         margin-inline: 15% auto;
     }
 
