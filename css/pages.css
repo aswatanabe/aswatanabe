@@ -95,7 +95,7 @@
     display: none;
 }
 
-/* ABOUT
+/* CONCEPT
 ===================================================================== */
 .top main > section:nth-of-type(2) {
     grid-area: CONCEPT;
@@ -262,64 +262,126 @@
 ===================================================================== */
 
 .about main {
-    display: block;
+    display: grid;
+    grid-template-areas:
+        'A1'
+        'A2'
+        'A3'
+        'A4'
+        'A5'
+        'A6';
+}
+
+.about main > h1 {
+    display: none;
 }
 
 /* 概要
 ===================================================================== */
-.about main > article:nth-of-type(1) {
+
+.about main > section:nth-of-type(1) {
+    grid-area: A1;
+}
+
+.about main > section:nth-of-type(1) > h2 {
+    color: transparent;
+    block-size: 10em;
+    background-image: url('../images/white-simple-textured-design-background.jpg');
+}
+
+.about main > section:nth-of-type(1) > ul {
     display: grid;
     grid-template-areas:
-        'title title'
-        'photo name'
-        'photo job'
-        'photo birth'
-        'photo live';
-    row-gap: 1em;
-    align-items: center;
-    inline-size: min(100%, calc(var(--logic-px) * 800));
-    margin-inline: auto;
+        'PIC'
+        'NAME'
+        'JOB'
+        'PLACE';
+    text-align: center;
+    justify-items: center; /* 画像を水平方向に中央揃え */
+    align-items: center; /* 画像を縦方向に中央揃え */
+    margin-block-start: -10em;
 }
 
-.about main > article:nth-of-type(1) > h2 {
-    display: none;
-    grid-area: title;
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(1) {
+    grid-area: PIC;
+    border-radius: 50%; /* 画像を円形にする */
+    block-size: 10em;
+    inline-size: 10em;
 }
 
-.about main > article:nth-of-type(1) > img {
-    grid-area: photo;
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(1) > img {
+    display: block;
+    block-size: 100%;
     inline-size: 100%;
-    aspect-ratio: 1 / 1;
     object-fit: cover;
-    max-block-size: calc(var(--logic-px) * 210);
 }
 
-.about main > article:nth-of-type(1) > p:nth-of-type(1) {
-    grid-area: name;
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(2) {
+    grid-area: NAME;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-block: 0.5em;
 }
 
-.about main > article:nth-of-type(1) > p:nth-of-type(2) {
-    grid-area: job;
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(3) {
+    grid-area: JOB;
 }
 
-.about main > article:nth-of-type(1) > p:nth-of-type(3) {
-    grid-area: birth;
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(4) {
+    grid-area: PLACE;
 }
 
-.about main > article:nth-of-type(1) > p:nth-of-type(4) {
-    grid-area: live;
-}
-
-/* 自己PR
+/* ビジョン
 ===================================================================== */
-.about p {
-    margin-block-end: 0;
+
+.about main > section:nth-of-type(2) {
+    grid-area: A2;
+}
+
+.about main > section:nth-of-type(2) > h2 {
+    display: none;
+}
+
+.about main > section:nth-of-type(2) > section > h3 {
+    display: none;
+}
+
+/*キャッチコピー*/
+.about main > section:nth-of-type(2) > section:nth-of-type(1) {
+    margin-block: 5em;
+}
+
+.about main > section:nth-of-type(2) > section:nth-of-type(1) > p:nth-of-type(1) {
+    font-size: 1.3em;
+    margin-block: 0.3em;
+}
+
+.about main > section:nth-of-type(2) > section:nth-of-type(1) > p:nth-of-type(2) {
+    font-size: 0.9em;
+}
+
+/*自己PR*/
+.about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
+    margin-block: 2.2em;
+}
+
+.about main > section:nth-of-type(2) > section:nth-of-type(2) > section > h4 {
+    font-weight: 500;
+    margin-block: 1.5em;
+}
+
+.about main > section:nth-of-type(2) > section:nth-of-type(2) > section > p {
+    line-height: 2.2em;
 }
 
 /* 経歴
 ===================================================================== */
 
-.about main > article:nth-of-type(3) > div::before {
+.about main > section:nth-of-type(3) {
+    grid-area: A3;
+}
+
+.about main > section:nth-of-type(3) > div::before {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -329,12 +391,12 @@
     background-color: #000;
 }
 
-.about main > article:nth-of-type(3) > div > dl {
+.about main > section:nth-of-type(3) > div > dl {
     padding-inline-start: 80px;
     margin-block: 2em;
 }
 
-.about main > article:nth-of-type(3) > div > dl::before {
+.about main > section:nth-of-type(3) > div > dl::before {
     position: absolute;
     inset-inline-start: calc(40px - 11px);
     display: inline-block;
@@ -346,19 +408,63 @@
     block-size: 16px;
 }
 
-.about main > article:nth-of-type(3) > div > dl > dt {
+.about main > section:nth-of-type(3) > div > dl > dt {
     margin-block-end: 0.5em;
     font-size: 18px;
     font-weight: bold;
 }
 
-.about main > article:nth-of-type(3) > div > dl > dd {
+.about main > section:nth-of-type(3) > div > dl > dd {
     inline-size: 100%;
+}
+
+/* スキルと特徴
+===================================================================== */
+
+.about main > section:nth-of-type(4) {
+    grid-area: A4;
+}
+
+.about main > section:nth-of-type(4) > dl > dt {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-block-start: 1em;
+}
+
+.about main > section:nth-of-type(4) > dl > dd {
+    line-height: 1.5em;
+}
+
+.about main > section:nth-of-type(4) > dl > dd:nth-of-type(1) {
+    margin-block: 0.5em;
+    font-weight: 600;
+}
+
+/* 資格
+===================================================================== */
+
+.about main > section:nth-of-type(5) {
+    grid-area: A5;
+}
+
+.about main > section:nth-of-type(5) > dl > dt {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-block: 1em 0.5em;
+}
+
+.about main > section:nth-of-type(5) > dl > dd {
+    font-size: 0.9em;
 }
 
 /* 趣味
 ===================================================================== */
-.about main > article:nth-of-type(4) > section:nth-of-type(2n + 1) {
+
+.about main > section:nth-of-type(6) {
+    grid-area: A6;
+}
+
+.about main > section:nth-of-type(6) > section:nth-of-type(2n + 1) {
     display: grid;
     grid-template-areas:
         'icon title'
@@ -367,7 +473,7 @@
     margin-block: 1.5em;
 }
 
-.about main > article:nth-of-type(4) > section:nth-of-type(2n) {
+.about main > section:nth-of-type(6) > section:nth-of-type(2n) {
     display: grid;
     grid-template-areas:
         'title icon'
@@ -376,20 +482,20 @@
     text-align: end;
 }
 
-.about main > article:nth-of-type(4) > section > h3 {
+.about main > section:nth-of-type(6) > section > h3 {
     grid-area: title;
     margin-block-start: 0;
     margin-block-end: 0.5em;
 }
 
-.about main > article:nth-of-type(4) > section > i {
+.about main > section:nth-of-type(6) > section > i {
     grid-area: icon;
     margin-block: auto;
     font-size: 3em;
     text-align: center;
 }
 
-.about main > article:nth-of-type(4) > section > p {
+.about main > section:nth-of-type(6) > section > p {
     grid-area: text;
 }
 
@@ -550,9 +656,56 @@
     ** ABOUT
     ===================================================================== */
 
+    .about main > section:not(:nth-of-type(2)) {
+        margin-inline: 10%; /*ABOUTページのmargin*/
+    }
+
+    /* 概要
+    ===================================================================== */
+
+    .about main > section:nth-of-type(1) > ul {
+        display: grid;
+        grid-template-areas:
+            'PIC NAME'
+            'PIC JOB'
+            'PIC PLACE';
+        text-align: unset;
+        justify-items: unset;
+        align-items: unset;
+        margin-block-start: -10em;
+        place-content: center;
+        gap: 2em;
+    }
+
+    /* ビジョン
+    ===================================================================== */
+
+    .about main > section:nth-of-type(2) {
+        padding-inline-start: 10%; /*ABOUTページのmargin*/
+    }
+
+    /*背景*/
+    .about main > section:nth-of-type(2) > section:nth-of-type(2)::before {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        background-image: url('../images/white-simple-textured-design-background.jpg');
+        background-size: cover;
+        background-position: center center;
+        z-index: -1;
+    }
+
+    .about main > section:nth-of-type(2) > section:nth-of-type(2) > h4,
+    p {
+        inline-size: 70%;
+    }
+
     /* 経歴
     ===================================================================== */
-    .about main > article:nth-of-type(3) {
+    .about main > section:nth-of-type(3) {
         display: grid;
         justify-content: center;
     }
@@ -560,21 +713,24 @@
     /* 趣味
     ===================================================================== */
 
-    .about main > article:nth-of-type(4) > section:nth-of-type(2n + 1) {
-        grid-template-columns: 30% 70%;
+    .about main > section:nth-of-type(6) > section:nth-of-type(2n + 1) {
+        grid-template-columns: 15% auto;
     }
 
-    .about main > article:nth-of-type(4) > section:nth-of-type(2n) {
+    .about main > section:nth-of-type(6) > section:nth-of-type(2n) {
         grid-template-areas:
             'icon title'
             'icon text';
-        grid-template-columns: 30% 70%;
+        grid-template-columns: 15% auto;
         text-align: start;
     }
 
-    .about main > article:nth-of-type(4) > section > i {
-        margin-inline-end: 2em;
-        text-align: end;
+    .about main > section:nth-of-type(6) > section > i {
+        text-align: start;
+    }
+
+    .about main > section:nth-of-type(6) > section > p {
+        inline-size: 100%;
     }
 
     /* =====================================================================

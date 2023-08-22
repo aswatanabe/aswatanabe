@@ -377,10 +377,6 @@ header > nav > div > div > ul > li > a {
 /* main
 ===================================================================== */
 
-main {
-    padding-inline: 1em;
-}
-
 main > section,
 article {
     margin-block: 2em;
