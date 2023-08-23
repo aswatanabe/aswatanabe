@@ -6,6 +6,7 @@ node_modules/
 .eslintrc.js
 package-lock.json
 package.json
+css/red.css
 works/cafeforest/
 works/cafeforest_old/
 works/cookpalace/

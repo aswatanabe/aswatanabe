@@ -38,12 +38,14 @@
     block-size: calc(100vh - 5em); /* header 5em */
 }
 
+/*キャッチコピー*/
 .top main > section:nth-of-type(1) > div > p {
     font-size: 1.8em;
     font-weight: bold;
     inline-size: 100%;
 }
 
+/*Asuka Watanabe*/
 .top main > section:nth-of-type(1) > div > h2 {
     margin-block-start: 1em;
     font-size: 1.2em;
@@ -126,23 +128,10 @@
     margin-block: 5em;
 }
 
-.top main > section:nth-of-type(3) > article > * {
-    margin-block: 0.5em;
-}
-
-.top main > section:nth-of-type(3) > article > *:not(p:last-of-type) {
-    font-size: 0.8em;
-}
-
-.top main > section:nth-of-type(3) > article > a {
-    transition:
-        filter 0.4s,
-        transform 0.4s;
-}
-
-.top main > section:nth-of-type(3) > article > a:hover {
-    filter: brightness(0.7);
-    transform: scale(1.25, 1.25);
+.top main > section:nth-of-type(3) > article > h3 {
+    display: inline-block;
+    border-block-end: 1px solid;
+    padding: 1em;
 }
 
 .top main > section:nth-of-type(3) > article > a > img {
@@ -151,24 +140,48 @@
     object-fit: cover;
 }
 
-.top main > section:nth-of-type(3) > article > div {
+.top main > section:nth-of-type(3) > article > ul {
     display: flex;
+    margin-block-start: 1em;
 }
 
-.top main > section:nth-of-type(3) > article > div:nth-of-type(1) > h3 {
-    margin-block: 0;
-}
-
-.top main > section:nth-of-type(3) > article > div:nth-of-type(1) > p {
+.top main > section:nth-of-type(3) > article > ul > * {
     margin-inline-end: 1em;
-    margin-block: auto;
-    padding-inline: 0.5em;
-    padding-block: 0.2em;
-    background-color: var(--color-icon-bg);
+    font-size: 0.9em;
 }
 
-.top main > section:nth-of-type(3) > article > div:nth-of-type(2) > p {
-    margin-inline-end: 2em;
+/*カテゴリー*/
+.top main > section:nth-of-type(3) > article > ul > li:nth-of-type(1) {
+    grid-area: CATEGORY;
+    background-color: var(--color-icon-bg);
+    padding-inline: 0.5em;
+}
+
+/*作品名*/
+.top main > section:nth-of-type(3) > article > ul > li:nth-of-type(2) {
+    margin-block: 0;
+    display: inline;
+    font-weight: bold;
+}
+
+/*リンク*/
+.top main > section:nth-of-type(3) > article > ul > li:nth-of-type(3) {
+    grid-area: CATEGORY;
+}
+
+/*GitHub*/
+.top main > section:nth-of-type(3) > article > ul > li:nth-of-type(4) {
+    grid-area: CATEGORY;
+}
+
+.top main > section:nth-of-type(3) > article > p:nth-of-type(1) {
+    /* grid-area: DESC; */
+    font-weight: bold;
+    margin-block: 0.5em;
+}
+
+.top main > section:nth-of-type(3) > article > p:nth-of-type(2) {
+    /* grid-area: DETAIL; */
 }
 
 /* ABOUT
@@ -180,6 +193,7 @@
 
 .top main > section:nth-of-type(4) > * {
     text-align: center;
+    inline-size: 100%;
 }
 
 .top main > section:nth-of-type(4) > p:nth-of-type(1) {
@@ -638,10 +652,10 @@
         font-size: 2.1em;
     }
 
-    /* WORKS
+    /* SERVICE
     ===================================================================== */
-    .top main > section:nth-of-type(3) > article {
-        margin-block: 5em;
+
+    .top main > section:nth-of-type(3) {
         margin-inline: auto;
         inline-size: clamp(0px, 80%, 780px);
     }
@@ -868,7 +882,7 @@
         }
     }
 
-    /* ABOUT
+    /* CONCEPT
     ===================================================================== */
 
     .top main > section:nth-of-type(2) > p {
@@ -876,21 +890,11 @@
         inline-size: 50%;
     }
 
-    /* WORKS
+    /* ABOUT
     ===================================================================== */
-
-    .top main > section:nth-of-type(4) > h2,
-    p:last-of-type {
-        grid-column: 1 / span 3;
-    }
-
-    .top main > section:nth-of-type(4) div {
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 1em;
-    }
-
-    .top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li {
-        margin-block: 0;
+    .top main > section:nth-of-type(4) > * {
+        inline-size: min(80%, 1100px);
+        margin-inline: auto;
     }
 
     /* =====================================================================
