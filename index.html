@@ -180,7 +180,39 @@
                         <p>お仕事のご依頼・ご相談などがございましたら、問合せフォームよりお気軽にご連絡ください。<br>返信には３営業日ほどお時間をいただく可能性があります。</p>
                         <p>お仕事のご依頼・ご相談などがございましたら、問合せフォームよりお気軽にご連絡ください。<br>返信には３営業日ほどお時間をいただく可能性があります。</p>
                     </section>
-                    <p>ここに問合フォームが入ります。</p>
+                    <section id="form">
+                        <h3>お問い合わせフォーム</h3>
+                        <form action="confirm.php" enctype="multipart/form-data" method="POST">
+                            <dl>
+                                <dt><label for="name">お名前</label></dt>
+                                <dd><input type="text" name="name" placeholder="Your Name" required/></dd>
+                            </dl>
+                            <dl>
+                                <dt><label for="email">メールアドレス</label></dt>
+                                <dd><input type="email" name="email01" id="email01" patter="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="abc@example.com" required/></dd>
+                            </dl>
+                            <dl>
+                                <dt><label for="email02">メールアドレス（確認）</label></dt>
+                                <dd><input type="email" name="email02" id="email02" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="abc@example.com" required/></dd>
+                            </dl>
+                            <dl>
+                                <dt><label for="querytitle">お問い合わせの種類</label></dt>
+                                <dd>
+                                    <select name="querytitle">
+                                        <option>Web制作について</option>
+                                        <option>Web編集について</option>
+                                        <option>書籍編集について</option>
+                                        <option>その他</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><label for="query">お問い合わせ内容</label></dt>
+                                <dd><textarea name="query" required></textarea></dd>
+                            </dl>
+                            <p class="btn"><input type="submit" value="入力内容の確認" onClick="CheckEmail(this)" /></p>
+                        </form>
+                    </section>
                 </div>
             </section>
         </main>

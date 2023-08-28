@@ -306,12 +306,45 @@
     display: none;
 }
 
-.top main > section:nth-of-type(6) > div > p:last-of-type {
-    display: block;
+/* --------------- form --------------- */
+
+#form dl {
     inline-size: 100%;
-    block-size: 300px;
-    background-color: var(--color-icon-bg);
 }
+
+#form dl > :is(dt, dd) {
+    margin-block: 0.5em;
+}
+
+#form dl:not(:nth-of-type(5)) > dd {
+    block-size: 3em;
+}
+
+#form dl:nth-of-type(5) > dd {
+    block-size: 10em;
+}
+
+#form dl > dd > * {
+    inline-size: 100%;
+    block-size: 100%;
+    padding: 0.5em;
+}
+
+#form p {
+    display: flex;
+    justify-content: center;
+}
+
+#form p > input {
+    inline-size: 15em;
+    block-size: 3em;
+}
+
+#form p > input:hover {
+    background-color: var(--color-button-hover);
+    border-color: var(--color-button-hover);
+}
+
 
 /* =====================================================================
 ** ABOUT
@@ -629,7 +662,7 @@
         'TITLE'
         'DESC'
         'DETAIL'
-        'TABLE';
+        'dl';
     margin-block: 8em;
 }
 
@@ -660,7 +693,7 @@
 }
 
 .works main > section:nth-of-type(2) > article > dl {
-    grid-area: TABLE;
+    grid-area: dl;
     display: grid;
     grid-template-columns: 25% 70%;
     gap: 0.8em 2em;
@@ -672,7 +705,7 @@
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-** MEDIA QUERY DESIGN B(Tablet)
+** MEDIA QUERY DESIGN B(dlt)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 @media screen and (width >= 600px) {
@@ -713,11 +746,11 @@
         grid-template-rows: 1fr;
     }
 
-    .top main > section:nth-of-type(6) > div > section {
+    .top main > section:nth-of-type(6) > div > section:nth-of-type(1) {
         grid-area: MSG;
     }
 
-    .top main > section:nth-of-type(6) > div > p {
+    .top main > section:nth-of-type(6) > div > section:nth-of-type(2) {
         grid-area: FORM;
     }
 
@@ -970,7 +1003,7 @@
             'THUMB TITLE'
             'THUMB DESC'
             'THUMB DETAIL'
-            'TABLE TABLE';
+            'dl dl';
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1em;
         inline-size: 100%;
