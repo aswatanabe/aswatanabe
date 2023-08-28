@@ -20,6 +20,7 @@
     --color-button-link: #3d9ec8;
     --color-button-hover: #a0c4d3;
     --color-icon-bg: #afafb0;
+    --color-warning: #f23a3c;
 
     font-family: Verdana, '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
     font-size: max(calc(var(--logic-px) * 16), 14px);
@@ -42,7 +43,7 @@ h2 {
 }
 
 h3 {
-    margin-block-start: 1.5em;
+    /* margin-block-start: 1.5em; */
     margin-block-end: 1em;
     font-size: 1.2em;
     line-height: 1.6em;

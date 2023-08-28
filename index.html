@@ -185,15 +185,15 @@
                         <form action="confirm.php" enctype="multipart/form-data" method="POST">
                             <dl>
                                 <dt><label for="name">お名前</label></dt>
-                                <dd><input type="text" name="name" placeholder="Your Name" required/></dd>
+                                <dd><input type="text" name="name" placeholder="例）山田太郎" autocomplete="name" required/></dd>
                             </dl>
                             <dl>
                                 <dt><label for="email">メールアドレス</label></dt>
-                                <dd><input type="email" name="email01" id="email01" patter="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="abc@example.com" required/></dd>
+                                <dd><input type="email" name="email01" id="email01" patter="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="例）abc@example.com" autocomplete="email" required/></dd>
                             </dl>
                             <dl>
                                 <dt><label for="email02">メールアドレス（確認）</label></dt>
-                                <dd><input type="email" name="email02" id="email02" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="abc@example.com" required/></dd>
+                                <dd><input type="email" name="email02" id="email02" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="例）abc@example.com" required/></dd>
                             </dl>
                             <dl>
                                 <dt><label for="querytitle">お問い合わせの種類</label></dt>
@@ -208,7 +208,7 @@
                             </dl>
                             <dl>
                                 <dt><label for="query">お問い合わせ内容</label></dt>
-                                <dd><textarea name="query" required></textarea></dd>
+                                <dd><textarea name="query" placeholder="こちらにお問い合わせ内容をご入力ください" required></textarea></dd>
                             </dl>
                             <p class="btn"><input type="submit" value="入力内容の確認" onClick="CheckEmail(this)" /></p>
                         </form>

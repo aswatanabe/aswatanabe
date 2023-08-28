@@ -62,11 +62,11 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 8.5秒後に表示を切り替える
+// typewriterの表示が終わった後に表示を切り替える
 setTimeout(() => {
     stickyList.style.display = 'block';
     stickyList.style.opacity = '1';
-}, 8500);
+}, 7700);
 
 
 /************************************************************************
@@ -94,8 +94,8 @@ const typewriterWithDelay = (param) => {
 
 typewriterWithDelay({
     el: "#typewriter",
-    string: "A harmonious blend where creative vision and digital innovation unite.",
-    speed: 100
+    string: "Where creative vision and digital innovation unite.",
+    speed: 120
 });
 
 /************************************************************************

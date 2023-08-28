@@ -104,7 +104,7 @@
     top: 480px;
     display: none; /* 最初は非表示にする */
     opacity: 0; /* 初期状態では透明に設定 */
-    animation: fadeIn 5s ease-in-out 8.5s forwards; /* アニメーションを適用 */
+    animation: fadeIn 5s ease-in-out 7.7s forwards; /* アニメーションを適用 */
 }
 
 @keyframes fadeIn {
@@ -159,11 +159,11 @@
 }
 
 .top main > section:nth-of-type(3) > h2 {
-    margin-block-start: 1.5em; /*デフォルトの値から変更*/
+    margin-block: 3em 1.5em;
 }
 
 .top main > section:nth-of-type(3) > article {
-    margin-block: 5em;
+    margin-block-end: 5em;
 }
 
 .top main > section:nth-of-type(3) > article > h3 {
@@ -310,10 +310,20 @@
 
 #form dl {
     inline-size: 100%;
+    margin-block-end: 1em;
 }
 
 #form dl > :is(dt, dd) {
-    margin-block: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+#form dl > dt::after {
+    content: "必須";
+    font-size: 0.8em;
+    background-color: var(--color-warning);
+    padding: 0.3em 0.5em;
+    margin-inline: 0.5em;
+    border-radius: 20%;
 }
 
 #form dl:not(:nth-of-type(5)) > dd {
