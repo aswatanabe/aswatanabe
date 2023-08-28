@@ -79,54 +79,57 @@ a:is(:hover, :focus) {
 
 /* button
 ===================================================================== */
-
-.button {
+.btn {
     margin-block: 3em;
 }
 
-.button a {
-    position: relative;
+.btn a {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    inline-size: calc(var(--logic-px) * 200);
-    padding: 1em 2em;
-    margin-block-start: 0.5em;
-    margin-inline: auto;
-    font-size: calc(var(--logic-px) * 18);
-    font-weight: normal;
-    color: #000;
-    background-color: var(--color-button-color);
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 1em 3em;
+    width: calc(var(--logic-px) * 200);
+    color: #333;
+    font-size: calc(var(--logic-px) * 16);
+    transition: 0.3s;
+    font-weight: 700;
+    border-bottom: 1px solid;
+}
+
+.btn a::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 1em;
+    transform: translateY(calc(-50% - 2px)) rotate(30deg);
+    width: 12px;
+    height: 2px;
+    background-color: var(--color-button-link);
     transition: 0.3s;
 }
 
-.button a::before {
+.btn a::after {
+    content: '';
     position: absolute;
-    inset-block-start: -5px;
-    inset-inline-start: -5px;
-    inline-size: calc(100% - 4px);
-    block-size: calc(100% - 4px);
-    content: '';
-    border: 2px solid var(--color-button-link);
-    transition: 0.2s;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 2px;
+    background-color: var(--color-button-link);
+    transition: 0.3s;
 }
 
-.button a::after {
-    block-size: 5px;
-    inline-size: 5px;
-    content: '';
-    border-block-start: 3px solid #333;
-    border-inline-end: 3px solid #333;
-    transform: rotate(45deg);
-}
-
-.button a:hover::before {
-    inset-block-start: 0;
-    inset-inline-start: 0;
-}
-
-.button a:hover {
+.btn a:hover {
     text-decoration: none;
+    color: var(--color-button-hover);
+}
+
+.btn a:hover::before,
+.btn a:hover::after {
+    right: 0.5em;
     background-color: var(--color-button-hover);
 }
 
