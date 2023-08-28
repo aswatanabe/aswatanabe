@@ -29,43 +29,97 @@
 ===================================================================== */
 
 .top main > section:nth-of-type(1) {
-    display: grid;
+    /* display: grid; */
     grid-area: hero;
     align-items: center;
     margin-block-start: 0;
     text-align: center;
-    background-image: url('../images/white-simple-textured-design-background.jpg');
     block-size: calc(100vh - 5em); /* header 5em */
 }
 
+/* --------------- video --------------- */
+
+.top main > section:nth-of-type(1) > div:nth-of-type(2) {
+	position: absolute;
+	top: 0;
+	right:0;
+	left:0;
+	bottom: 0;
+}
+
+.movie {
+    background: url(../images/video.png) no-repeat center center;
+    background-size: cover;
+    height: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-video {
+    display: none;
+    object-fit: cover;
+}
+
+/* --------------- テキスト --------------- */
+
 /*キャッチコピー*/
-.top main > section:nth-of-type(1) > div > p {
-    font-size: 1.8em;
+.top main > section:nth-of-type(1) > div:nth-of-type(2) > p {
+    font-size: 2em;
     font-weight: bold;
     inline-size: 100%;
+    margin-block-start: 5em;
+    font-family: "Times New Roman", "Georgia", serif;
 }
 
 /*Asuka Watanabe*/
-.top main > section:nth-of-type(1) > div > h2 {
+.top main > section:nth-of-type(1) > div:nth-of-type(2) > h2 {
     margin-block-start: 1em;
     font-size: 1.2em;
     font-weight: normal;
     text-align: center;
 }
 
+/*タイプライター*/
+#typewriter::after {
+    content: "|";
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* --------------- sticky list --------------- */
 
 #sticky-list-wrapper {
     position: absolute;
-    display: block;
     inline-size: 100%;
     top: 480px;
+    display: none; /* 最初は非表示にする */
+    opacity: 0; /* 初期状態では透明に設定 */
+    animation: fadeIn 5s ease-in-out 8.5s forwards; /* アニメーションを適用 */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* アニメーション終了時の透明度を設定 */
+    }
 }
 
 #sticky-list {
     inline-size: min(60%, var(--logic-px) * 300);
     margin-block-end: 15%;
     margin-inline: auto;
+    border: 1px solid;
+    padding-inline: 2em;
+    padding-block: 1em;
 }
 
 #sticky-list > li {
@@ -73,24 +127,8 @@
     align-items: center;
     justify-content: space-between;
     margin-block: 0.5em;
+    padding-block: 0.2em;
     text-align: left;
-    background-color: #fff; /* spanと色を合わせる */
-}
-
-#sticky-list > li::after {
-    position: absolute;
-    inset-block-start: 50%;
-    z-index: 1;
-    display: block;
-    inline-size: 100%;
-    content: '';
-    border-bottom: dotted 2px black;
-}
-
-#sticky-list > li > span {
-    z-index: 2;
-    padding: 0.5em;
-    background-color: #fff; /* liと色を合わせる */
 }
 
 /* --------------- Scroll --------------- */
@@ -178,10 +216,6 @@
     /* grid-area: DESC; */
     font-weight: bold;
     margin-block: 0.5em;
-}
-
-.top main > section:nth-of-type(3) > article > p:nth-of-type(2) {
-    /* grid-area: DETAIL; */
 }
 
 /* ABOUT
@@ -648,8 +682,8 @@
     ** TOP
     ===================================================================== */
 
-    .top main > section:nth-of-type(1) > div > p {
-        font-size: 2.1em;
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p {
+        font-size: 2.4em;
     }
 
     /* SERVICE
@@ -774,9 +808,6 @@
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 @media screen and (width >= 1025px) {
-    .skill-grid section {
-        grid-template-columns: 75%;
-    }
 
     /* =====================================================================
     ** TOP
@@ -804,28 +835,31 @@
         grid-area: hero;
     }
 
-    .top main > section:nth-of-type(1) > div {
+    .top main > section:nth-of-type(1) > div:nth-of-type(1) {
+        inline-size: 100%;
+    }
+
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) {
         inline-size: min(80%, 1100px);
         margin-inline: auto;
-        margin-block: auto;
-        text-align: end;
+        margin-block: 12em;
+        text-align: center;
     }
 
-    .top main > section:nth-of-type(1) > div > p {
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p {
         margin-inline: auto 0;
         margin-block: auto;
-        inline-size: 85%;
-        font-size: 2.5em;
+        font-size: 2.8em;
     }
 
-    .top main > section:nth-of-type(1) > div > h2 {
-        text-align: end;
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > h2 {
+        text-align: center;
     }
 
     #sticky-list-wrapper {
         position: fixed;
         inline-size: clamp(1025px, 100%, 1720px);
-        top: 450px;
+        top: 480px;
     }
 
     #sticky-list {
