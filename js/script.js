@@ -39,37 +39,6 @@ burgerBlur.forEach(blurElement => {
 });
 
 /************************************************************************
-メインビジュアルのリストを追随・解除
-************************************************************************/
-
-const stickyList = document.getElementById('sticky-list-wrapper');
-
-window.addEventListener('scroll', () => {
-    const scroll_y = window.scrollY;
-    console.log(scroll_y);
-    const inner_width = window.innerWidth;
-
-    if (inner_width <= 1025) {
-        stickyList.style.position = 'absolute';
-        stickyList.style.inlineSize = '100%';
-        stickyList.style.top = '480px';
-    } else if (inner_width >= 1025 && scroll_y >= 310) {
-        stickyList.style.position = 'absolute';
-        stickyList.style.top = '790px';
-    } else if (inner_width >= 1025 && scroll_y < 310) {
-        stickyList.style.position = 'fixed';
-        stickyList.style.top = '480px';
-    }
-});
-
-// typewriterの表示が終わった後に表示を切り替える
-setTimeout(() => {
-    stickyList.style.display = 'block';
-    stickyList.style.opacity = '1';
-}, 7700);
-
-
-/************************************************************************
 タイプライターエフェクト
 ************************************************************************/
 
@@ -98,20 +67,28 @@ typewriterWithDelay({
     speed: 120
 });
 
+
+/************************************************************************
+job descriptionを表示
+************************************************************************/
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      // 6秒後にスタイルを変更
+      var element = document.querySelector(".top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2)");
+      element.style.fontSize = "1.0em"; // 新しいフォントサイズなど、必要に応じて変更
+    }, 6000); // 6秒をミリ秒に変換
+  });
+
 /************************************************************************
 動画再生
 ************************************************************************/
 
-const movieElement = document.querySelector('.movie');
 const movieVideoElement = document.querySelector('.movie-video');
 
-// 10秒後に.movie-videoを表示して再生する
-setTimeout(() => {
-    // PNG画像を非表示にする
-    movieElement.style.background = 'none';
-    
-    // .movie-videoを表示して再生
-    movieVideoElement.style.display = 'block';
-    movieVideoElement.play();
-}, 10000); // 10秒後 (10000ミリ秒)
+movieVideoElement.pause(); // 動画停止
 
+// 11秒後に再生
+setTimeout(() => {
+    movieVideoElement.play(); // 動画再生
+}, 11000);

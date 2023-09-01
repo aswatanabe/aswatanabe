@@ -29,57 +29,42 @@
 ===================================================================== */
 
 .top main > section:nth-of-type(1) {
-    /* display: grid; */
+    display: grid; /*上下中央揃え*/
     grid-area: hero;
     align-items: center;
     margin-block-start: 0;
     text-align: center;
-    block-size: calc(100vh - 5em); /* header 5em */
+    min-block-size: calc(100vh - 5em); /* header 5em */
+    place-items: center; /*上下中央揃え*/
 }
 
 /* --------------- video --------------- */
-
-.top main > section:nth-of-type(1) > div:nth-of-type(2) {
-	position: absolute;
-	top: 0;
-	right:0;
-	left:0;
-	bottom: 0;
-}
 
 .movie {
     background: url(../images/video.png) no-repeat center center;
     background-size: cover;
     height: inherit;
-    position: relative;
     overflow: hidden;
+    position: absolute;
+	inset-block: 0;
+	inset-inline:0;
 }
 
 .movie-video {
-    display: none;
+    display: block;
     object-fit: cover;
 }
 
 /* --------------- テキスト --------------- */
 
-/*キャッチコピー*/
-.top main > section:nth-of-type(1) > div:nth-of-type(2) > p {
+/*タイプライター*/
+.top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
     font-size: 2em;
     font-weight: bold;
     inline-size: 100%;
-    margin-block-start: 5em;
     font-family: "Times New Roman", "Georgia", serif;
 }
 
-/*Asuka Watanabe*/
-.top main > section:nth-of-type(1) > div:nth-of-type(2) > h2 {
-    margin-block-start: 1em;
-    font-size: 1.2em;
-    font-weight: normal;
-    text-align: center;
-}
-
-/*タイプライター*/
 #typewriter::after {
     content: "|";
     animation-name: blink;
@@ -96,15 +81,19 @@
     }
 }
 
-/* --------------- sticky list --------------- */
+/*Asuka Watanabe*/
+.top main > section:nth-of-type(1) > div:nth-of-type(2) > h2 {
+    margin-block: 1em;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-align: center;
+}
 
-#sticky-list-wrapper {
-    position: absolute;
-    inline-size: 100%;
-    top: 480px;
-    display: none; /* 最初は非表示にする */
+/*job description*/
+.top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) {
+    font-size: 1.0em;
     opacity: 0; /* 初期状態では透明に設定 */
-    animation: fadeIn 5s ease-in-out 7.7s forwards; /* アニメーションを適用 */
+    animation: fadeIn 6s ease-in-out 6s forwards; /* アニメーションを適用 */
 }
 
 @keyframes fadeIn {
@@ -113,41 +102,140 @@
     }
 }
 
-#sticky-list {
-    inline-size: min(60%, var(--logic-px) * 300);
-    margin-block-end: 15%;
-    margin-inline: auto;
-    border: 1px solid;
-    padding-inline: 2em;
-    padding-block: 1em;
-}
-
-#sticky-list > li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-block: 0.5em;
-    padding-block: 0.2em;
-    text-align: left;
-}
-
 /* --------------- Scroll --------------- */
 .top main > section:nth-of-type(1) > p:last-of-type {
-    display: none;
+    position: absolute;
+    top: 92.5%;
+    left: 50%; /*左右の位置を変える*/
+    display: block;
+    font-size: 0.7em;
+    color: #333;
+    writing-mode: vertical-rl;
+    transform: translateX(-50%) translateY(-50%);
+    animation: fadeIn 6s ease-in-out 6s forwards; /* アニメーションを適用 */
+    opacity: 0; /* 初期状態では透明に設定 */
+}
+
+.top main > section:nth-of-type(1) > p:last-of-type::before {
+    right: 50%;
+    bottom: -120px;
+    display: block;
+    width: 1px;
+    height: 70px;
+    content: '';
+    background-color: rgb(0 0 0 / 50%);
+    transform: translateX(-50%);
+}
+
+.top main > section:nth-of-type(1) > p:last-of-type::before {
+    animation: scroll 3s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: scale(1, 0);
+        transform-origin: 0 0;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        transform-origin: 0 0;
+    }
+
+    50.1% {
+        transform: scale(1, 1);
+        transform-origin: 0 100%;
+    }
+
+    100% {
+        transform: scale(1, 0);
+        transform-origin: 0 100%;
+    }
 }
 
 /* CONCEPT
 ===================================================================== */
+
 .top main > section:nth-of-type(2) {
     grid-area: CONCEPT;
     inline-size: 100%;
+    display: grid;
+    grid-template-areas:
+        "CONCEPTTITLE"
+        "E3"
+        "CONCEPTDESC";
+    background: no-repeat center/70% 100% url("../images/white-simple-textured-design-background.jpg");
+    padding-block: 5em 3em;
 }
 
 .top main > section:nth-of-type(2) > h2 {
-    display: none;
+    grid-area: CONCEPTTITLE;
+    align-self: center; /* 中央寄せにする */
+}
+
+.top main > section:nth-of-type(2) > ul {
+    grid-area: E3;
+    block-size: 75vh;
+}
+
+.top main > section:nth-of-type(2) > ul > li {
+    position: absolute;
+    min-inline-size: 50%;
+    min-block-size: 50%;
+    animation: fluidrotate 30s ease 0s infinite;/*アニメーションの設定*/
+    display: flex; /* テキストを中央寄せ */
+    justify-content: center; /* テキストを中央寄せ */
+    align-items: center; /* テキストを中央寄せ */
+    font-size: 1.2em;
+    font-family: "Times New Roman", "Georgia", serif; /*タイプライターと同じ*/
+    font-weight: bold;
+}
+
+@keyframes fluidrotate {  
+        
+    0%, 100% {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+    14% {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+    28% {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+    42% {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+    56% {
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+    70% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+    84% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+}
+
+.top main > section:nth-of-type(2) > ul > li:nth-of-type(1) {
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    background: #D3E3D8;
+}
+
+.top main > section:nth-of-type(2) > ul > li:nth-of-type(2) {
+    inset-inline-start: 20%;
+    inset-block-start: 40%;
+    background: #FBF5A3;
+}
+
+.top main > section:nth-of-type(2) > ul > li:nth-of-type(3) {
+    inset-inline-start: 50%;
+    inset-block-start: 20%;
+    background: #dfbab8;
 }
 
 .top main > section:nth-of-type(2) > p {
+    grid-area: CONCEPTDESC;
     line-height: 2.5em;
 }
 
@@ -725,8 +813,13 @@
     ** TOP
     ===================================================================== */
 
-    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p {
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
         font-size: 2.4em;
+    }
+
+    /*job description*/
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > br {
+        display: none;
     }
 
     /* SERVICE
@@ -866,7 +959,7 @@
         display: grid;
         grid-template-areas:
             'hero hero hero'
-            '. CONCEPT .'
+            'CONCEPT CONCEPT CONCEPT'
             '. WORKS .'
             'ABOUT ABOUT ABOUT'
             '. SERVICE .'
@@ -885,11 +978,10 @@
     .top main > section:nth-of-type(1) > div:nth-of-type(2) {
         inline-size: min(80%, 1100px);
         margin-inline: auto;
-        margin-block: 12em;
         text-align: center;
     }
 
-    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p {
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
         margin-inline: auto 0;
         margin-block: auto;
         font-size: 2.8em;
@@ -910,62 +1002,25 @@
         margin-inline: 15% auto;
     }
 
-    /* --------------- scroll --------------- */
-    .top main > section:nth-of-type(1) > p:last-of-type {
-        position: absolute;
-        top: 92.5%;
-        left: 50%; /*左右の位置を変える*/
-        display: block;
-        font-size: 0.7em;
-        color: #333;
-        writing-mode: vertical-rl;
-        transform: translateX(-50%) translateY(-50%);
-    }
-
-    .top main > section:nth-of-type(1) > p:last-of-type::before {
-        right: 50%;
-        bottom: -120px;
-        display: block;
-        width: 1px;
-        height: 70px;
-        content: '';
-        background-color: rgb(0 0 0 / 50%);
-        transform: translateX(-50%);
-    }
-
-    .top main > section:nth-of-type(1) > p:last-of-type::before {
-        animation: scroll 3s cubic-bezier(1, 0, 0, 1) infinite;
-    }
-
-    @keyframes scroll {
-        0% {
-            transform: scale(1, 0);
-            transform-origin: 0 0;
-        }
-
-        50% {
-            transform: scale(1, 1);
-            transform-origin: 0 0;
-        }
-
-        50.1% {
-            transform: scale(1, 1);
-            transform-origin: 0 100%;
-        }
-
-        100% {
-            transform: scale(1, 0);
-            transform-origin: 0 100%;
-        }
-    }
-
     /* CONCEPT
     ===================================================================== */
-
-    .top main > section:nth-of-type(2) > p {
-        margin-inline: auto 0;
-        inline-size: 50%;
+    .top main > section:nth-of-type(2) {
+        inline-size: min(80%, 1100px);
+        padding-inline: unset;
+        display: grid;
+        grid-template-areas:
+            "E3 CONCEPTTITLE"
+            "E3 CONCEPTDESC";
+        grid-template-columns: max(90vh, 60%) auto;
+        margin-inline: auto;
+        margin-block-start: 10em;
+        column-gap: 5em;
     }
+
+    .top main > section:nth-of-type(2) > h2 {
+        margin-block: unset;
+    }
+
 
     /* ABOUT
     ===================================================================== */
