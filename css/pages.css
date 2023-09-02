@@ -109,7 +109,7 @@
     left: 50%; /*左右の位置を変える*/
     display: block;
     font-size: 0.7em;
-    color: #333;
+    color: var(--color-text-gray);
     writing-mode: vertical-rl;
     transform: translateX(-50%) translateY(-50%);
     animation: fadeIn 6s ease-in-out 6s forwards; /* アニメーションを適用 */
@@ -165,7 +165,7 @@
         "E3"
         "CONCEPTDESC";
     background: no-repeat center/70% 100% url("../images/white-simple-textured-design-background.jpg");
-    padding-block: 5em 3em;
+    padding-block: 5em 4em;
 }
 
 .top main > section:nth-of-type(2) > h2 {
@@ -180,9 +180,6 @@
 
 .top main > section:nth-of-type(2) > ul > li {
     position: absolute;
-    min-inline-size: 50%;
-    min-block-size: 50%;
-    animation: fluidrotate 30s ease 0s infinite;/*アニメーションの設定*/
     display: flex; /* テキストを中央寄せ */
     justify-content: center; /* テキストを中央寄せ */
     align-items: center; /* テキストを中央寄せ */
@@ -191,7 +188,17 @@
     font-weight: bold;
 }
 
-@keyframes fluidrotate {  
+.top main > section:nth-of-type(2) > ul > li:nth-of-type(1) {
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    background: #dfe0e2;
+    animation: fluidrotate1 40s ease 0s infinite;/*アニメーションの設定*/
+    min-inline-size: 55%;
+    min-block-size: 55%;
+
+}
+
+@keyframes fluidrotate1 {  
         
     0%, 100% {
         border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
@@ -216,22 +223,75 @@
     }
 }
 
-.top main > section:nth-of-type(2) > ul > li:nth-of-type(1) {
-    inset-inline-start: 0;
-    inset-block-start: 0;
-    background: #D3E3D8;
-}
-
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(2) {
     inset-inline-start: 20%;
-    inset-block-start: 40%;
-    background: #FBF5A3;
+    inset-block-start: 50%;
+    background: #e5e3d8;
+    animation: fluidrotate2 50s ease 0s infinite;/*アニメーションの設定*/
+    min-inline-size: 50%;
+    min-block-size: 50%;
+
 }
 
+@keyframes fluidrotate2 {  
+        
+    70% {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+    84% {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+    0%, 100% {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+    14% {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+    28% {
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+    42% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+    56% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+}
+
+
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(3) {
-    inset-inline-start: 50%;
+    inset-inline-start: 45%;
     inset-block-start: 20%;
-    background: #dfbab8;
+    background: #eae1e4;
+    animation: fluidrotate3 45s ease 0s infinite;/*アニメーションの設定*/
+    min-inline-size: 50%;
+    min-block-size: 50%;
+
+}
+
+@keyframes fluidrotate3 {  
+        
+    42% {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+    56% {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+    70% {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+    84% {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+    0%, 100% {
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+    14% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+    28% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
 }
 
 .top main > section:nth-of-type(2) > p {
@@ -279,7 +339,7 @@
 /*カテゴリー*/
 .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(1) {
     grid-area: CATEGORY;
-    background-color: var(--color-icon-bg);
+    background-color: var(--color-bg-gray);
     padding-inline: 0.5em;
 }
 
@@ -301,7 +361,6 @@
 }
 
 .top main > section:nth-of-type(3) > article > p:nth-of-type(1) {
-    /* grid-area: DESC; */
     font-weight: bold;
     margin-block: 0.5em;
 }
@@ -331,6 +390,7 @@
     margin-block-end: 5em;
     font-size: 0.9em;
     line-height: 2.5em;
+    text-align: start;
 }
 
 /* SERVICE
@@ -412,6 +472,7 @@
     padding: 0.3em 0.5em;
     margin-inline: 0.5em;
     border-radius: 20%;
+    color: #ffffff;
 }
 
 #form dl:not(:nth-of-type(5)) > dd {
@@ -438,11 +499,10 @@
     block-size: 3em;
 }
 
-#form p > input:hover {
-    background-color: var(--color-button-hover);
-    border-color: var(--color-button-hover);
+#form p > input:is(:hover, :focus) {
+    background-color: var(--color-hover);
+    border-color: var(--color-hover);
 }
-
 
 /* =====================================================================
 ** ABOUT
@@ -563,10 +623,10 @@
 .about main > section:nth-of-type(2) > section:nth-of-type(2)::before {
     content: '';
     position: absolute;
-    width: 70%; /*背景の幅を変更*/
-    height: 100%;
-    right: 0;
-    top: 0;
+    inline-size: 70%; /*背景の幅を変更*/
+    block-size: 100%;
+    inset-inline-end: 0;
+    inset-block-start: 0;
     background-image: url('../images/white-simple-textured-design-background.jpg');
     background-size: cover;
     background-position: center center;
@@ -591,12 +651,12 @@
 
 .about main > section:nth-of-type(3) > div::before {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 40px;
-    width: 2px;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 40px;
+    inline-size: 2px;
     content: '';
-    background-color: #000;
+    background-color: #000000;
 }
 
 .about main > section:nth-of-type(3) > div > dl {
@@ -610,8 +670,8 @@
     display: inline-block;
     inline-size: 16px;
     content: '';
-    background-color: #fff;
-    border: 4px solid #000;
+    background-color: #ffffff;
+    border: 4px solid #000000;
     border-radius: 100%;
     block-size: 16px;
 }
@@ -764,11 +824,11 @@
     margin-block: 8em;
 }
 
-.works main > section:nth-of-type(2) > article > a {
+.works main > section:nth-of-type(2) > article > :is(a, div) {
     grid-area: THUMB;
 }
 
-.works main > section:nth-of-type(2) > article > a > img {
+.works main > section:nth-of-type(2) > article > :is(a, div) > img {
     inline-size: 100%;
     aspect-ratio: 3/2;
     object-fit: cover;
@@ -796,8 +856,8 @@
     grid-template-columns: 25% 70%;
     gap: 0.8em 2em;
     font-size: 0.9em;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
     margin-block: 1em;
     padding-block: 0.5em;
 }
@@ -935,8 +995,7 @@
     .works main > section:nth-of-type(2) {
         margin-inline: auto;
         inline-size: clamp(0px, 80%, 780px);
-    }
-        
+    }     
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -991,21 +1050,10 @@
         text-align: center;
     }
 
-    #sticky-list-wrapper {
-        position: fixed;
-        inline-size: clamp(1025px, 100%, 1720px);
-        top: 480px;
-    }
-
-    #sticky-list {
-        inline-size: min(30%, var(--logic-px) * 400);
-        margin-inline: 15% auto;
-    }
-
     /* CONCEPT
     ===================================================================== */
     .top main > section:nth-of-type(2) {
-        inline-size: min(80%, 1100px);
+        inline-size: var(--size-inline-wrapper);
         padding-inline: unset;
         display: grid;
         grid-template-areas:
@@ -1021,11 +1069,10 @@
         margin-block: unset;
     }
 
-
     /* ABOUT
     ===================================================================== */
     .top main > section:nth-of-type(4) > * {
-        inline-size: min(80%, 1100px);
+        inline-size: var(--size-inline-wrapper);
         margin-inline: auto;
     }
 
@@ -1037,12 +1084,12 @@
     ===================================================================== */
     .about main > section:nth-of-type(3) {
         display: block;
-        inline-size: 800px;
+        inline-size: 800px; /*固定*/
         margin-inline: auto;
     }
 
     .about main > section:nth-of-type(3) > div::before {
-        left: 50%;
+        inset-inline-start: 50%;
     }
 
     .about main > section:nth-of-type(3) > div > dl:nth-of-type(2n + 1) {

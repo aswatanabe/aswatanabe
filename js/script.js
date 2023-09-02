@@ -67,7 +67,6 @@ typewriterWithDelay({
     speed: 120
 });
 
-
 /************************************************************************
 job descriptionを表示
 ************************************************************************/
@@ -92,3 +91,33 @@ movieVideoElement.pause(); // 動画停止
 setTimeout(() => {
     movieVideoElement.play(); // 動画再生
 }, 11000);
+
+/************************************************************************
+フェードイン
+************************************************************************/
+
+const animateFade = (entries, obs) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) { // 'Intersecting' の代わりに 'isIntersecting' を使用
+            entry.target.animate(
+                [
+                    { opacity: 0, filter: 'blur(.3em)', transform: 'translateY(3em)' },
+                    { opacity: 1, filter: 'blur(0)', transform: 'translateY(0)' }
+                ],
+                {
+                    duration: 3000,
+                    easing: 'ease',
+                    fill: 'forwards',
+                }
+            );
+            obs.unobserve(entry.target);
+        }
+    });
+};
+
+const fadeObserver = new IntersectionObserver(animateFade);
+
+const fadeElements = document.querySelectorAll('.fade-in');
+fadeElements.forEach((fadeElement) => {
+    fadeObserver.observe(fadeElement);
+});
