@@ -417,7 +417,7 @@
 
 .top main > section:nth-of-type(5) > div > section > h3 {
     margin-block: 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: normal;
     block-size: 2.5em;
     display: flex; /*テキストを上下中央に*/
@@ -882,7 +882,16 @@
         display: none;
     }
 
-    /* SERVICE
+    /* CONCEPT
+    ===================================================================== */
+    .top main > section:nth-of-type(2) {
+        inline-size: min(var(--size-inline-wrapper), 75%);
+        padding-inline: unset;
+        margin-inline: auto;
+        margin-block-start: 5em;
+    }
+
+    /* WORKS
     ===================================================================== */
 
     .top main > section:nth-of-type(3) {
@@ -1054,13 +1063,11 @@
     ===================================================================== */
     .top main > section:nth-of-type(2) {
         inline-size: var(--size-inline-wrapper);
-        padding-inline: unset;
         display: grid;
         grid-template-areas:
             "E3 CONCEPTTITLE"
             "E3 CONCEPTDESC";
         grid-template-columns: max(90vh, 60%) auto;
-        margin-inline: auto;
         margin-block-start: 10em;
         column-gap: 5em;
     }
@@ -1076,6 +1083,13 @@
         margin-inline: auto;
     }
 
+    /* SERVICE
+    ===================================================================== */
+
+    .top main > section:nth-of-type(5) > div > section > h3 {
+        font-size: 1.2em;
+    }
+    
     /* =====================================================================
     ** ABOUT
     ===================================================================== */

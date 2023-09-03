@@ -101,7 +101,7 @@ const animateFade = (entries, obs) => {
         if (entry.isIntersecting) { // 'Intersecting' の代わりに 'isIntersecting' を使用
             entry.target.animate(
                 [
-                    { opacity: 0, filter: 'blur(.3em)', transform: 'translateY(3em)' },
+                    { opacity: 0, filter: 'blur(.2em)', transform: 'translateY(3em)' },
                     { opacity: 1, filter: 'blur(0)', transform: 'translateY(0)' }
                 ],
                 {
