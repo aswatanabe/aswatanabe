@@ -320,6 +320,10 @@
     padding: 1em;
 }
 
+.top main > section:nth-of-type(3) > article > a {
+    inline-size: 100%;
+}
+
 .top main > section:nth-of-type(3) > article > a > img {
     inline-size: 100%;
     aspect-ratio: 3/2;
@@ -854,12 +858,22 @@
     grid-area: dl;
     display: grid;
     grid-template-columns: 25% 70%;
-    gap: 0.8em 2em;
-    font-size: 0.9em;
+    gap: 0.1em 2em;
     border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
     margin-block: 1em;
     padding-block: 0.5em;
+    overflow-x: scroll;
+}
+
+.works main > section:nth-of-type(2) > article > dl > :is(dt, dd) {
+    font-size: 0.9em;
+    line-height: 1.8em;
+    white-space: nowrap;
+}
+
+.works main > section:nth-of-type(2) > article > dl > dd:last-of-type > a {
+    padding-inline-end: 1.5em;
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -1004,7 +1018,16 @@
     .works main > section:nth-of-type(2) {
         margin-inline: auto;
         inline-size: clamp(0px, 80%, 780px);
-    }     
+    }
+    
+    .works main > section:nth-of-type(2) > article > dl {
+        overflow-x: unset;
+    }
+    
+    .works main > section:nth-of-type(2) > article > dl > :is(dt, dd) {
+        white-space: unset;
+    }
+    
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
