@@ -817,7 +817,7 @@
 /* 作品
 ===================================================================== */
 
-.works main > section:nth-of-type(2) > article {
+.works main > section:not(:nth-of-type(1)) > article {
     display: grid;
     grid-template-areas:
         'THUMB'
@@ -828,33 +828,33 @@
     margin-block: 8em;
 }
 
-.works main > section:nth-of-type(2) > article > :is(a, div) {
+.works main > section:not(:nth-of-type(1)) > article > :is(a, div) {
     grid-area: THUMB;
 }
 
-.works main > section:nth-of-type(2) > article > :is(a, div) > img {
+.works main > section:not(:nth-of-type(1)) > article > :is(a, div) > img {
     inline-size: 100%;
     aspect-ratio: 3/2;
     object-fit: cover;
 }
 
-.works main > section:nth-of-type(2) > article > h3 {
+.works main > section:not(:nth-of-type(1)) > article > h3 {
     grid-area: TITLE;
     font-size: 0.8em;
-    margin-block: 0.5em;
+    margin-block: 1.5em 0.5em;
 }
 
-.works main > section:nth-of-type(2) > article > p:nth-of-type(1) {
+.works main > section:not(:nth-of-type(1)) > article > p:nth-of-type(1) {
     grid-area: DESC;
     font-weight: bold;
     margin-block: 0.5em;
 }
 
-.works main > section:nth-of-type(2) > article > p:nth-of-type(2) {
+.works main > section:not(:nth-of-type(1)) > article > p:nth-of-type(2) {
     grid-area: DETAIL;
 }
 
-.works main > section:nth-of-type(2) > article > dl {
+.works main > section:not(:nth-of-type(1)) > article > dl {
     grid-area: dl;
     display: grid;
     grid-template-columns: 25% 70%;
@@ -863,17 +863,23 @@
     border-bottom: 1px solid #000000;
     margin-block: 1em;
     padding-block: 0.5em;
-    overflow-x: scroll;
 }
 
-.works main > section:nth-of-type(2) > article > dl > :is(dt, dd) {
+.works main > section:not(:nth-of-type(1)) > article > dl > :is(dt, dd) {
     font-size: 0.9em;
     line-height: 1.8em;
-    white-space: nowrap;
 }
 
-.works main > section:nth-of-type(2) > article > dl > dd:last-of-type > a {
+.works main > section:not(:nth-of-type(1)) > article > dl > dd:last-of-type > a {
     padding-inline-end: 1.5em;
+}
+
+/* 詳細はお問い合わせください
+===================================================================== */
+
+.works main > p {
+    text-align: left;
+    margin-block: auto 3em;
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -1015,17 +1021,10 @@
     ** WORKS
     ===================================================================== */
 
-    .works main > section:nth-of-type(2) {
+    .works main > section:not(:nth-of-type(1)),
+    .works main > p {
         margin-inline: auto;
         inline-size: clamp(0px, 80%, 780px);
-    }
-    
-    .works main > section:nth-of-type(2) > article > dl {
-        overflow-x: unset;
-    }
-    
-    .works main > section:nth-of-type(2) > article > dl > :is(dt, dd) {
-        white-space: unset;
     }
     
 }
@@ -1146,7 +1145,7 @@
     ** WORKS
     ===================================================================== */
 
-    .works main > section:nth-of-type(2) > article {
+    .works main > section:not(:nth-of-type(1)) > article {
         display: grid;
         grid-template-areas:
             'THUMB TITLE'
@@ -1158,8 +1157,15 @@
         inline-size: 100%;
     }
 
-    .works main > section:nth-of-type(2) > article > dl {
+    .works main > section:not(:nth-of-type(1)) > article > dl {
         grid-template-columns: 10% 85%;
-    }    
+    }
+
+    /* 詳細はお問い合わせください
+    ===================================================================== */
+
+    .works main > p {
+        text-align: center;
+    }
 
 }
