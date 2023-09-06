@@ -324,6 +324,16 @@
     inline-size: 100%;
 }
 
+/* Japan Box */
+.top main > section:nth-of-type(3) > article:nth-of-type(2) > a {
+    border: 1px solid var(--color-border);
+}
+
+/* Next Dictionary */
+.top main > section:nth-of-type(3) > article:nth-of-type(3) > a {
+    border: 1px solid var(--color-border);
+}
+
 .top main > section:nth-of-type(3) > article > a > img {
     inline-size: 100%;
     aspect-ratio: 3/2;
@@ -393,7 +403,7 @@
 .top main > section:nth-of-type(4) > p:nth-of-type(3) {
     margin-block-end: 5em;
     font-size: 0.9em;
-    line-height: 2.5em;
+    line-height: 2.0em;
     text-align: start;
 }
 
@@ -601,23 +611,26 @@
     display: none;
 }
 
-/*キャッチコピー*/
+/* --------------- キャッチコピー --------------- */
 .about main > section:nth-of-type(2) > section:nth-of-type(1) {
     margin-inline: 2em; /*ABOUTページのmargin*/
     margin-block: 5em;
 }
 
+/* 日本語 */
 .about main > section:nth-of-type(2) > section:nth-of-type(1) > p:nth-of-type(1) {
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin-block: 0.3em;
-    font-weight: bold;
+    /* font-weight: bold; */
+    letter-spacing: 0.3em;
 }
 
+/* 英語 */
 .about main > section:nth-of-type(2) > section:nth-of-type(1) > p:nth-of-type(2) {
     font-size: 0.9em;
 }
 
-/*自己PR*/
+/* --------------- 自己PR --------------- */
 .about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
     margin-block: 2.2em;
     margin-inline: 2em; /*ABOUTページのmargin*/
@@ -627,11 +640,11 @@
 .about main > section:nth-of-type(2) > section:nth-of-type(2)::before {
     content: '';
     position: absolute;
-    inline-size: 70%; /*背景の幅を変更*/
+    inline-size: 50%; /*背景の幅を変更*/
     block-size: 100%;
     inset-inline-end: 0;
     inset-block-start: 0;
-    background-image: url('../images/white-simple-textured-design-background.jpg');
+    background-image: url('../images/colorful-painted-background.jpg');
     background-size: cover;
     background-position: center center;
     z-index: -1;
@@ -640,6 +653,7 @@
 .about main > section:nth-of-type(2) > section:nth-of-type(2) > section > h4 {
     font-weight: 500;
     margin-block: 1.5em;
+    font-size: 1.1em;
 }
 
 .about main > section:nth-of-type(2) > section:nth-of-type(2) > section > p {
@@ -697,6 +711,10 @@
     grid-area: A4;
 }
 
+.about main > section:nth-of-type(4) > dl {
+    margin-block-start: 2em;
+}
+
 .about main > section:nth-of-type(4) > dl > dt {
     font-size: 1.1em;
     font-weight: bold;
@@ -719,14 +737,19 @@
     grid-area: A5;
 }
 
+.about main > section:nth-of-type(5) > dl {
+    margin-block: 1.5em;
+}
+
 .about main > section:nth-of-type(5) > dl > dt {
     font-size: 1.1em;
     font-weight: bold;
-    margin-block: 1em 0.5em;
+    margin-block-end: 0.3em;
 }
 
 .about main > section:nth-of-type(5) > dl > dd {
-    font-size: 0.9em;
+    font-size: 0.8em;
+    color: var(--color-text-lightgray);
 }
 
 /* 趣味
@@ -808,7 +831,7 @@
 }
 
 .works main > section:nth-of-type(1) > ul > li {
-    margin-inline: 0.5em;
+    margin-inline: 1em;
     display: flex;
     align-items: center; /* 垂直方向中央揃え */
     justify-content: center; /* 水平方向中央揃え */
@@ -1120,12 +1143,16 @@
     ===================================================================== */
     .about main > section:nth-of-type(3) {
         display: block;
-        inline-size: 800px; /*固定*/
+        inline-size: 980px; /*固定 800px*/
         margin-inline: auto;
     }
 
     .about main > section:nth-of-type(3) > div::before {
         inset-inline-start: 50%;
+    }
+
+    .about main > section:nth-of-type(3) > div > dl {
+        padding-inline-start: 0;
     }
 
     .about main > section:nth-of-type(3) > div > dl:nth-of-type(2n + 1) {

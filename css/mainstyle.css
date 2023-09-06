@@ -16,12 +16,13 @@
     --logic-px: calc(var(--base-w) / 320);
     --color-link: #3d9ec8;
     --color-hover: #a0c4d3;
-    --color-button-color: #ccc;
+    --color-button-color: #cccccc;
     --color-button-link: #3d9ec8;
     --color-button-hover: #a0c4d3;
-    /* --color-icon-bg: #afafb0; */
+    --color-border: rgba(0,0,0,0.12);
     --color-bg-gray: #cccccc;
-    --color-text-gray: #333333;
+    --color-text-gray: rgba(0,0,0,0.84);
+    --color-text-lightgray: rgba(0,0,0,0.56);
     --color-warning: #CC4E69;
     --size-inline-wrapper: min(80%, 1100px);
 
