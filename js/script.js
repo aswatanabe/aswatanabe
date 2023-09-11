@@ -72,12 +72,12 @@ job descriptionを表示
 ************************************************************************/
 
 document.addEventListener("DOMContentLoaded", function() {
+    //6秒後に変更
     setTimeout(function() {
-      // 6秒後にスタイルを変更
-      var element = document.querySelector(".top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2)");
-      element.style.fontSize = "1.0em"; // 新しいフォントサイズなど、必要に応じて変更
-    }, 6000); // 6秒をミリ秒に変換
-  });
+        var element = document.querySelector(".top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2)");
+        element.style.fontSize = "1.0em"; // 新しいフォントサイズなど、必要に応じて変更
+    }, 6000);
+});
 
 /************************************************************************
 動画再生
@@ -98,10 +98,10 @@ setTimeout(() => {
 
 const animateFade = (entries, obs) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) { // 'Intersecting' の代わりに 'isIntersecting' を使用
+        if (entry.isIntersecting) {
             entry.target.animate(
                 [
-                    { opacity: 0, filter: 'blur(.2em)', transform: 'translateY(3em)' },
+                    { opacity: 0, filter: 'blur(.1em)', transform: 'translateY(3em)' },
                     { opacity: 1, filter: 'blur(0)', transform: 'translateY(0)' }
                 ],
                 {
