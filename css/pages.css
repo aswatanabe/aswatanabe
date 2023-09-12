@@ -895,6 +895,79 @@
     margin-block: auto 3em;
 }
 
+/* =====================================================================
+** confirm.php
+===================================================================== */
+
+.confirm main {
+    padding-inline: 1em;
+    margin-inline: auto;
+    min-block-size: calc(100vh - 5em); /* header 5em */
+}
+
+.confirm main > h1 {
+    display: none;
+}
+
+/* --------------- メッセージ --------------- */
+.confirm main > p {
+    padding-block-start: calc(5em + 3em);  /* header 5em ＋　余白3em*/
+}
+
+/* --------------- 入力内容の表示 --------------- */
+.confirm main > dl {
+    margin-block: 2em;
+}
+
+/* ラベル */
+.confirm main > dl > dt {
+    margin-block: 1em 0.3em;
+}
+
+/* 入力した内容 */
+.confirm main > dl > dd {
+    line-height: 2em;
+    border: 1px solid var(--color-border);
+    padding: 0.5em;
+}
+
+/* --------------- ボタン --------------- */
+
+.confirm main > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-end: 3em; /*footerとの間の余白*/
+}
+
+.confirm .btn02 {
+    margin: 2em 1em;
+}
+
+/* =====================================================================
+** complete.php
+===================================================================== */
+
+.complete main {
+    padding-inline: 1em;
+    margin-inline: auto;
+    min-block-size: calc(100vh - 5em); /* header 5em */
+}
+
+.complete main > h1 {
+    display: none;
+}
+
+/* --------------- メッセージ --------------- */
+.complete main > p:nth-of-type(1) {
+    padding-block-start: calc(5em + 3em);  /* header 5em ＋　余白3em*/
+}
+
+.complete .btn01 > a {
+    margin-block-start: 5em;
+    inline-size: calc(var(--logic-px) * 300);
+}
+
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ** MEDIA QUERY DESIGN B(dlt)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -1039,7 +1112,15 @@
         margin-inline: auto;
         inline-size: clamp(0px, 80%, 780px);
     }
-    
+
+    /* =====================================================================
+    ** confirm.php / complete.php
+    ===================================================================== */
+
+    .confirm main,
+    .complete main {
+        inline-size: min(80%, calc(var(--logic-px) * 780));
+    }
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
