@@ -121,3 +121,20 @@ const fadeElements = document.querySelectorAll('.fade-in');
 fadeElements.forEach((fadeElement) => {
     fadeObserver.observe(fadeElement);
 });
+
+/************************************************************************
+メールフォーム
+************************************************************************/
+
+function checkEmail(event) {
+    // フォーム内のemail01とemail02の要素を取得
+    const email01 = document.getElementById("email01").value;
+    const email02 = document.getElementById("email02").value;
+
+    // email01とemail02の内容を比較
+    if (email01 !== email02) {
+        alert("メールアドレスが一致しません。再度入力してください。");
+        // フォームの送信をキャンセル
+        event.preventDefault();
+    }
+}

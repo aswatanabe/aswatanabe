@@ -17,14 +17,14 @@
     --color-link: #3d9ec8;
     --color-hover: #a0c4d3;
     --color-button-color: #cccccc;
-    --color-button-link: #3d9ec8;
-    --color-button-hover: #a0c4d3;
+    --color-button-link: #a0c4d3;
+    --color-button-hover: #3d9ec8;
     --color-border: rgba(0,0,0,0.12);
     --color-bg-gray: #cccccc;
     --color-text-gray: rgba(0,0,0,0.84);
     --color-text-lightgray: rgba(0,0,0,0.56);
     --color-warning: #CC4E69;
-    --size-inline-wrapper: min(80%, 1100px);
+    --size-inline-wrapper: min(80%, calc(var(--logic-px) * 1100));
 
     font-family: Verdana, '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
     font-size: max(calc(var(--logic-px) * 16), 14px);
@@ -83,13 +83,13 @@ a:is(:hover, :focus) {
 ** UTILITIES
 ===================================================================== */
 
-/* button
+/* btn01
 ===================================================================== */
-.btn {
+.btn01 {
     margin-block: 3em;
 }
 
-.btn a {
+.btn01 a {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,7 +104,7 @@ a:is(:hover, :focus) {
     border-bottom: 1px solid;
 }
 
-.btn a::before {
+.btn01 a::before {
     content: '';
     position: absolute;
     inset-block-start: calc(50% - 2px);
@@ -116,7 +116,7 @@ a:is(:hover, :focus) {
     transition: 0.3s;
 }
 
-.btn a::after {
+.btn01 a::after {
     content: '';
     position: absolute;
     inset-block-start: 50%;
@@ -128,15 +128,40 @@ a:is(:hover, :focus) {
     transition: 0.3s;
 }
 
-.btn a:hover {
+.btn01 a:hover {
     text-decoration: none;
     color: var(--color-hover);
 }
 
-.btn a:hover::before,
-.btn a:hover::after {
+.btn01 a:hover::before,
+.btn01 a:hover::after {
     right: 0.5em;
     background-color: var(--color-hover);
+}
+
+/* btn002
+===================================================================== */
+
+.btn02 {
+    inline-size: 10em;
+    block-size: 3em;
+}
+
+.btn02 > * {
+    inline-size: 100%;
+    block-size: 100%;
+}
+
+.btn02 > *:hover {
+    transition: 0.3s;
+}
+
+.btn02 > input {
+    background-color: var(--color-button-link);
+}
+
+.btn02 > input:hover {
+    background-color: var(--color-button-hover);
 }
 
 /* 画像をホバー
