@@ -503,19 +503,9 @@
     padding: 0.5em;
 }
 
+/* 入力内容の確認ボタン */
 #form p {
-    display: flex;
-    justify-content: center;
-}
-
-#form p > input {
-    inline-size: 15em;
-    block-size: 3em;
-}
-
-#form p > input:is(:hover, :focus) {
-    background-color: var(--color-hover);
-    border-color: var(--color-hover);
+    margin-inline: auto;
 }
 
 /* =====================================================================
