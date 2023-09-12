@@ -206,13 +206,13 @@
                     </section>
                     <section id="form">
                         <h3>お問い合わせフォーム</h3>
-                        <form action="confirm.php" enctype="multipart/form-data" method="POST">
+                        <form id="form" action="./contact/confirm.php" enctype="multipart/form-data" method="POST">
                             <dl>
                                 <dt><label for="name">お名前</label></dt>
                                 <dd><input type="text" name="name" placeholder="例）山田太郎" autocomplete="name" required/></dd>
                             </dl>
                             <dl>
-                                <dt><label for="email">メールアドレス</label></dt>
+                                <dt><label for="email01">メールアドレス</label></dt>
                                 <dd><input type="email" name="email01" id="email01" patter="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="例）abc@example.com" autocomplete="email" required/></dd>
                             </dl>
                             <dl>
@@ -223,10 +223,10 @@
                                 <dt><label for="querytitle">お問い合わせの種類</label></dt>
                                 <dd>
                                     <select name="querytitle">
-                                        <option>Web制作について</option>
-                                        <option>Web編集について</option>
-                                        <option>書籍編集について</option>
-                                        <option>その他</option>
+                                        <option value="Web制作について">Web制作について</option>
+                                        <option value="Web編集について">Web編集について</option>
+                                        <option value="書籍編集について">書籍編集について</option>
+                                        <option value="その他">その他</option>
                                     </select>
                                 </dd>
                             </dl>
