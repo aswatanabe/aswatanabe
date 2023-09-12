@@ -83,13 +83,13 @@ a:is(:hover, :focus) {
 ** UTILITIES
 ===================================================================== */
 
-/* button
+/* btn01
 ===================================================================== */
-.btn {
+.btn01 {
     margin-block: 3em;
 }
 
-.btn a {
+.btn01 a {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,7 +104,7 @@ a:is(:hover, :focus) {
     border-bottom: 1px solid;
 }
 
-.btn a::before {
+.btn01 a::before {
     content: '';
     position: absolute;
     inset-block-start: calc(50% - 2px);
@@ -116,7 +116,7 @@ a:is(:hover, :focus) {
     transition: 0.3s;
 }
 
-.btn a::after {
+.btn01 a::after {
     content: '';
     position: absolute;
     inset-block-start: 50%;
@@ -128,15 +128,40 @@ a:is(:hover, :focus) {
     transition: 0.3s;
 }
 
-.btn a:hover {
+.btn01 a:hover {
     text-decoration: none;
     color: var(--color-hover);
 }
 
-.btn a:hover::before,
-.btn a:hover::after {
+.btn01 a:hover::before,
+.btn01 a:hover::after {
     right: 0.5em;
     background-color: var(--color-hover);
+}
+
+/* btn002
+===================================================================== */
+
+.btn02 {
+    inline-size: 10em;
+    block-size: 3em;
+}
+
+.btn02 > * {
+    inline-size: 100%;
+    block-size: 100%;
+}
+
+.btn02 > *:hover {
+    transition: 0.3s;
+}
+
+.btn02 > input {
+    background-color: var(--color-button-link);
+}
+
+.btn02 > input:hover {
+    background-color: var(--color-button-hover);
 }
 
 /* 画像をホバー

@@ -86,13 +86,13 @@ function h( $str ) {
                 <dd><?php echo h($_POST['query']); ?></dd>
             </dl>
             <div>
-                <p class="btn"><button onClick="history.back()">入力画面に戻る</button></p>
-                <form action="./complete.php" enctype="multipart/form-data" method="POST" class="form">
+                <p class="btn02"><button onClick="history.back()">入力画面に戻る</button></p>
+                <form  class="form" action="./complete.php" enctype="multipart/form-data" method="POST">
                     <input type="hidden" name="name" value="<?php echo h($_POST['name']); ?>">
                     <input type="hidden" name="email01" value="<?php echo h($_POST['email01']); ?>">
                     <input type="hidden" name="querytitle" value="<?php echo h($_POST['querytitle']); ?>">
                     <input type="hidden" name="query" value="<?php echo h($_POST['query']); ?>">
-                    <p class="btn"><input type="submit" name="btn_submit" value="送信" /></p>
+                    <p class="btn02"><input type="submit" name="btn_submit" value="送信" /></p>
                 </form>
             </div>
         </main>

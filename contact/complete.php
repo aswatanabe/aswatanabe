@@ -119,7 +119,7 @@ if( !empty($_SESSION['page']) && $_SESSION['page'] === true ) {
             <p>お問い合わせありがとうございました。</p>
             <p>確認のため、自動返信メールをお送りいたします。</p>
             <p>ご入力いただいた内容を確認後、２－３日以内に返信いたしますので、しばらくお待ちください。</p>
-            <p class="btn"><a href="../">TOPページへ戻る</a></p>
+            <p class="btn01"><a href="../">TOPページへ戻る</a></p>
         </main>
         <footer>
             <section>
