@@ -25,12 +25,11 @@ if( !empty($_SESSION['page']) && $_SESSION['page'] === true ) {
     $auto_reply_subject = 'お問い合わせありがとうございます';
 
     // 本文を設定
-    $auto_reply_text = "この度は、お問い合わせ頂き誠にありがとうございます。
-    下記の内容でお問い合わせを受け付けました。\n\n";
+    $auto_reply_text = "この度は、お問い合わせ頂き誠にありがとうございます。下記の内容でお問い合わせを受け付けました。\n\n";
     $auto_reply_text .= "お問い合わせ日時：" . date("Y-m-d H:i") . "\n";
     $auto_reply_text .= "氏名：" . $_POST['name'] . "\n";
     $auto_reply_text .= "メールアドレス：" . $_POST['email01'] . "\n";
-    $auto_reply_text .= "お問い合わせの種類：" . $_POST['querytype'] . "\n";
+    $auto_reply_text .= "お問い合わせの種類：" . $_POST['querytitle'] . "\n";
     $auto_reply_text .= "お問い合わせの内容：" . $_POST['query'] . "\n\n";
     $auto_reply_text .= "渡辺明日香";
 
