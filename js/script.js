@@ -126,7 +126,7 @@ fadeElements.forEach((fadeElement) => {
 メールフォーム
 ************************************************************************/
 
-function checkEmail(button) {
+function checkEmail(event) {
     // フォーム内のemail01とemail02の要素を取得
     const email01 = document.getElementById("email01").value;
     const email02 = document.getElementById("email02").value;
