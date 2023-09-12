@@ -44,7 +44,7 @@ if( !empty($_SESSION['page']) && $_SESSION['page'] === true ) {
     $admin_reply_text .= "お問い合わせ日時：" . date("Y-m-d H:i") . "\n";
     $admin_reply_text .= "氏名：" . $_POST['name'] . "\n";
     $admin_reply_text .= "メールアドレス：" . $_POST['email01'] . "\n";
-    $admin_reply_text .= "お問い合わせの種類：" . $_POST['querytype'] . "\n";
+    $admin_reply_text .= "お問い合わせの種類：" . $_POST['querytitle'] . "\n";
     $admin_reply_text .= "お問い合わせの内容：" . $_POST['query'] . "\n";
 
     // 運営側へメール送信
