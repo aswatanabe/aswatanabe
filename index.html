@@ -209,20 +209,20 @@
                         <form id="form" action="./contact/confirm.php" enctype="multipart/form-data" method="POST">
                             <dl>
                                 <dt><label for="name">お名前</label></dt>
-                                <dd><input type="text" name="name" placeholder="例）山田太郎" autocomplete="name" required/></dd>
+                                <dd><input type="text" name="name" id="name" placeholder="例）山田太郎" autocomplete="name" required/></dd>
                             </dl>
                             <dl>
                                 <dt><label for="email01">メールアドレス</label></dt>
-                                <dd><input type="email" name="email01" id="email01" patter="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="例）abc@example.com" autocomplete="email" required/></dd>
+                                <dd><input type="email" name="email01" id="email01" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="例）abc@example.com" autocomplete="email" required/></dd>
                             </dl>
                             <dl>
                                 <dt><label for="email02">メールアドレス（確認）</label></dt>
-                                <dd><input type="email" name="email02" id="email02" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="例）abc@example.com" required/></dd>
+                                <dd><input type="email" name="email02" id="email02" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="例）abc@example.com" required/></dd>
                             </dl>
                             <dl>
                                 <dt><label for="querytitle">お問い合わせの種類</label></dt>
                                 <dd>
-                                    <select name="querytitle">
+                                    <select name="querytitle" id="querytitle">
                                         <option value="Web制作について">Web制作について</option>
                                         <option value="Web編集について">Web編集について</option>
                                         <option value="書籍編集について">書籍編集について</option>
@@ -232,9 +232,9 @@
                             </dl>
                             <dl>
                                 <dt><label for="query">お問い合わせ内容</label></dt>
-                                <dd><textarea name="query" placeholder="こちらにお問い合わせ内容をご入力ください" required></textarea></dd>
+                                <dd><textarea name="query" id="query" placeholder="こちらにお問い合わせ内容をご入力ください" required></textarea></dd>
                             </dl>
-                            <p class="btn"><input type="submit" value="入力内容の確認" onClick="CheckEmail(this)" /></p>
+                            <p class="btn02"><input type="submit" value="入力内容の確認" onClick="checkEmail(event)" ></p>
                         </form>
                     </section>
                 </div>
