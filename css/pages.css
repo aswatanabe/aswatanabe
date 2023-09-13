@@ -191,8 +191,9 @@
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(1) {
     inset-inline-start: 0;
     inset-block-start: 0;
-    background: #dfe0e2;
-    animation: fluidrotate1 40s ease 0s infinite;/*アニメーションの設定*/
+    /* background: #dfe0e2; */
+    background: #3D3FBA;
+    animation: fluidrotate1 35s ease 0s infinite;/*アニメーションの設定*/
     min-inline-size: 55%;
     min-block-size: 55%;
 
@@ -226,8 +227,9 @@
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(2) {
     inset-inline-start: 20%;
     inset-block-start: 50%;
-    background: #e5e3d8;
-    animation: fluidrotate2 50s ease 0s infinite;/*アニメーションの設定*/
+    /* background: #e5e3d8; */
+    background: #FFAC42;
+    animation: fluidrotate2 45s ease 0s infinite;/*アニメーションの設定*/
     min-inline-size: 50%;
     min-block-size: 50%;
 
@@ -262,8 +264,9 @@
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(3) {
     inset-inline-start: 45%;
     inset-block-start: 20%;
-    background: #eae1e4;
-    animation: fluidrotate3 45s ease 0s infinite;/*アニメーションの設定*/
+    /* background: #eae1e4; */
+    background: #CB3664;
+    animation: fluidrotate3 40s ease 0s infinite;/*アニメーションの設定*/
     min-inline-size: 50%;
     min-block-size: 50%;
 
@@ -1183,7 +1186,7 @@
         grid-template-areas:
             "E3 CONCEPTTITLE"
             "E3 CONCEPTDESC";
-        grid-template-columns: max(90vh, 60%) auto;
+        grid-template-columns: max(80vh, 50%) auto;
         margin-block-start: 10em;
         column-gap: 5em;
     }
