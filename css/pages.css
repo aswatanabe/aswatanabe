@@ -93,7 +93,7 @@
 .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) {
     font-size: 1.0em;
     opacity: 0; /* 初期状態では透明に設定 */
-    animation: fadeIn 6s ease-in-out 6s forwards; /* アニメーションを適用 */
+    animation: fadeIn 4.5s ease-in-out 4.5s forwards; /* アニメーションを適用 */
 }
 
 @keyframes fadeIn {
@@ -112,7 +112,7 @@
     color: var(--color-text-gray);
     writing-mode: vertical-rl;
     transform: translateX(-50%) translateY(-50%);
-    animation: fadeIn 6s ease-in-out 6s forwards; /* アニメーションを適用 */
+    animation: fadeIn 4.5s ease-in-out 4.5s forwards; /* アニメーションを適用 */
     opacity: 0; /* 初期状態では透明に設定 */
 }
 

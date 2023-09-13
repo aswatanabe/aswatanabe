@@ -63,8 +63,8 @@ const typewriterWithDelay = (param) => {
 
 typewriterWithDelay({
     el: "#typewriter",
-    string: "Where creative vision and digital innovation unite.",
-    speed: 120
+    string: "English. Engineering. Editing.",
+    speed: 130
 });
 
 /************************************************************************
@@ -72,11 +72,11 @@ job descriptionを表示
 ************************************************************************/
 
 document.addEventListener("DOMContentLoaded", function() {
-    //6秒後に変更
+    //4.5秒後に変更
     setTimeout(function() {
         var element = document.querySelector(".top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2)");
         element.style.fontSize = "1.0em"; // 新しいフォントサイズなど、必要に応じて変更
-    }, 6000);
+    }, 4500);
 });
 
 /************************************************************************
@@ -87,10 +87,10 @@ const movieVideoElement = document.querySelector('.movie-video');
 
 movieVideoElement.pause(); // 動画停止
 
-// 11秒後に再生
+// 8秒後に再生
 setTimeout(() => {
     movieVideoElement.play(); // 動画再生
-}, 11000);
+}, 8000);
 
 /************************************************************************
 フェードイン
