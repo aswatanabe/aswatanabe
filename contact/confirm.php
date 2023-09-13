@@ -53,7 +53,7 @@ function h( $str ) {
         <header id="header">
             <nav>
                 <p>
-                    <a href="#"><img src="../images/logo.png" alt="logo" /></a>
+                    <a href="../"><img src="../images/logo.png" alt="logo" /></a>
                 </p>
                 <h2>NAVIGATION</h2>
                 <div id="burger">
