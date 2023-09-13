@@ -101,8 +101,8 @@ const animateFade = (entries, obs) => {
         if (entry.isIntersecting) {
             entry.target.animate(
                 [
-                    { opacity: 0, filter: 'blur(.1em)', transform: 'translateY(3em)' },
-                    { opacity: 1, filter: 'blur(0)', transform: 'translateY(0)' }
+                    { opacity: 0, transform: 'translateY(3em)' },
+                    { opacity: 1, transform: 'translateY(0)' }
                 ],
                 {
                     duration: 3000,

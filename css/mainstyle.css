@@ -237,7 +237,7 @@ header {
     display: flex; /* navを中央に */
     justify-content: center; /* navを中央に */
     inline-size: 100%;
-    background-color: #ffffff;
+    background-color: rgba(255,255,255,40%);
     block-size: 5em;
 }
 

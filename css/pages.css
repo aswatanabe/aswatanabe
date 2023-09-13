@@ -1005,7 +1005,7 @@
 
     .top main > section:nth-of-type(3) {
         margin-inline: auto;
-        inline-size: clamp(0px, 80%, 780px);
+        inline-size: min(80%, 690px);
     }
 
     /* SERVICE
