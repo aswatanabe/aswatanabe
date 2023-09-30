@@ -44,17 +44,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: inherit;
-    overflow: hidden;
     position: absolute;
     inset-block: 0;
     inset-inline: 0;
 }
 
 .movie-video {
-    max-block-size: 100%;
-    inline-size: auto;
-    block-size: auto;
+    object-fit: cover;
+    block-size: 100%;
 }
 
 /* --------------- テキスト --------------- */
@@ -195,7 +192,7 @@
     inset-block-start: 0;
     /* background: #dfe0e2; */
     background: #3D3FBA;
-    animation: fluidrotate1 35s ease 0s infinite;/*アニメーションの設定*/
+    animation: fluidrotate1 35s ease 0s infinite; /*アニメーションの設定*/
     min-inline-size: 55%;
     min-block-size: 55%;
 
@@ -234,7 +231,6 @@
     animation: fluidrotate2 45s ease 0s infinite;/*アニメーションの設定*/
     min-inline-size: 50%;
     min-block-size: 50%;
-
 }
 
 @keyframes fluidrotate2 {  
@@ -996,11 +992,11 @@
     .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
         font-size: 2.4em;
     }
-
+    
     /*job description*/
     .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > br {
         display: none;
-    }
+    }    
 
     /* CONCEPT
     ===================================================================== */
@@ -1205,17 +1201,16 @@
         grid-area: hero;
     }
 
-    .top main > section:nth-of-type(1) > div:nth-of-type(1) {
+    .movie {
+        display: unset;
+    }
+    
+    .movie-video {
+        object-fit: cover;
+        block-size: unset;
         inline-size: 100%;
     }
-
-    /* --------------- video --------------- */
-
-    .movie-video {
-        max-inline-size: 100%;
-        max-block-size: unset;
-    }
-
+    
     .top main > section:nth-of-type(1) > div:nth-of-type(2) {
         inline-size: min(80%, 1100px);
         margin-inline: auto;
