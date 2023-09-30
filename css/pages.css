@@ -346,12 +346,16 @@
 }
 
 .top main > section:nth-of-type(3) > article > ul {
-    display: flex;
+    display: grid;
+    grid-template-areas:
+        "CATEGORY WORKTITLE"
+        "LINK GITHUB";
+        grid-template-columns: 5em auto;
+    gap: 0.5em;
     margin-block-start: 1em;
 }
 
 .top main > section:nth-of-type(3) > article > ul > * {
-    margin-inline-end: 1em;
     font-size: 0.9em;
 }
 
@@ -360,10 +364,14 @@
     grid-area: CATEGORY;
     background-color: var(--color-bg-gray);
     padding-inline: 0.5em;
+    display: flex; /* 中央配置 */
+    justify-content: center; /* 水平方向に中央配置 */
+    align-items: center; /* 垂直方向に中央配置 */
 }
 
 /*作品名*/
 .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(2) {
+    grid-area: WORKTITLE;
     margin-block: 0;
     display: inline;
     font-weight: bold;
@@ -371,12 +379,12 @@
 
 /*リンク*/
 .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(3) {
-    grid-area: CATEGORY;
+    grid-area: LINK;
 }
 
 /*GitHub*/
 .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(4) {
-    grid-area: CATEGORY;
+    grid-area: GITHUB;
 }
 
 .top main > section:nth-of-type(3) > article > p:nth-of-type(1) {
@@ -1009,6 +1017,38 @@
         margin-inline: auto;
         inline-size: min(80%, 690px);
     }
+
+    .top main > section:nth-of-type(3) > article > ul {
+        display: flex;
+    }
+    
+    .top main > section:nth-of-type(3) > article > ul > * {
+        margin-inline-end: 1em;
+    }
+    
+    /*カテゴリー*/
+    .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(1) {
+        grid-area: CATEGORY;
+        background-color: var(--color-bg-gray);
+        padding-inline: 0.5em;
+    }
+    
+    /*作品名*/
+    .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(2) {
+        margin-block: 0;
+        display: inline;
+        font-weight: bold;
+    }
+    
+    /*リンク*/
+    .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(3) {
+        grid-area: CATEGORY;
+    }
+    
+    /*GitHub*/
+    .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(4) {
+        grid-area: CATEGORY;
+    }    
 
     /* SERVICE
     ===================================================================== */
