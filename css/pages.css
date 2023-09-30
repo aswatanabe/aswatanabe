@@ -444,7 +444,7 @@
 
 .top main > section:nth-of-type(5) > div > section > h3 {
     margin-block: 0.5em;
-    font-size: 0.9em;
+    font-size: 0.7em;
     line-height: normal;
     block-size: 2.5em;
     display: flex; /*テキストを上下中央に*/
