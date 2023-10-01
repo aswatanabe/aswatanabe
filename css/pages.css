@@ -478,6 +478,10 @@
     display: none;
 }
 
+.top main > section:nth-of-type(6) > div > section:nth-of-type(1) > p {
+    margin-block: 1em;
+}
+
 /* --------------- form --------------- */
 
 #form dl {
