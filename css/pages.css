@@ -650,15 +650,16 @@
     z-index: -1;
 }
 
-.about main > section:nth-of-type(2) > section:nth-of-type(2) > section > h4 {
-    font-weight: bold;
-    margin-block: 1.5em;
-    font-size: 1.1em;
-}
-
-.about main > section:nth-of-type(2) > section:nth-of-type(2) > section > p {
+.about main > section:nth-of-type(2) > section:nth-of-type(2) > p {
+    margin-block: 2em;
+    padding-inline: 2em;  /*ABOUTページのmargin*/
     line-height: 2.2em;
 }
+
+.about main > section:nth-of-type(2) > section:nth-of-type(2) > p > br {
+    display: none;
+}
+
 
 /* 経歴
 ===================================================================== */
@@ -1118,6 +1119,10 @@
     .about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
         inline-size: 65%;
     }
+
+    .about main > section:nth-of-type(2) > section:nth-of-type(2) > p > br {
+        display: inline;
+    }    
 
     /* 経歴
     ===================================================================== */
