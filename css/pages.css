@@ -806,7 +806,7 @@
     background-image: url('../images/white-simple-textured-design-background.jpg');
 }
 
-.works main > section {
+.works main > :is(section, p) {
     margin-inline: 2em; /*WORKSページのmargin*/
 }
 
@@ -822,17 +822,17 @@
 
 .works main > section:nth-of-type(1) > h2 {
     margin-block: 0;
-    font-size: 1.1em;
     margin-inline-end: 1.2em;
+    font-size: 1.0em;
 }
 
 .works main > section:nth-of-type(1) > ul {
     display: flex;
-    font-size: 1.1em;
+    font-size: 1.0em;
 }
 
 .works main > section:nth-of-type(1) > ul > li {
-    margin-inline: 1em;
+    margin-inline: 0.8em;
     display: flex;
     align-items: center; /* 垂直方向中央揃え */
     justify-content: center; /* 水平方向中央揃え */
@@ -1163,6 +1163,18 @@
         margin-inline: auto;
         inline-size: clamp(0px, 80%, 780px);
     }
+
+    .works main > section:nth-of-type(1) > h2 {
+        font-size: 1.1em;
+    }
+    
+    .works main > section:nth-of-type(1) > ul {
+        font-size: 1.1em;
+    }
+
+    .works main > section:nth-of-type(1) > ul > li {
+        margin-inline: 1em;
+    }    
 
     /* =====================================================================
     ** confirm.php / complete.php
