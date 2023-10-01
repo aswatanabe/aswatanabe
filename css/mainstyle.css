@@ -11,6 +11,27 @@
     line-height: 1em;
 }
 
+button {
+	background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input[type="submit"] {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 :root {
     --base-w: 320px;
     --logic-px: calc(var(--base-w) / 320);
@@ -131,6 +152,7 @@ a:is(:hover, :focus) {
 .btn01 a:hover {
     text-decoration: none;
     color: var(--color-hover);
+    cursor : pointer;
 }
 
 .btn01 a:hover::before,
@@ -145,6 +167,7 @@ a:is(:hover, :focus) {
 .btn02 {
     inline-size: 10em;
     block-size: 3em;
+    border-radius: 2px;
 }
 
 .btn02 > * {
@@ -152,16 +175,18 @@ a:is(:hover, :focus) {
     block-size: 100%;
 }
 
-.btn02 > *:hover {
-    transition: 0.3s;
-}
-
 .btn02 > input {
     background-color: var(--color-button-link);
 }
 
-.btn02 > input:hover {
+.btn02 > button {
+    background-color: var(--color-button-color);
+}
+
+.btn02 > *:hover {
+    transition: 0.3s;
     background-color: var(--color-button-hover);
+    cursor : pointer;
 }
 
 /* 画像をホバー
@@ -189,11 +214,12 @@ a:is(:hover, :focus) {
     background-position: 50%;
     opacity: 1;
     transition: opacity 0.3s, transform 0.3s ease;
+    cursor : pointer;
 }
 
 .image-hover:is(:hover, :active) img {
     opacity: 0.7;
-    transform: scale(1.01);
+    transform: scale(0.99);
 }
 
 /* フェイドイン
