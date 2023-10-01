@@ -29,24 +29,24 @@
 ===================================================================== */
 
 .top main > section:nth-of-type(1) {
-    display: grid; /*上下中央揃え*/
+    display: grid; /* 上下中央揃え */
     grid-area: hero;
+    place-items: center; /* 上下中央揃え */
     align-items: center;
     margin-block-start: 0;
     text-align: center;
     min-block-size: calc(100vh - 5em); /* header 5em */
-    place-items: center; /*上下中央揃え*/
 }
 
 /* --------------- video --------------- */
 
 .movie {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     inset-block: 0;
     inset-inline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .movie-video {
@@ -56,16 +56,16 @@
 
 /* --------------- テキスト --------------- */
 
-/*タイプライター*/
+/* タイプライター */
 .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
+    inline-size: 100%;
+    font-family: 'Times New Roman', Georgia, serif;
     font-size: 2em;
     font-weight: bold;
-    inline-size: 100%;
-    font-family: "Times New Roman", "Georgia", serif;
 }
 
 #typewriter::after {
-    content: "|";
+    content: '|';
     animation-name: blink;
     animation-duration: 1s;
     animation-iteration-count: infinite;
@@ -75,12 +75,13 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
-/*Asuka Watanabe*/
+/* Asuka Watanabe */
 .top main > section:nth-of-type(1) > div:nth-of-type(2) > h2 {
     margin-block: 1em;
     font-size: 1.2em;
@@ -88,9 +89,9 @@
     text-align: center;
 }
 
-/*job description*/
+/* job description */
 .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) {
-    font-size: 1.0em;
+    font-size: 1em;
     opacity: 0; /* 初期状態では透明に設定 */
     animation: fadeIn 4.5s ease-in-out 4.5s forwards; /* アニメーションを適用 */
 }
@@ -105,14 +106,14 @@
 .top main > section:nth-of-type(1) > p:last-of-type {
     position: absolute;
     top: 92.5%;
-    left: 50%; /*左右の位置を変える*/
+    left: 50%; /* 左右の位置を変える */
     display: block;
     font-size: 0.7em;
     color: var(--color-text-gray);
+    opacity: 0; /* 初期状態では透明に設定 */
     writing-mode: vertical-rl;
     transform: translateX(-50%) translateY(-50%);
     animation: fadeIn 4.5s ease-in-out 4.5s forwards; /* アニメーションを適用 */
-    opacity: 0; /* 初期状態では透明に設定 */
 }
 
 .top main > section:nth-of-type(1) > p:last-of-type::before {
@@ -156,15 +157,15 @@
 ===================================================================== */
 
 .top main > section:nth-of-type(2) {
-    grid-area: CONCEPT;
-    inline-size: 100%;
     display: grid;
+    grid-area: CONCEPT;
     grid-template-areas:
-        "CONCEPTTITLE"
-        "E3"
-        "CONCEPTDESC";
-    background: no-repeat center/70% 100% url("../images/white-simple-textured-design-background.jpg");
+        'CONCEPTTITLE'
+        'E3'
+        'CONCEPTDESC';
+    inline-size: 100%;
     padding-block: 5em 4em;
+    background: no-repeat center/70% 100% url('../images/white-simple-textured-design-background.jpg');
 }
 
 .top main > section:nth-of-type(2) > h2 {
@@ -180,116 +181,131 @@
 .top main > section:nth-of-type(2) > ul > li {
     position: absolute;
     display: flex; /* テキストを中央寄せ */
-    justify-content: center; /* テキストを中央寄せ */
     align-items: center; /* テキストを中央寄せ */
+    justify-content: center; /* テキストを中央寄せ */
+    font-family: 'Times New Roman', Georgia, serif; /* タイプライターと同じ */
     font-size: 1.2em;
-    font-family: "Times New Roman", "Georgia", serif; /*タイプライターと同じ*/
     font-weight: bold;
 }
 
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(1) {
-    inset-inline-start: 0;
     inset-block-start: 0;
-    /* background: #dfe0e2; */
-    background: #3D3FBA;
-    animation: fluidrotate1 35s ease 0s infinite; /*アニメーションの設定*/
+    inset-inline-start: 0;
     min-inline-size: 55%;
-    min-block-size: 55%;
 
+    /* background: #dfe0e2; */
+    background: #3d3fba;
+    animation: fluidrotate1 35s ease 0s infinite; /* アニメーションの設定 */
+    min-block-size: 55%;
 }
 
-@keyframes fluidrotate1 {  
-        
+@keyframes fluidrotate1 {
     0%, 100% {
         border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
     }
+
     14% {
         border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
     }
+
     28% {
         border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
     }
+
     42% {
         border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
     }
+
     56% {
         border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
     }
+
     70% {
         border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
     }
+
     84% {
         border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
     }
 }
 
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(2) {
-    inset-inline-start: 20%;
     inset-block-start: 50%;
-    /* background: #e5e3d8; */
-    background: #FFAC42;
-    animation: fluidrotate2 45s ease 0s infinite;/*アニメーションの設定*/
+    inset-inline-start: 20%;
     min-inline-size: 50%;
+
+    /* background: #e5e3d8; */
+    background: #ffac42;
+    animation: fluidrotate2 45s ease 0s infinite; /* アニメーションの設定 */
     min-block-size: 50%;
 }
 
-@keyframes fluidrotate2 {  
-        
+@keyframes fluidrotate2 {
     70% {
         border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
     }
+
     84% {
         border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
     }
+
     0%, 100% {
         border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
     }
+
     14% {
         border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
     }
+
     28% {
         border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
     }
+
     42% {
         border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
     }
+
     56% {
         border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
     }
 }
 
-
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(3) {
-    inset-inline-start: 45%;
     inset-block-start: 20%;
-    /* background: #eae1e4; */
-    background: #CB3664;
-    animation: fluidrotate3 40s ease 0s infinite;/*アニメーションの設定*/
+    inset-inline-start: 45%;
     min-inline-size: 50%;
-    min-block-size: 50%;
 
+    /* background: #eae1e4; */
+    background: #cb3664;
+    animation: fluidrotate3 40s ease 0s infinite; /* アニメーションの設定 */
+    min-block-size: 50%;
 }
 
-@keyframes fluidrotate3 {  
-        
+@keyframes fluidrotate3 {
     42% {
         border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
     }
+
     56% {
         border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
     }
+
     70% {
         border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
     }
+
     84% {
         border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
     }
+
     0%, 100% {
         border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
     }
+
     14% {
         border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
     }
+
     28% {
         border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
     }
@@ -317,8 +333,8 @@
 
 .top main > section:nth-of-type(3) > article > h3 {
     display: inline-block;
-    border-block-end: 1px solid;
     padding: 1em;
+    border-block-end: 1px solid;
 }
 
 .top main > section:nth-of-type(3) > article > a {
@@ -344,9 +360,9 @@
 .top main > section:nth-of-type(3) > article > ul {
     display: grid;
     grid-template-areas:
-        "CATEGORY WORKTITLE"
-        "LINK GITHUB";
-        grid-template-columns: 5em auto;
+        'CATEGORY WORKTITLE'
+        'LINK GITHUB';
+    grid-template-columns: 5em auto;
     gap: 0.5em;
     margin-block-start: 1em;
 }
@@ -355,37 +371,37 @@
     font-size: 0.9em;
 }
 
-/*カテゴリー*/
+/* カテゴリー */
 .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(1) {
-    grid-area: CATEGORY;
-    background-color: var(--color-bg-gray);
-    padding-inline: 0.5em;
     display: flex; /* 中央配置 */
-    justify-content: center; /* 水平方向に中央配置 */
+    grid-area: CATEGORY;
     align-items: center; /* 垂直方向に中央配置 */
+    justify-content: center; /* 水平方向に中央配置 */
+    padding-inline: 0.5em;
+    background-color: var(--color-bg-gray);
 }
 
-/*作品名*/
+/* 作品名 */
 .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(2) {
+    display: inline;
     grid-area: WORKTITLE;
     margin-block: 0;
-    display: inline;
     font-weight: bold;
 }
 
-/*リンク*/
+/* リンク */
 .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(3) {
     grid-area: LINK;
 }
 
-/*GitHub*/
+/* GitHub */
 .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(4) {
     grid-area: GITHUB;
 }
 
 .top main > section:nth-of-type(3) > article > p:nth-of-type(1) {
-    font-weight: bold;
     margin-block: 0.5em;
+    font-weight: bold;
 }
 
 /* ABOUT
@@ -396,8 +412,8 @@
 }
 
 .top main > section:nth-of-type(4) > * {
-    text-align: center;
     inline-size: 100%;
+    text-align: center;
 }
 
 .top main > section:nth-of-type(4) > p:nth-of-type(1) {
@@ -423,15 +439,15 @@
 }
 
 .top main > section:nth-of-type(5) > div {
-    grid-area: SERVICE;
     display: grid;
+    grid-area: SERVICE;
     grid-template-columns: repeat(2, 1fr);
     gap: 1em 2em;
 }
 
 .top main > section:nth-of-type(5) > div > section {
-    text-align: center;
     margin: 2em;
+    text-align: center;
 }
 
 .top main > section:nth-of-type(5) > div > section > * {
@@ -439,13 +455,13 @@
 }
 
 .top main > section:nth-of-type(5) > div > section > h3 {
+    display: flex; /* テキストを上下中央に */
+    align-items: center; /* テキストを上下中央に */
+    justify-content: center; /* テキストを上下中央に */
     margin-block: 0.5em;
     font-size: 0.7em;
     line-height: normal;
     block-size: 2.5em;
-    display: flex; /*テキストを上下中央に*/
-    justify-content: center; /*テキストを上下中央に*/
-    align-items: center; /*テキストを上下中央に*/
 }
 
 .top main > section:nth-of-type(5) > div > section > p {
@@ -494,13 +510,13 @@
 }
 
 #form dl > dt::after {
-    content: "必須";
-    font-size: 0.8em;
-    background-color: var(--color-warning);
     padding: 0.3em 0.5em;
     margin-inline: 0.5em;
+    font-size: 0.8em;
+    color: #fff;
+    content: '必須';
+    background-color: var(--color-warning);
     border-radius: 20%;
-    color: #ffffff;
 }
 
 #form dl:not(:nth-of-type(5)) > dd {
@@ -542,7 +558,7 @@
 }
 
 .about main > section:not(:nth-of-type(2)) {
-    margin-inline: 2em; /*ABOUTページのmargin*/
+    margin-inline: 2em; /* ABOUTページのmargin */
 }
 
 /* 概要
@@ -565,17 +581,17 @@
         'NAME'
         'JOB'
         'PLACE';
-    text-align: center;
-    justify-items: center; /* 画像を水平方向に中央揃え */
     align-items: center; /* 画像を縦方向に中央揃え */
+    justify-items: center; /* 画像を水平方向に中央揃え */
     margin-block-start: -10em;
+    text-align: center;
 }
 
 .about main > section:nth-of-type(1) > ul > li:nth-of-type(1) {
     grid-area: PIC;
+    inline-size: 10em;
     border-radius: 50%; /* 画像を円形にする */
     block-size: 10em;
-    inline-size: 10em;
 }
 
 .about main > section:nth-of-type(1) > ul > li:nth-of-type(1) > img {
@@ -587,9 +603,9 @@
 
 .about main > section:nth-of-type(1) > ul > li:nth-of-type(2) {
     grid-area: NAME;
+    margin-block: 0.5em;
     font-size: 1.2em;
     font-weight: bold;
-    margin-block: 0.5em;
 }
 
 .about main > section:nth-of-type(1) > ul > li:nth-of-type(3) {
@@ -617,14 +633,14 @@
 
 /* --------------- キャッチコピー --------------- */
 .about main > section:nth-of-type(2) > section:nth-of-type(1) {
-    margin-inline: 2em; /*ABOUTページのmargin*/
     margin-block: 5em;
+    margin-inline: 2em; /* ABOUTページのmargin */
 }
 
 /* 日本語 */
 .about main > section:nth-of-type(2) > section:nth-of-type(1) > p:nth-of-type(1) {
-    font-size: 1.3em;
     margin-block: 0.3em;
+    font-size: 1.3em;
     font-weight: bold;
     letter-spacing: 0.3em;
 }
@@ -637,33 +653,32 @@
 /* --------------- 自己PR --------------- */
 .about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
     margin-block: 2.2em;
-    margin-inline: 2em; /*ABOUTページのmargin*/
+    margin-inline: 2em; /* ABOUTページのmargin */
 }
 
-/*背景*/
+/* 背景 */
 .about main > section:nth-of-type(2) > section:nth-of-type(2)::before {
-    content: '';
     position: absolute;
-    inline-size: 50%; /*背景の幅を変更*/
-    block-size: 100%;
-    inset-inline-end: 0;
     inset-block-start: 0;
-    background-image: url('../images/white-simple-textured-design-background.jpg');
-    background-size: cover;
-    background-position: center center;
+    inset-inline-end: 0;
     z-index: -1;
+    inline-size: 50%; /* 背景の幅を変更 */
+    content: '';
+    background-image: url('../images/white-simple-textured-design-background.jpg');
+    background-position: center center;
+    background-size: cover;
+    block-size: 100%;
 }
 
 .about main > section:nth-of-type(2) > section:nth-of-type(2) > p {
+    padding-inline: 2em; /* ABOUTページのmargin */
     margin-block: 2em;
-    padding-inline: 2em;  /*ABOUTページのmargin*/
     line-height: 2.2em;
 }
 
 .about main > section:nth-of-type(2) > section:nth-of-type(2) > p > br {
     display: none;
 }
-
 
 /* 経歴
 ===================================================================== */
@@ -679,7 +694,7 @@
     inset-inline-start: 40px;
     inline-size: 2px;
     content: '';
-    background-color: #000000;
+    background-color: #000;
 }
 
 .about main > section:nth-of-type(3) > div > dl {
@@ -693,8 +708,8 @@
     display: inline-block;
     inline-size: 16px;
     content: '';
-    background-color: #ffffff;
-    border: 4px solid #000000;
+    background-color: #fff;
+    border: 4px solid #000;
     border-radius: 100%;
     block-size: 16px;
 }
@@ -721,9 +736,9 @@
 }
 
 .about main > section:nth-of-type(4) > dl > dt {
+    margin-block-start: 1em;
     font-size: 1.1em;
     font-weight: bold;
-    margin-block-start: 1em;
 }
 
 .about main > section:nth-of-type(4) > dl > dd {
@@ -747,9 +762,9 @@
 }
 
 .about main > section:nth-of-type(5) > dl > dt {
+    margin-block-end: 0.3em;
     font-size: 1.1em;
     font-weight: bold;
-    margin-block-end: 0.3em;
 }
 
 .about main > section:nth-of-type(5) > dl > dd {
@@ -804,14 +819,14 @@
 ===================================================================== */
 
 .works main > h1 {
+    margin-inline: 2em; /* WORKSページのmargin */
     color: transparent;
-    block-size: 10em;
-    margin-inline: 2em; /*WORKSページのmargin*/
     background-image: url('../images/white-simple-textured-design-background.jpg');
+    block-size: 10em;
 }
 
 .works main > :is(section, p) {
-    margin-inline: 2em; /*WORKSページのmargin*/
+    margin-inline: 2em; /* WORKSページのmargin */
 }
 
 /* タブ
@@ -819,27 +834,27 @@
 
 .works main > section:nth-of-type(1) {
     display: flex;
-    margin-block-start: -1em;
     align-items: center; /* 垂直方向中央揃え */
     justify-content: center; /* 水平方向中央揃え */
+    margin-block-start: -1em;
 }
 
 .works main > section:nth-of-type(1) > h2 {
     margin-block: 0;
     margin-inline-end: 1.2em;
-    font-size: 1.0em;
+    font-size: 1em;
 }
 
 .works main > section:nth-of-type(1) > ul {
     display: flex;
-    font-size: 1.0em;
+    font-size: 1em;
 }
 
 .works main > section:nth-of-type(1) > ul > li {
-    margin-inline: 0.8em;
     display: flex;
     align-items: center; /* 垂直方向中央揃え */
     justify-content: center; /* 水平方向中央揃え */
+    margin-inline: 0.8em;
 }
 
 /* 作品
@@ -868,14 +883,14 @@
 
 .works main > section:not(:nth-of-type(1)) > article > h3 {
     grid-area: TITLE;
-    font-size: 0.8em;
     margin-block: 1.5em 0.5em;
+    font-size: 0.8em;
 }
 
 .works main > section:not(:nth-of-type(1)) > article > p:nth-of-type(1) {
     grid-area: DESC;
-    font-weight: bold;
     margin-block: 0.5em;
+    font-weight: bold;
 }
 
 .works main > section:not(:nth-of-type(1)) > article > p:nth-of-type(2) {
@@ -883,14 +898,14 @@
 }
 
 .works main > section:not(:nth-of-type(1)) > article > dl {
-    grid-area: dl;
     display: grid;
+    grid-area: dl;
     grid-template-columns: 25% 70%;
     gap: 0.1em 2em;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-    margin-block: 1em;
     padding-block: 0.5em;
+    margin-block: 1em;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 .works main > section:not(:nth-of-type(1)) > article > dl > :is(dt, dd) {
@@ -906,8 +921,8 @@
 ===================================================================== */
 
 .works main > p {
-    text-align: left;
     margin-block: auto 3em;
+    text-align: left;
 }
 
 /* =====================================================================
@@ -926,7 +941,7 @@
 
 /* --------------- メッセージ --------------- */
 .confirm main > p {
-    padding-block-start: calc(5em + 3em);  /* header 5em ＋　余白3em*/
+    padding-block-start: calc(5em + 3em); /* header 5em ＋　余白3em */
 }
 
 /* --------------- 入力内容の表示 --------------- */
@@ -941,18 +956,18 @@
 
 /* 入力した内容 */
 .confirm main > dl > dd {
+    padding: 0.5em;
     line-height: 2em;
     border: 1px solid var(--color-border);
-    padding: 0.5em;
 }
 
 /* --------------- ボタン --------------- */
 
 .confirm main > div {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-block-end: 3em; /*footerとの間の余白*/
+    justify-content: center;
+    margin-block-end: 3em; /* footerとの間の余白 */
 }
 
 .confirm .btn02 {
@@ -975,12 +990,12 @@
 
 /* --------------- メッセージ --------------- */
 .complete main > p:nth-of-type(1) {
-    padding-block-start: calc(5em + 3em);  /* header 5em ＋　余白3em*/
+    padding-block-start: calc(5em + 3em); /* header 5em ＋　余白3em */
 }
 
 .complete .btn01 > a {
-    margin-block-start: 5em;
     inline-size: calc(var(--logic-px) * 300);
+    margin-block-start: 5em;
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -997,82 +1012,82 @@
     .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
         font-size: 2.4em;
     }
-    
-    /*job description*/
+
+    /* job description */
     .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > br {
         display: none;
-    }    
+    }
 
     /* CONCEPT
     ===================================================================== */
     .top main > section:nth-of-type(2) {
         inline-size: min(var(--size-inline-wrapper), 75%);
         padding-inline: unset;
-        margin-inline: auto;
         margin-block-start: 5em;
+        margin-inline: auto;
     }
 
     /* WORKS
     ===================================================================== */
 
     .top main > section:nth-of-type(3) {
-        margin-inline: auto;
         inline-size: min(80%, 690px);
+        margin-inline: auto;
     }
 
     .top main > section:nth-of-type(3) > article > ul {
         display: flex;
     }
-    
+
     .top main > section:nth-of-type(3) > article > ul > * {
         margin-inline-end: 1em;
     }
-    
-    /*カテゴリー*/
+
+    /* カテゴリー */
     .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(1) {
         grid-area: CATEGORY;
-        background-color: var(--color-bg-gray);
         padding-inline: 0.5em;
+        background-color: var(--color-bg-gray);
     }
-    
-    /*作品名*/
+
+    /* 作品名 */
     .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(2) {
-        margin-block: 0;
         display: inline;
+        margin-block: 0;
         font-weight: bold;
     }
-    
-    /*リンク*/
+
+    /* リンク */
     .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(3) {
         grid-area: CATEGORY;
     }
-    
-    /*GitHub*/
+
+    /* GitHub */
     .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(4) {
         grid-area: CATEGORY;
-    }    
+    }
 
     /* SERVICE
     ===================================================================== */
     .top main > section:nth-of-type(5) > div {
-        grid-area: SERVICE;
         display: grid;
+        grid-area: SERVICE;
         grid-template-columns: repeat(3, 1fr);
         gap: 1em 2em;
     }
 
     .top main > section:nth-of-type(5) > div > section > h3 {
         font-size: 1.1em;
-    }    
+    }
 
     /* CONTACT
     ===================================================================== */
     .top main > section:nth-of-type(6) > div {
         display: grid;
         grid-template-areas: 'MSG FORM';
-        gap: 3em;
-        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3em;
     }
 
     .top main > section:nth-of-type(6) > div > section:nth-of-type(1) {
@@ -1088,7 +1103,7 @@
     ===================================================================== */
 
     .about main > section:not(:nth-of-type(2)) {
-        margin-inline: 10%; /*ABOUTページのmargin*/
+        margin-inline: 10%; /* ABOUTページのmargin */
     }
 
     /* 概要
@@ -1100,24 +1115,24 @@
             'PIC NAME'
             'PIC JOB'
             'PIC PLACE';
-        text-align: unset;
-        justify-items: unset;
-        align-items: unset;
-        margin-block-start: -10em;
-        place-content: center;
         gap: 2em;
+        place-content: center;
+        align-items: unset;
+        justify-items: unset;
+        margin-block-start: -10em;
+        text-align: unset;
     }
 
     /* 特徴
     ===================================================================== */
 
     .about main > section:nth-of-type(2) {
-        padding-inline-start: 10%; /*ABOUTページのmargin*/
+        padding-inline-start: 10%; /* ABOUTページのmargin */
     }
 
-    /*背景*/
+    /* 背景 */
     .about main > section:nth-of-type(2) > section:nth-of-type(2)::before {
-        width: 60%; /*背景の幅を変更*/
+        width: 60%; /* 背景の幅を変更 */
     }
 
     .about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
@@ -1126,7 +1141,7 @@
 
     .about main > section:nth-of-type(2) > section:nth-of-type(2) > p > br {
         display: inline;
-    }    
+    }
 
     /* 経歴
     ===================================================================== */
@@ -1162,30 +1177,28 @@
     ** WORKS
     ===================================================================== */
 
-    .works main > section:not(:nth-of-type(1)),
-    .works main > p {
-        margin-inline: auto;
+    .works main > section:not(:nth-of-type(1)), .works main > p {
         inline-size: clamp(0px, 80%, 780px);
+        margin-inline: auto;
     }
 
     .works main > section:nth-of-type(1) > h2 {
         font-size: 1.1em;
     }
-    
+
     .works main > section:nth-of-type(1) > ul {
         font-size: 1.1em;
     }
 
     .works main > section:nth-of-type(1) > ul > li {
         margin-inline: 1em;
-    }    
+    }
 
     /* =====================================================================
     ** confirm.php / complete.php
     ===================================================================== */
 
-    .confirm main,
-    .complete main {
+    .confirm main, .complete main {
         inline-size: min(80%, calc(var(--logic-px) * 780));
     }
 }
@@ -1195,7 +1208,6 @@
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 @media screen and (width >= 1025px) {
-
     /* =====================================================================
     ** TOP
     ===================================================================== */
@@ -1225,13 +1237,13 @@
     .movie {
         display: unset;
     }
-    
+
     .movie-video {
         object-fit: cover;
         block-size: unset;
         inline-size: 100%;
     }
-    
+
     .top main > section:nth-of-type(1) > div:nth-of-type(2) {
         inline-size: min(80%, 1100px);
         margin-inline: auto;
@@ -1239,8 +1251,8 @@
     }
 
     .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
-        margin-inline: auto 0;
         margin-block: auto;
+        margin-inline: auto 0;
         font-size: 2.8em;
     }
 
@@ -1251,14 +1263,14 @@
     /* CONCEPT
     ===================================================================== */
     .top main > section:nth-of-type(2) {
-        inline-size: var(--size-inline-wrapper);
         display: grid;
         grid-template-areas:
-            "E3 CONCEPTTITLE"
-            "E3 CONCEPTDESC";
+            'E3 CONCEPTTITLE'
+            'E3 CONCEPTDESC';
         grid-template-columns: min(80vh, 50%) auto;
-        margin-block-start: 10em;
         column-gap: 2em;
+        inline-size: var(--size-inline-wrapper);
+        margin-block-start: 10em;
     }
 
     .top main > section:nth-of-type(2) > h2 {
@@ -1278,7 +1290,7 @@
     .top main > section:nth-of-type(5) > div > section > h3 {
         font-size: 1.2em;
     }
-    
+
     /* =====================================================================
     ** ABOUT
     ===================================================================== */
@@ -1294,7 +1306,7 @@
     ===================================================================== */
     .about main > section:nth-of-type(3) {
         display: block;
-        inline-size: 980px; /*固定 800px*/
+        inline-size: 980px; /* 固定 800px */
         margin-inline: auto;
     }
 
@@ -1345,5 +1357,4 @@
     .works main > p {
         text-align: center;
     }
-
 }

@@ -12,24 +12,24 @@
 }
 
 button {
-	background: none;
-	border: none;
-	outline: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 input[type="submit"] {
-	margin: 0;
-	padding: 0;
-	background: none;
-	border: none;
-	border-radius: 0;
-	outline: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
 }
 
 :root {
@@ -37,13 +37,13 @@ input[type="submit"] {
     --logic-px: calc(var(--base-w) / 320);
     --color-link: #3d9ec8;
     --color-hover: #a0c4d3;
-    --color-button-color: #cccccc;
+    --color-button-color: #ccc;
     --color-button-link: #a0c4d3;
     --color-button-hover: #3d9ec8;
-    --color-border: rgba(0,0,0,0.12);
-    --color-bg-gray: #cccccc;
-    --color-text-gray: rgba(0,0,0,0.84);
-    --color-text-lightgray: rgba(0,0,0,0.56);
+    --color-border: rgb(0 0 0 / 12%);
+    --color-bg-gray: #ccc;
+    --color-text-gray: rgb(0 0 0 / 84%);
+    --color-text-lightgray: rgb(0 0 0 / 56%);
     --color-warning: #CC4E69;
     --size-inline-wrapper: min(80%, calc(var(--logic-px) * 1100));
 
@@ -111,52 +111,51 @@ a:is(:hover, :focus) {
 }
 
 .btn01 a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: relative;
-    margin: 0 auto;
-    padding: 1em 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     inline-size: calc(var(--logic-px) * 200);
-    color: #333;
+    padding: 1em 3em;
+    margin: 0 auto;
     font-size: calc(var(--logic-px) * 16);
-    transition: 0.3s;
     font-weight: 700;
+    color: #333;
     border-bottom: 1px solid;
+    transition: 0.3s;
 }
 
 .btn01 a::before {
-    content: '';
     position: absolute;
     inset-block-start: calc(50% - 2px);
     inset-inline-end: 1em;
-    transform: translateY(calc(-50% - 2px)) rotate(30deg);
     inline-size: 12px;
-    block-size: 2px;
+    content: '';
     background-color: var(--color-link);
     transition: 0.3s;
+    transform: translateY(calc(-50% - 2px)) rotate(30deg);
+    block-size: 2px;
 }
 
 .btn01 a::after {
-    content: '';
     position: absolute;
     inset-block-start: 50%;
     inset-inline-end: 1em;
-    transform: translateY(-50%);
     inline-size: 70px;
-    block-size: 2px;
+    content: '';
     background-color: var(--color-link);
     transition: 0.3s;
+    transform: translateY(-50%);
+    block-size: 2px;
 }
 
 .btn01 a:hover {
-    text-decoration: none;
     color: var(--color-hover);
+    text-decoration: none;
     cursor : pointer;
 }
 
-.btn01 a:hover::before,
-.btn01 a:hover::after {
+.btn01 a:hover::before, .btn01 a:hover::after {
     right: 0.5em;
     background-color: var(--color-hover);
 }
@@ -184,9 +183,9 @@ a:is(:hover, :focus) {
 }
 
 .btn02 > *:hover {
-    transition: 0.3s;
-    background-color: var(--color-button-hover);
     cursor : pointer;
+    background-color: var(--color-button-hover);
+    transition: 0.3s;
 }
 
 /* 画像をホバー
@@ -202,19 +201,19 @@ a:is(:hover, :focus) {
 }
 
 .image-hover:is(:hover, :active)::after {
-    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    cursor : pointer;
+    content: "";
     background-image: url('../images/icon-search.png');
-    background-size: 10%;
     background-repeat: no-repeat;
     background-position: 50%;
+    background-size: 10%;
     opacity: 1;
     transition: opacity 0.3s, transform 0.3s ease;
-    cursor : pointer;
 }
 
 .image-hover:is(:hover, :active) img {
@@ -236,20 +235,7 @@ a:is(:hover, :focus) {
 /* 初期化
 ===================================================================== */
 
-header,
-main,
-footer,
-section,
-article,
-figcaption,
-div,
-nav,
-ul,
-li,
-dl,
-dt,
-dd,
-p {
+header, main, footer, section, article, figcaption, div, nav, ul, li, dl, dt, dd, p {
     position: relative;
     overflow: hidden;
 }
@@ -263,7 +249,7 @@ header {
     display: flex; /* navを中央に */
     justify-content: center; /* navを中央に */
     inline-size: 100%;
-    background-color: rgba(255,255,255,40%);
+    background-color: rgb(255 255 255 / 40%);
     block-size: 5em;
 }
 
@@ -296,7 +282,7 @@ header > nav > div > div > ul > li > a {
     flex-direction: column;
     align-items: center;
     font-weight: lighter;
-    color: #000000;
+    color: #000;
 }
 
 /* --------------- hamburger menu --------------- */
@@ -312,7 +298,7 @@ header > nav > div > div > ul > li > a {
     z-index: 999;
     inline-size: 3em;
     cursor: pointer;
-    background-color: #cccccc;
+    background-color: #ccc;
     block-size: 3em;
 }
 
@@ -322,7 +308,7 @@ header > nav > div > div > ul > li > a {
     display: block;
     inline-size: 50%;
     block-size: 3px;
-    background-color: #ffffff;
+    background-color: #fff;
     transition:
         transform 0.4s ease-in-out,
         top 0.3s ease,
@@ -365,7 +351,7 @@ header > nav > div > div > ul > li > a {
 #burger-menu a {
     display: block;
     padding: 30px 0;
-    color: #000000;
+    color: #000;
     transition: opacity 0.6s ease;
 }
 
@@ -406,8 +392,7 @@ header > nav > div > div > ul > li > a {
 /* main
 ===================================================================== */
 
-main > section,
-article {
+main > section, article {
     margin-block: 2em;
 }
 
@@ -415,7 +400,7 @@ article {
 ===================================================================== */
 
 footer {
-    background-color: #000000;
+    background-color: #000;
 }
 
 footer > section > h2 {
@@ -434,7 +419,7 @@ footer > section > ul > li:not(:last-of-type) {
 }
 
 footer > section > ul > li > a {
-    color: #ffffff;
+    color: #fff;
 }
 
 footer > section > ul > li > a:is(:hover, :focus) {
@@ -443,7 +428,7 @@ footer > section > ul > li > a:is(:hover, :focus) {
 
 footer > section > ul > li > a > i {
     font-size: calc(var(--logic-px) * 24);
-    color: #ffffff;
+    color: #fff;
 }
 
 /* Twitter非表示 */
@@ -456,7 +441,7 @@ footer > small {
     inline-size: 100%;
     margin-block: 4em 2em;
     font-size: 0.8em;
-    color: #ffffff;
+    color: #fff;
     text-align: center;
 }
 
