@@ -99,9 +99,10 @@ setTimeout(() => {
 const animateFade = (entries, obs) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
+            console.log('observed:', entry.target); // 要素が監視されていることをログに出力
             entry.target.animate(
                 [
-                    { opacity: 0, transform: 'translateY(3em)' },
+                    { opacity: 0, transform: 'translateY(10em)' },
                     { opacity: 1, transform: 'translateY(0)' }
                 ],
                 {
