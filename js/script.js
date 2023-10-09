@@ -5,6 +5,10 @@
 window.addEventListener('load', changeBurger);
 window.addEventListener('resize', changeBurger);
 
+const burger = document.getElementById('burger');
+const burgerBlur = document.querySelectorAll('.burger-blur');
+const mainElements = document.querySelectorAll('main');
+
 function changeBurger() {
     const winW = window.innerWidth;
     let deviceW = 600;
@@ -14,29 +18,38 @@ function changeBurger() {
         document.querySelector('nav > div').setAttribute('id', 'burger');
         document.querySelector('nav > div > div:nth-of-type(1)').setAttribute('id', 'burger-btn');
         document.querySelector('nav > div > div:nth-of-type(2)').setAttribute('id', 'burger-menu');
+
+        // バーガーメニューをクリック時のイベントを追加
+        burger.addEventListener('click', burgerClickHandler);
+
+        // バーガーメニューの背景をクリック時のイベントを追加
+        burgerBlur.forEach(blurElement => {
+            blurElement.addEventListener('click', blurClickHandler);
+        });
     } else {
         // 600pxより大きいなら
         document.querySelector('nav > div').removeAttribute('id');
         document.querySelector('nav > div > div:nth-of-type(1)').removeAttribute('id');
         document.querySelector('nav > div > div:nth-of-type(2)').removeAttribute('id');
+
+        // イベントリスナーを削除
+        burger.removeEventListener('click', burgerClickHandler);
+
+        burgerBlur.forEach(blurElement => {
+            blurElement.removeEventListener('click', blurClickHandler);
+        });
     }
 }
 
-const burger = document.getElementById('burger');
-const burgerBlur = document.querySelectorAll('.burger-blur');
-const mainElements = document.querySelectorAll('main');
-
-burger.addEventListener('click', function () {
-    this.classList.toggle('is-open');
+function burgerClickHandler() {
+    burger.classList.toggle('is-open');
     mainElements.forEach(main => main.classList.toggle('burger-blur'));
-});
+}
 
-burgerBlur.forEach(blurElement => {
-    blurElement.addEventListener('click', function () {
-        burger.classList.remove('is-open');
-        mainElements.forEach(main => main.classList.remove('burger-blur'));
-    });
-});
+function blurClickHandler() {
+    burger.classList.remove('is-open');
+    mainElements.forEach(main => main.classList.remove('burger-blur'));
+}
 
 /************************************************************************
 タイプライターエフェクト
