@@ -6,6 +6,8 @@ node_modules/
 .eslintrc.js
 package-lock.json
 package.json
+css/red.css
+vendor/fontawesome-free-6.2.0-web/css/
 works/cafeforest/
 works/cafeforest_old/
 works/cookpalace/

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
     <head prefix="og:http://ogp.me/ns#">
         <meta charset="UTF-8" />
@@ -6,37 +6,46 @@
         <title>Asuka Watanabe</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="渡辺明日香（エンジニア・Webライター・書籍編集者・家庭教師）のポートフォリオサイトです。英語力・プログラミング・教材編集の知識と経験を活かし、使いやすさ・理解のしやすさ・正確性を考慮した、良質なコンテンツを提供いたします。">
-        <meta property="og:locale" content="ja_JP">
-        <meta property="og:title" content="Asuka Watanabe">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://aswatanabe.com">
-        <meta property="og:description" content="渡辺明日香（エンジニア・Webライター・書籍編集者・家庭教師）のポートフォリオサイトです。英語力・プログラミング・教材編集の知識と経験を活かし、使いやすさ・理解のしやすさ・正確性を考慮した、良質なコンテンツを提供いたします。">
-        <meta property="og:image" content="https://aswatanabe.com/images/ogp.png">
-        <meta name="twitter:card" content="summary_large_image">
+        <meta
+            name="description"
+            content="渡辺明日香（フロントエンドエンジニア・Webライター・書籍編集者）のポートフォリオサイトです。英語力・プログラミング・教材編集の知識と経験を活かし、使いやすさ・理解のしやすさ・正確性を考慮した、良質なコンテンツを提供いたします。"
+        />
+        <meta property="og:locale" content="ja_JP" />
+        <meta property="og:title" content="Asuka Watanabe" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://aswatanabe.com" />
+        <meta
+            property="og:description"
+            content="渡辺明日香（フロントエンドエンジニア・Webライター・書籍編集者）のポートフォリオサイトです。英語力・プログラミング・教材編集の知識と経験を活かし、使いやすさ・理解のしやすさ・正確性を考慮した、良質なコンテンツを提供いたします。"
+        />
+        <meta property="og:image" content="https://aswatanabe.com/images/ogp.png" />
+        <meta name="twitter:card" content="summary_large_image" />
         <!-- favicon -->
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
 
         <link rel="stylesheet" href="./css/mainstyle.css" />
         <link rel="stylesheet" href="./css/pages.css" />
+        <link rel="stylesheet" href="./css/red.css" />
         <link rel="preload" href="#" as="image" />
+        <script src="./js/script.js" defer></script>
+
         <!-- Font Awesome -->
         <link rel="stylesheet" href="./vendor/fontawesome-free-6.2.0-web/css/all.min.css" />
         <!-- favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-        <link rel="manifest" href="images/favicon/site.webmanifest">
-        <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+        <link rel="manifest" href="images/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
     </head>
     <body class="top">
         <header id="header">
             <h1>Asuka Watanabe's Portfolio</h1>
             <nav>
-                <h2>NAVIGATION</h2>
                 <p>
                     <a href="#"><img src="./images/logo.png" alt="logo" /></a>
                 </p>
+                <h2>NAVIGATION</h2>
                 <div id="burger">
                     <div id="burger-btn">
                         <span></span>
@@ -45,173 +54,208 @@
                     </div>
                     <div id="burger-menu">
                         <ul>
-                            <li><a href="about/index.html">ABOUT</a></li>
-                            <li><a href="skills/index.html">SKILLS</a></li>
-                            <li><a href="works/index.html">WORKS</a></li>
+                            <li><a href="./about/">ABOUT</a></li>
+                            <li><a href="./works/">WORKS</a></li>
+                            <li><a href="#contact">CONTACT</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
         <main>
-            <section>
-                <div>
-                    <h2>Asuka Watanabe</h2>
-                    <p><img src="./images/signature.png" alt="Asuka Watanabe" /></p>
-                    <p>Web developer. Content writer. <br />Book editor. Tutor.</p>
+            <section class="keyvisual">
+                <div class="movie">
+                    <video class="movie-video" webkit-playsinline playsinline muted autoplay loop>
+                        <source src="images/video.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div>
-                    <p>scroll</p>
+                    <p id="typewriter"></p>
+                    <h2>Asuka Watanabe Official Website</h2>
+                    <p>Web developer.&nbsp;Content writer.&nbsp;Book editor.&nbsp;Tutor.</p>
                 </div>
+                <p>scroll</p>
             </section>
             <section>
-                <h2>ABOUT</h2>
-                <img />
-                <p>エンジニア。Webライター。書籍編集者。家庭教師。</p>
-                <p>近年は英語教材編集者として主に紙媒体を介した情報発信やプロダクト開発に携わってきました。</p>
-                <p>現在は職業訓練校でWeb制作やプログラミングを学習しています。</p>
-                <p>編集経験と英語力にエンジニアリングスキルを掛け合わせ、時代にあわせてコンテンツ制作をアップデートしています。</p>
-                <p class="button"><a href="about/index.html">MORE</a></p>
-            </section>
-            <section>
-                <h2>SKILLS</h2>
-                <div class="skill-grid">
-                    <section>
-                        <i class="fa-solid fa-code"></i>
-                        <h3>HTML5/CSS3</h3>
-                        <p>コーディング</p>
-                    </section>
-                    <section>
-                        <i class="fa-solid fa-laptop"></i>
-                        <h3>JavaScript</h3>
-                        <p>フロントエンド</p>
-                    </section>
-                    <section>
-                        <i class="fa-solid fa-gear"></i>
-                        <h3>PHP/Java/SQL</h3>
-                        <p>バックエンド</p>
-                    </section>
-                    <section>
-                        <i class="fa-solid fa-spray-can"></i>
-                        <h3>Illustrator<br />Photoshop</h3>
-                        <p>デザイン</p>
-                    </section>
-                    <section>
-                        <i class="fa-solid fa-globe"></i>
-                        <h3>ENGLISH</h3>
-                        <p>英語</p>
-                    </section>
-                    <section>
-                        <i class="fa-solid fa-spell-check"></i>
-                        <h3>CONTENT WRITING</h3>
-                        <p>Webライティング</p>
-                    </section>
-                    <section>
-                        <i class="fa-solid fa-book"></i>
-                        <h3>EDITING</h3>
-                        <p>書籍編集</p>
-                    </section>
-                    <section>
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <h3>EDUCATION</h3>
-                        <p>教育</p>
-                    </section>
-                </div>
-                <p class="button"><a href="skills/index.html">MORE</a></p>
+                <h2>CONCEPT</h2>
+                <ul>
+                    <li class="fluid">Web</li>
+                    <li class="fluid">書籍編集</li>
+                    <li class="fluid">英語</li>
+                </ul>
+                <p>英語、Web制作／開発、書籍編集といったスキルを融合し、多面的にコンテンツを制作します。情報の魅力を引き出し、効率的なプロセスで整理し、共感と理解を促進します。</p>
             </section>
             <section>
                 <h2>WORKS</h2>
-                <div>
-                    <article>
-                        <img src="images/image-works-cookpalace.png" alt="【架空】グルメサイト" />
-                        <h3>【架空】グルメサイト</h3>
-                        <ul>
-                            <li>動くWebサイト</li>
-                            <li>脱jQuery</li>
-                            <li>Vanilla JS</li>
-                            <li>CSSアニメーション</li>
-                        </ul>
-                        <p>HTML5/CSS3/JavaScript</p>
-                        <ul>
-                            <li><a href="./works/cookpalace/gochitan/index.html">サイト（indexページ）を見る</a></li>
-                            <li><a href="./works/cookpalace/gochitan/0101_shikisaisai.html">サイト（詳細ページ）を見る</a></li>
-                            <li><a href="https://github.com/aswatanabe/cookpalace">GitHubでコードを見る</a></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <img src="images/image-works-cafeforest.png" alt="【架空】個人店舗サイト" />
-                        <h3>【架空】個人店舗サイト</h3>
-                        <ul>
-                            <li>PHPで更新プログラム作成</li>
-                            <li>jQueryプラグインを活用したチャート描画</li>
-                            <li>デザインリニューアル</li>
-                            <li>ディレクトリ・コードの整理</li>
-                        </ul>
-                        <p>HTML5/CSS3/JavaScript/PHP</p>
-                        <ul>
-                            <li><a href="./works/cafeforest/index.html">サイトを見る</a></li>
-                            <li><a href="https://github.com/aswatanabe/cafeforest">GitHubでコード（全体）を見る</a></li>
-                            <li><a href="https://github.com/aswatanabe/cafeforest/tree/main/admin">GitHubでコード（更新プログラム）を見る</a></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <img src="images/image-works-japanbox.png" alt="【架空サブスクリプションサイト】" />
-                        <h3>【架空】サブスクリプションサイト</h3>
-                        <ul>
-                            <li>動くWebサイト</li>
-                            <li>英語で制作</li>
-                            <li>モバイルファーストデザイン</li>
-                            <li>3段階でレスポンシブ対応</li>
-                        </ul>
-                        <p>HTML5/CSS3/JavaScript</p>
-                        <ul>
-                            <li><a href="./works/japanbox/index.html">サイトを見る</a></li>
-                            <li><a href="https://github.com/aswatanabe/japanbox">GitHubでコードを見る</a></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <img src="images/image-works-englishnotes.png" alt="英語編集のーと" />
-                        <h3>英語学習サイト</h3>
-                        <ul>
-                            <li>個人運営・全記事ライティング</li>
-                            <li>Google Analytics・Google Search Console利用</li>
-                            <li>WordPress利用</li>
-                            <li>月間最高10万PV</li>
-                        </ul>
-                        <ul>
-                            <li><a href="https://englishnotes.jp/">サイトを見る</a></li>
-                        </ul>
-                    </article>
-                    </div>
-                <p class="button"><a href="works/index.html">MORE</a></p>
+                <article class="fade-in">
+                    <h3>PickUp 01</h3>
+                    <a href="./works/cookpalace/gochitan/index.html" class="image-hover">
+                        <img src="images/image-works-cookpalace.png" alt="料理の殿堂">
+                    </a>
+                    <ul>
+                        <li>Web制作</li>
+                        <li>架空：ポータルサイト</li>                   
+                        <li><a href="./works/cookpalace/gochitan/index.html"><i class="fa-solid fa-link"></i>LINK</a></li>
+                        <li><a href="https://github.com/aswatanabe/cookpalace"><i class="fa-brands fa-github"></i>GitHub</a></li>
+                    </ul>
+                    <p>料理を見て楽しむことコンセプトとした、多彩な動きのあるグルメサイト</p>
+                    <p>
+                        スライダー、サムネイルの切り替え、ポップアップなどを活用し、ユーザーのUXを向上させるデザインを実現しました。画像は一覧表示から拡大表示までシームレスに切り替え可能となっており、使いやすいUIも整備しました。
+                    </p>
+                </article>
+                <article class="fade-in">
+                    <h3>PickUp 02</h3>
+                    <a href="./works/japanbox/index.html" class="image-hover">
+                        <img src="images/image-works-japanbox.png" alt="Japan Box">
+                    </a>
+                    <ul>
+                        <li>Web制作</li>
+                        <li>架空：LP</li>                   
+                        <li><a href="./works/japanbox/index.html"><i class="fa-solid fa-link"></i>LINK</a></li>
+                        <li><a href="https://github.com/aswatanabe/japanbox"><i class="fa-brands fa-github"></i>GitHub</a></li>
+                    </ul>
+                    <p>海外向けの、日本のお菓子のサブスクリプションサイト</p>
+                    <p>
+                        フェードイン・スライダーなどの大胆な動き、派手な色使い、大きな画像などを活用し、海外のユーザーに強い印象を与えるデザインを実現しました。英文は、自己執筆、ネイティブスピーカーによる校正を通じて、正確かつ自然な表現を確保しました。
+                    </p>
+                </article>
+                <article class="fade-in">
+                    <h3>PickUp 03</h3>
+                    <a href="https://nextdictionary.vercel.app/dictionary/used-to" class="image-hover">
+                        <img src="images/image-works-nextdictionary.png" alt="Next Dictionary">
+                    </a>
+                    <ul>
+                        <li>Web開発</li>
+                        <li>開発中：英語アプリ</li>                   
+                        <li><a href="https://nextdictionary.vercel.app/dictionary/used-to"><i class="fa-solid fa-link"></i>LINK</a></li>
+                        <li><a href="https://github.com/aswatanabe/nextdictionary"><i class="fa-brands fa-github"></i>GitHub</a></li>
+                    </ul>
+                    <p>文法・語法・イディオムを網羅的に扱う英語学習アプリ</p>
+                    <p>
+                        問題集で暗記する英語の知識を手軽に検索できるアプリです。ReactとTypeScriptの組み合わせにより、高度なインタラクティブ性と使いやすさを実現しています。また、教材編集と家庭教師の経験を活かして、高品質な解説を提供しています。
+                    </p>
+                </article>
+                <article class="fade-in">
+                    <h3>PickUp 04</h3>
+                    <a href="https://englishnotes.jp/" class="image-hover">
+                        <img src="images/image-works-englishnotes.png" alt="英語編集のーと">
+                    </a>
+                    <ul>
+                        <li>Web編集</li>
+                        <li>ブログ</li>                   
+                        <li><a href="https://englishnotes.jp/"><i class="fa-solid fa-link"></i>LINK</a></li>
+                    </ul>
+                    <p>日本の英語教育とトレンド・エンタメをベースにした英語学習サイト</p>
+                    <p>
+                        英語教材編集や家庭教師の経験を活かして、英語学習に関するブログを執筆しています。最高月間10万PV達成。WordPress・Googleアナリティクス・サーチコンソールを利用。
+                    </p>
+                </article>
+                <p class="btn01"><a href="./works/">MORE</a></p>
             </section>
             <section>
+                <h2>ABOUT</h2>
+                <p>Asuka Watanabe</p>
+                <p>Web developer. Content writer. Book editor. Tutor.</p>
+                <p>
+                    教育系出版社や語学系出版社で英語教材の書籍編集者として働く中で、Web編集を経験。その後、Web制作やWeb開発を学び、現在は、デジタル教科書の開発やWebサイトのフロントエンドを担当。
+                    AWS Certified Cloud Practitioner・TOEIC公開テスト940点取得。本業以外では、英語学習に関する知識をブログなどで積極的に発信しています。
+                </p>
+                <p class="btn01"><a href="./about/">MORE</a></p>
+            </section>
+            <section>
+                <h2>SERVICE</h2>
+                <div>
+                    <section class="fade-in">
+                        <p><i class="fa-solid fa-code"></i></p>
+                        <h3>WEB<br>PRODUCTION</h3>
+                        <p>Web制作</p>
+                    </section>
+                    <section class="fade-in">
+                        <p><i class="fa-solid fa-code-pull-request"></i></p>
+                        <h3>WEB<br>DEVELOPMENT</h3>
+                        <p>Web開発</p>
+                    </section>
+                    <section class="fade-in">
+                        <p><i class="fa-solid fa-laptop-file"></i></p>
+                        <h3>CONTENT<br>WRITING</h3>
+                        <p>Web編集</p>
+                    </section>
+                    <section class="fade-in">
+                        <p><i class="fa-solid fa-book-open"></i></p>
+                        <h3>BOOK<br>EDITTING</h3>
+                        <p>書籍編集</p>
+                    </section>
+                    <section class="fade-in">
+                        <p><i class="fa-solid fa-graduation-cap"></i></p>
+                        <h3>EDUCATION</h3>
+                        <p>教育</p>
+                    </section>
+                    <section class="fade-in">
+                        <p><i class="fa-solid fa-globe"></i></p>
+                        <h3>ENGLISH</h3>
+                        <p>英語</p>
+                    </section>
+                </div>
+            </section>
+            <section id="contact">
                 <h2>CONTACT</h2>
-                <p>ポートフォリオをご覧いただきありがとうございます。<br>気になることなどございましたらお気軽にご連絡ください。</p>
-                <ul>
-                    <li>
-                        <a href="https://aswatanabe.com/script/mailform/contact/"><i class="fa-solid fa-envelope"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/333ACCC"><i class="fa-brands fa-twitter"></i></a>
-                    </li>
-                </ul>
+                <div>
+                    <section>
+                        <h3>MESSAGE</h3>
+                        <p>渡辺明日香のWebサイトにご訪問いただきありがとうございます。</p>
+                        <p>お仕事のご依頼、ご相談、不明点などがございましたら、問合せフォームよりお気軽にご連絡ください。</p>
+                        <p>返信には３営業日ほどお時間をいただく可能性があります。</p>
+                    </section>
+                    <section id="form">
+                        <h3>お問い合わせフォーム</h3>
+                        <form id="form" action="./contact/confirm.php" enctype="multipart/form-data" method="POST">
+                            <dl>
+                                <dt><label for="name">お名前</label></dt>
+                                <dd><input type="text" name="name" id="name" placeholder="例）山田太郎" autocomplete="name" required/></dd>
+                            </dl>
+                            <dl>
+                                <dt><label for="email01">メールアドレス</label></dt>
+                                <dd><input type="email" name="email01" id="email01" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="例）abc@example.com" autocomplete="email" required/></dd>
+                            </dl>
+                            <dl>
+                                <dt><label for="email02">メールアドレス（確認）</label></dt>
+                                <dd><input type="email" name="email02" id="email02" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="例）abc@example.com" required/></dd>
+                            </dl>
+                            <dl>
+                                <dt><label for="querytitle">お問い合わせの種類</label></dt>
+                                <dd>
+                                    <select name="querytitle" id="querytitle">
+                                        <option value="Web制作について">Web制作について</option>
+                                        <option value="Web編集について">Web編集について</option>
+                                        <option value="書籍編集について">書籍編集について</option>
+                                        <option value="その他">その他</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><label for="query">お問い合わせ内容</label></dt>
+                                <dd><textarea name="query" id="query" placeholder="こちらにお問い合わせ内容をご入力ください" required></textarea></dd>
+                            </dl>
+                            <p class="btn02"><input type="submit" value="入力内容の確認" onClick="checkEmail(event)" ></p>
+                        </form>
+                    </section>
+                </div>
             </section>
         </main>
         <footer>
             <section>
                 <h2>LINKS</h2>
                 <ul>
-                    <li><a href="about/index.html">ABOUT</a></li>
-                    <li><a href="skills/index.html">SKILLS</a></li>
-                    <li><a href="works/index.html">WORKS</a></li>
+                    <li><a href="./about/">ABOUT</a></li>
+                    <li><a href="./works/">WORKS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </section>
             <section>
                 <h2>CONTACT</h2>
                 <ul>
                     <li>
-                        <a href="https://aswatanabe.com/script/mailform/contact/"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#contact"><i class="fa-solid fa-envelope"></i></a>
                     </li>
                     <li>
                         <a href="https://twitter.com/333ACCC"><i class="fa-brands fa-twitter"></i></a>
@@ -223,6 +267,5 @@
             </section>
             <small>© 2023 Asuka Watanabe</small>
         </footer>
-        <script src="./js/script.js"></script>
     </body>
 </html>

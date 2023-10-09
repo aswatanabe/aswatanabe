@@ -3,26 +3,19 @@
 /* =====================================================================
 ** TOP
 ===================================================================== */
-.top {
-    grid-template-areas:
-        'header header header'
-        'main main main'
-        'footer footer footer';
-}
 
 .top h1 {
     display: none;
 }
 
-/* main
-========================================================= */
 .top main {
     display: grid;
     grid-template-areas:
         'hero'
-        'ABOUT'
-        'SKILL'
+        'CONCEPT'
         'WORKS'
+        'ABOUT'
+        'SERVICE'
         'CONTACT';
     padding-block-start: 5em;
     padding-inline: 0;
@@ -32,38 +25,98 @@
     padding-inline: 1em;
 }
 
-/* =============== hero =============== */
+/* hero
+===================================================================== */
+
 .top main > section:nth-of-type(1) {
-    display: grid;
+    display: grid; /* 上下中央揃え */
     grid-area: hero;
+    place-items: center; /* 上下中央揃え */
     align-items: center;
     margin-block-start: 0;
     text-align: center;
-    background-image: url(../images/white-simple-textured-design-background.jpg);
-    block-size: calc(100vh - 5em); /* header 5em */
+    min-block-size: calc(100vh - 5em); /* header 5em */
 }
 
-.top main > section:nth-of-type(1) > div > h2 {
-    display: none;
+/* --------------- video --------------- */
+
+.movie {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.top main > section:nth-of-type(1) > div > p:nth-of-type(1) > img {
-    inline-size: min(75%, calc(var(--logic-px) * 600));
-    object-fit: contain;
+.movie-video {
+    object-fit: cover;
+    block-size: 100%;
+}
+
+/* --------------- テキスト --------------- */
+
+/* タイプライター */
+.top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
+    inline-size: 100%;
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#typewriter::after {
+    content: '|';
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Asuka Watanabe */
+.top main > section:nth-of-type(1) > div:nth-of-type(2) > h2 {
+    margin-block: 1em;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* job description */
+.top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) {
+    font-size: 1em;
+    opacity: 0; /* 初期状態では透明に設定 */
+    animation: fadeIn 4.5s ease-in-out 4.5s forwards; /* アニメーションを適用 */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* アニメーション終了時の透明度を設定 */
+    }
 }
 
 /* --------------- Scroll --------------- */
-.top main > section:nth-of-type(1) > div:last-of-type {
+.top main > section:nth-of-type(1) > p:last-of-type {
     position: absolute;
     top: 92.5%;
-    left: 50%;
+    left: 50%; /* 左右の位置を変える */
+    display: block;
     font-size: 0.7em;
-    color: #333;
+    color: var(--color-text-gray);
+    opacity: 0; /* 初期状態では透明に設定 */
     writing-mode: vertical-rl;
     transform: translateX(-50%) translateY(-50%);
+    animation: fadeIn 4.5s ease-in-out 4.5s forwards; /* アニメーションを適用 */
 }
 
-.top main > section:nth-of-type(1) > div:last-of-type::before {
+.top main > section:nth-of-type(1) > p:last-of-type::before {
     right: 50%;
     bottom: -120px;
     display: block;
@@ -74,7 +127,7 @@
     transform: translateX(-50%);
 }
 
-.top main > section:nth-of-type(1) > div:last-of-type::before {
+.top main > section:nth-of-type(1) > p:last-of-type::before {
     animation: scroll 3s cubic-bezier(1, 0, 0, 1) infinite;
 }
 
@@ -100,145 +153,388 @@
     }
 }
 
-/* ------------------ ABOUT ------------------ */
+/* CONCEPT
+===================================================================== */
+
 .top main > section:nth-of-type(2) {
-    grid-area: ABOUT;
-    margin-block-start: 0;
+    display: grid;
+    grid-area: CONCEPT;
+    grid-template-areas:
+        'CONCEPTTITLE'
+        'E3'
+        'CONCEPTDESC';
+    inline-size: 100%;
+    padding-block: 5em 4em;
+    background: no-repeat center/70% 100% url('../images/white-simple-textured-design-background.jpg');
 }
 
-/* ------------------ SKILL ------------------ */
+.top main > section:nth-of-type(2) > h2 {
+    grid-area: CONCEPTTITLE;
+    align-self: center; /* 中央寄せにする */
+}
+
+.top main > section:nth-of-type(2) > ul {
+    grid-area: E3;
+    block-size: 75vh;
+}
+
+.top main > section:nth-of-type(2) > ul > li {
+    position: absolute;
+    display: flex; /* テキストを中央寄せ */
+    align-items: center; /* テキストを中央寄せ */
+    justify-content: center; /* テキストを中央寄せ */
+    font-family: 'Times New Roman', Georgia, serif; /* タイプライターと同じ */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.top main > section:nth-of-type(2) > ul > li:nth-of-type(1) {
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    min-inline-size: 55%;
+
+    /* background: #dfe0e2; */
+    background: #3d3fba;
+    animation: fluidrotate1 35s ease 0s infinite; /* アニメーションの設定 */
+    min-block-size: 55%;
+}
+
+@keyframes fluidrotate1 {
+    0%, 100% {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+
+    14% {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+
+    28% {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+
+    42% {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+
+    56% {
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+
+    70% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+
+    84% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+}
+
+.top main > section:nth-of-type(2) > ul > li:nth-of-type(2) {
+    inset-block-start: 50%;
+    inset-inline-start: 20%;
+    min-inline-size: 50%;
+
+    /* background: #e5e3d8; */
+    background: #ffac42;
+    animation: fluidrotate2 45s ease 0s infinite; /* アニメーションの設定 */
+    min-block-size: 50%;
+}
+
+@keyframes fluidrotate2 {
+    70% {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+
+    84% {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+
+    0%, 100% {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+
+    14% {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+
+    28% {
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+
+    42% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+
+    56% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+}
+
+.top main > section:nth-of-type(2) > ul > li:nth-of-type(3) {
+    inset-block-start: 20%;
+    inset-inline-start: 45%;
+    min-inline-size: 50%;
+
+    /* background: #eae1e4; */
+    background: #cb3664;
+    animation: fluidrotate3 40s ease 0s infinite; /* アニメーションの設定 */
+    min-block-size: 50%;
+}
+
+@keyframes fluidrotate3 {
+    42% {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+
+    56% {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+
+    70% {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+
+    84% {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+
+    0%, 100% {
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+
+    14% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+
+    28% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
+}
+
+.top main > section:nth-of-type(2) > p {
+    grid-area: CONCEPTDESC;
+    line-height: 2.5em;
+}
+
+/* WORKS
+===================================================================== */
 .top main > section:nth-of-type(3) {
-    grid-area: SKILL;
-}
-
-/* ------------------ WORKS ------------------ */
-.top main > section:nth-of-type(4) {
     grid-area: WORKS;
+    margin-inline: 5%;
 }
 
-.top main > section:nth-of-type(4) > h2 {
+.top main > section:nth-of-type(3) > h2 {
+    margin-block: 3em 1.5em;
+}
+
+.top main > section:nth-of-type(3) > article {
+    padding-block-start: 5em; /*スライドしたときにpadding-in要素が先に表示されてしまうことを防ぐ*/
+}
+
+.top main > section:nth-of-type(3) > article > h3 {
+    display: inline-block;
+    padding: 1em;
+    border-block-end: 1px solid;
+}
+
+.top main > section:nth-of-type(3) > article > a {
     inline-size: 100%;
 }
 
-.top main > section:nth-of-type(4) > div > article {
-    display: grid;
-    grid-template-areas:
-        'image'
-        'title'
-        'list'
-        'skills'
-        'links';
-    grid-template-rows: repeat(5, auto);
-    align-content: start;
-    margin-block: 1em;
-    border: 1px solid black;
+/* Japan Box */
+.top main > section:nth-of-type(3) > article:nth-of-type(2) > a {
+    border: 1px solid var(--color-border);
 }
 
-.top main > section:nth-of-type(4) > div > article > img {
-    grid-area: image;
+/* Next Dictionary */
+.top main > section:nth-of-type(3) > article:nth-of-type(3) > a {
+    border: 1px solid var(--color-border);
+}
+
+.top main > section:nth-of-type(3) > article > a > img {
     inline-size: 100%;
     aspect-ratio: 3/2;
+    object-fit: cover;
 }
 
-.top main > section:nth-of-type(4) > div > article > *:not(img) {
-    padding-inline: 1em;
-    margin-block-end: 1em;
+.top main > section:nth-of-type(3) > article > ul {
+    display: grid;
+    grid-template-areas:
+        'CATEGORY WORKTITLE'
+        'LINK GITHUB';
+    grid-template-columns: 5em auto;
+    gap: 0.5em;
+    margin-block-start: 1em;
 }
 
-.top main > section:nth-of-type(4) > div > article > h3 {
-    grid-area: title;
-}
-
-.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(1) {
-    grid-area: list;
-}
-
-.top
-    main
-    > section:nth-of-type(4)
-    > div
-    > article
-    > ul:nth-of-type(1)
-    > li::before {
-    content: '#';
-}
-
-.top main > section:nth-of-type(4) > div > article > p {
-    grid-area: skills;
-}
-
-.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) {
-    grid-area: links;
-}
-
-.top main > section:nth-of-type(4) > div > article > ul:nth-of-type(2) > li {
-    margin-block: 1em;
-}
-
-.top
-    main
-    > section:nth-of-type(4)
-    > div
-    > article
-    > ul:nth-of-type(2)
-    > li::before {
-    padding-block: 0.5em;
-    margin-inline-end: 0.3em;
-    color: var(--color-link);
-    content: '→';
-}
-
-.top
-    main
-    > section:nth-of-type(4)
-    > div
-    > article
-    > ul:nth-of-type(2)
-    > li
-    > a {
-    padding-inline-end: 0.5em;
+.top main > section:nth-of-type(3) > article > ul > * {
     font-size: 0.9em;
 }
 
-.top main > section:nth-of-type(4) > p {
-    grid-column: 1/4;
+/* カテゴリー */
+.top main > section:nth-of-type(3) > article > ul > li:nth-of-type(1) {
+    display: flex; /* 中央配置 */
+    grid-area: CATEGORY;
+    align-items: center; /* 垂直方向に中央配置 */
+    justify-content: center; /* 水平方向に中央配置 */
+    padding-inline: 0.5em;
+    background-color: var(--color-bg-gray);
 }
 
-/* ------------------ CONTACT ------------------ */
-.top main > section:nth-of-type(5) {
-    grid-area: CONTACT;
+/* 作品名 */
+.top main > section:nth-of-type(3) > article > ul > li:nth-of-type(2) {
+    display: inline;
+    grid-area: WORKTITLE;
+    margin-block: 0;
+    font-weight: bold;
 }
 
-.top main > section:nth-of-type(5) > ul {
-    display: flex;
-    justify-content: center;
-    margin-block: 1em;
+/* リンク */
+.top main > section:nth-of-type(3) > article > ul > li:nth-of-type(3) {
+    grid-area: LINK;
 }
 
-.top main > section:nth-of-type(5) > ul > li > a {
-    display: grid;
-    align-items: center;
-    margin-inline: 1em;
+/* GitHub */
+.top main > section:nth-of-type(3) > article > ul > li:nth-of-type(4) {
+    grid-area: GITHUB;
+}
+
+.top main > section:nth-of-type(3) > article > p:nth-of-type(1) {
+    margin-block: 0.5em;
+    font-weight: bold;
+}
+
+/* ABOUT
+===================================================================== */
+.top main > section:nth-of-type(4) {
+    grid-area: ABOUT;
+    background-image: url('../images/white-simple-textured-design-background.jpg');
+}
+
+.top main > section:nth-of-type(4) > * {
+    inline-size: 100%;
     text-align: center;
-    background-color: #000;
-    border: 1px solid #000;
-    border-radius: 50%;
-    inline-size: 3em;
+}
+
+.top main > section:nth-of-type(4) > p:nth-of-type(1) {
+    font-size: 2em;
+}
+
+.top main > section:nth-of-type(4) > p:nth-of-type(2) {
+    margin-block-end: 2em;
+    font-size: 0.8em;
+}
+
+.top main > section:nth-of-type(4) > p:nth-of-type(3) {
+    margin-block-end: 5em;
+    font-size: 0.9em;
+    line-height: 2.4em;
+    text-align: start;
+}
+
+/* SERVICE
+===================================================================== */
+.top main > section:nth-of-type(5) {
+    grid-area: SERVICE;
+}
+
+.top main > section:nth-of-type(5) > div {
+    display: grid;
+    grid-area: SERVICE;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.top main > section:nth-of-type(5) > div > section {
+    padding: 4em 1em; /*スライドしたときにpadding-in要素が先に表示されてしまうことを防ぐ*/
+    text-align: center;
+}
+
+.top main > section:nth-of-type(5) > div > section > * {
+    inline-size: 100%;
+}
+
+.top main > section:nth-of-type(5) > div > section > h3 {
+    display: flex; /* テキストを上下中央に */
+    align-items: center; /* テキストを上下中央に */
+    justify-content: center; /* テキストを上下中央に */
+    margin-block: 0.5em;
+    font-size: 1.1em;
+    line-height: normal;
+    block-size: 2.5em;
+}
+
+.top main > section:nth-of-type(5) > div > section > p {
+    display: block;
+    margin: auto;
+}
+
+/* アイコン */
+.top main > section:nth-of-type(5) > div > section > p:nth-of-type(1) {
     block-size: 3em;
 }
 
-.top main > section:nth-of-type(5) > ul > li > a:hover {
-    text-decoration: none;
+.top main > section:nth-of-type(5) > div > section > p:nth-of-type(1) > i {
+    block-size: 100%;
+    inline-size: 100%;
+    font-size: 2.5em;
 }
 
-.top main > section:nth-of-type(5) > ul > li > a > i {
-    font-size: calc(var(--logic-px) * 24);
-    color: #fff;
+/* CONTACT
+===================================================================== */
+.top main > section:nth-of-type(6) {
+    grid-area: CONTACT;
 }
 
-/* Twitter非表示*/
-.top main > section:nth-of-type(5) > ul > li:nth-of-type(2) {
+.top main > section:nth-of-type(6) > div > section {
+    margin-block-end: 1em;
+}
+
+.top main > section:nth-of-type(6) > div > section > h3 {
     display: none;
+}
+
+.top main > section:nth-of-type(6) > div > section:nth-of-type(1) > p {
+    margin-block: 1em;
+}
+
+/* --------------- form --------------- */
+
+#form dl {
+    inline-size: 100%;
+    margin-block-end: 1em;
+}
+
+#form dl > :is(dt, dd) {
+    margin-block-end: 0.5em;
+}
+
+#form dl > dt::after {
+    padding: 0.3em 0.5em;
+    margin-inline: 0.5em;
+    font-size: 0.8em;
+    color: #fff;
+    content: '必須';
+    background-color: var(--color-warning);
+    border-radius: 20%;
+}
+
+#form dl:not(:nth-of-type(5)) > dd {
+    block-size: 3em;
+}
+
+#form dl:nth-of-type(5) > dd {
+    block-size: 10em;
+}
+
+#form dl > dd > * {
+    inline-size: 100%;
+    block-size: 100%;
+    padding: 0.5em;
+}
+
+/* 入力内容の確認ボタン */
+#form p {
+    margin-inline: auto;
 }
 
 /* =====================================================================
@@ -246,100 +542,243 @@
 ===================================================================== */
 
 .about main {
-    display: block;
-}
-
-/* ------------------ 概要 ------------------ */
-.about main > article:nth-of-type(1) {
     display: grid;
     grid-template-areas:
-        'title title'
-        'photo name'
-        'photo job'
-        'photo birth'
-        'photo live';
-    row-gap: 1em;
-    align-items: center;
-    margin-inline: auto;
-    inline-size: min(100%, calc(var(--logic-px) * 800));
+        'A1'
+        'A2'
+        'A3'
+        'A4'
+        'A5'
+        'A6';
 }
 
-.about main > article:nth-of-type(1) > h2 {
+.about main > h1 {
     display: none;
-    grid-area: title;
 }
 
-.about main > article:nth-of-type(1) > img {
-    grid-area: photo;
-    aspect-ratio: 1 / 1;
+.about main > section:not(:nth-of-type(2)) {
+    margin-inline: 2em; /* ABOUTページのmargin */
+}
+
+/* 概要
+===================================================================== */
+
+.about main > section:nth-of-type(1) {
+    grid-area: A1;
+}
+
+.about main > section:nth-of-type(1) > h2 {
+    color: transparent;
+    block-size: 10em;
+    background-image: url('../images/white-simple-textured-design-background.jpg');
+}
+
+.about main > section:nth-of-type(1) > ul {
+    display: grid;
+    grid-template-areas:
+        'PIC'
+        'NAME'
+        'JOB'
+        'PLACE';
+    align-items: center; /* 画像を縦方向に中央揃え */
+    justify-items: center; /* 画像を水平方向に中央揃え */
+    margin-block-start: -10em;
+    text-align: center;
+}
+
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(1) {
+    grid-area: PIC;
+    inline-size: 10em;
+    border-radius: 50%; /* 画像を円形にする */
+    block-size: 10em;
+}
+
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(1) > img {
+    display: block;
+    block-size: 100%;
     inline-size: 100%;
     object-fit: cover;
-    max-block-size: calc(var(--logic-px) * 210);
 }
 
-.about main > article:nth-of-type(1) > p:nth-of-type(1) {
-    grid-area: name;
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(2) {
+    grid-area: NAME;
+    margin-block: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
-.about main > article:nth-of-type(1) > p:nth-of-type(2) {
-    grid-area: job;
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(3) {
+    grid-area: JOB;
 }
 
-.about main > article:nth-of-type(1) > p:nth-of-type(3) {
-    grid-area: birth;
+.about main > section:nth-of-type(1) > ul > li:nth-of-type(4) {
+    grid-area: PLACE;
 }
 
-.about main > article:nth-of-type(1) > p:nth-of-type(4) {
-    grid-area: live;
+/* 特徴
+===================================================================== */
+
+.about main > section:nth-of-type(2) {
+    grid-area: A2;
 }
 
-/* ------------------ 自己PR ------------------ */
-.about p {
-    margin-block-end: 0;
+.about main > section:nth-of-type(2) > h2 {
+    display: none;
 }
 
-/* ------------------ 経歴 ------------------ */
+.about main > section:nth-of-type(2) > section > h3 {
+    display: none;
+}
 
-.about main > article:nth-of-type(3) > div::before {
+/* --------------- キャッチコピー --------------- */
+.about main > section:nth-of-type(2) > section:nth-of-type(1) {
+    margin-block: 5em;
+    margin-inline: 2em; /* ABOUTページのmargin */
+}
+
+/* 日本語 */
+.about main > section:nth-of-type(2) > section:nth-of-type(1) > p:nth-of-type(1) {
+    margin-block: 0.3em;
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+}
+
+/* 英語 */
+.about main > section:nth-of-type(2) > section:nth-of-type(1) > p:nth-of-type(2) {
+    font-size: 0.8em;
+}
+
+/* --------------- 自己PR --------------- */
+.about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
+    margin-block: 2.2em;
+    margin-inline: 2em; /* ABOUTページのmargin */
+}
+
+/* 背景 */
+.about main > section:nth-of-type(2) > section:nth-of-type(2)::before {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 40px;
-    width: 2px;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    z-index: -1;
+    inline-size: 50%; /* 背景の幅を変更 */
+    content: '';
+    background-image: url('../images/white-simple-textured-design-background.jpg');
+    background-position: center center;
+    background-size: cover;
+    block-size: 100%;
+}
+
+.about main > section:nth-of-type(2) > section:nth-of-type(2) > p {
+    padding-inline: 2em; /* ABOUTページのmargin */
+    margin-block: 2em;
+    line-height: 2.2em;
+}
+
+.about main > section:nth-of-type(2) > section:nth-of-type(2) > p > br {
+    display: none;
+}
+
+/* 経歴
+===================================================================== */
+
+.about main > section:nth-of-type(3) {
+    grid-area: A3;
+}
+
+.about main > section:nth-of-type(3) > div::before {
+    position: absolute;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 40px;
+    inline-size: 2px;
     content: '';
     background-color: #000;
 }
 
-.about main > article:nth-of-type(3) > div > dl {
+.about main > section:nth-of-type(3) > div > dl {
     padding-inline-start: 80px;
     margin-block: 2em;
 }
 
-.about main > article:nth-of-type(3) > div > dl::before {
+.about main > section:nth-of-type(3) > div > dl::before {
     position: absolute;
+    inset-inline-start: calc(40px - 11px);
     display: inline-block;
+    inline-size: 16px;
     content: '';
     background-color: #fff;
     border: 4px solid #000;
     border-radius: 100%;
-    inline-size: 16px;
     block-size: 16px;
-    inset-inline-start: calc(40px - 11px);
 }
 
-.about main > article:nth-of-type(3) > div > dl > dt {
+.about main > section:nth-of-type(3) > div > dl > dt {
     margin-block-end: 0.5em;
     font-size: 18px;
     font-weight: bold;
 }
 
-.about main > article:nth-of-type(3) > div > dl > dd {
+.about main > section:nth-of-type(3) > div > dl > dd {
     inline-size: 100%;
 }
 
-/* ------------------ 趣味 ------------------ */
+/* スキル
+===================================================================== */
 
-.about main > article:nth-of-type(4) > section:nth-of-type(2n + 1) {
+.about main > section:nth-of-type(4) {
+    grid-area: A4;
+}
+
+.about main > section:nth-of-type(4) > dl {
+    margin-block-start: 2em;
+}
+
+.about main > section:nth-of-type(4) > dl > dt {
+    margin-block-start: 1em;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.about main > section:nth-of-type(4) > dl > dd {
+    line-height: 1.5em;
+}
+
+.about main > section:nth-of-type(4) > dl > dd:nth-of-type(1) {
+    margin-block: 0.5em;
+    font-weight: 600;
+}
+
+/* 資格
+===================================================================== */
+
+.about main > section:nth-of-type(5) {
+    grid-area: A5;
+}
+
+.about main > section:nth-of-type(5) > dl {
+    margin-block: 1.5em;
+}
+
+.about main > section:nth-of-type(5) > dl > dt {
+    margin-block-end: 0.3em;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.about main > section:nth-of-type(5) > dl > dd {
+    font-size: 0.8em;
+    color: var(--color-text-lightgray);
+}
+
+/* 趣味
+===================================================================== */
+
+.about main > section:nth-of-type(6) {
+    grid-area: A6;
+}
+
+.about main > section:nth-of-type(6) > section:nth-of-type(2n + 1) {
     display: grid;
     grid-template-areas:
         'icon title'
@@ -348,7 +787,7 @@
     margin-block: 1.5em;
 }
 
-.about main > article:nth-of-type(4) > section:nth-of-type(2n) {
+.about main > section:nth-of-type(6) > section:nth-of-type(2n) {
     display: grid;
     grid-template-areas:
         'title icon'
@@ -357,276 +796,567 @@
     text-align: end;
 }
 
-.about main > article:nth-of-type(4) > section > h3 {
+.about main > section:nth-of-type(6) > section > h3 {
     grid-area: title;
     margin-block-start: 0;
     margin-block-end: 0.5em;
 }
 
-.about main > article:nth-of-type(4) > section > i {
+.about main > section:nth-of-type(6) > section > i {
     grid-area: icon;
     margin-block: auto;
     font-size: 3em;
     text-align: center;
 }
 
-.about main > article:nth-of-type(4) > section > p {
+.about main > section:nth-of-type(6) > section > p {
     grid-area: text;
-}
-
-/* =====================================================================
-** SKILLS
-===================================================================== */
-
-.skills .skill-grid section {
-    align-content: start;
-}
-
-.skills .skill-grid section > ul > li {
-    font-size: 0.9em;
-}
-
-.skills .skill-grid section > img {
-    grid-area: icon;
-    justify-content: center;
-    margin-inline: auto;
-    inline-size: 50%;
-    block-size: auto;
-}
-
-.skills main > section:nth-of-type(1) > h2 {
-    display: none;
-}
-
-.skills main > section:nth-of-type(1) > p {
-    margin-block-end: 0.5em;
-}
-
-.skills main > section:not(:nth-of-type(1)) > h2 {
-    margin-block: 1em;
 }
 
 /* =====================================================================
 ** WORKS
 ===================================================================== */
 
-.works main > div {
+.works main > h1 {
+    margin-inline: 2em; /* WORKSページのmargin */
+    color: transparent;
+    background-image: url('../images/white-simple-textured-design-background.jpg');
+    block-size: 10em;
+}
+
+.works main > :is(section, p) {
+    margin-inline: 2em; /* WORKSページのmargin */
+}
+
+/* タブ
+===================================================================== */
+
+.works main > section:nth-of-type(1) {
+    display: flex;
+    align-items: center; /* 垂直方向中央揃え */
+    justify-content: center; /* 水平方向中央揃え */
+    margin-block-start: -1em;
+}
+
+.works main > section:nth-of-type(1) > h2 {
+    margin-block: 0;
+    margin-inline-end: 1.2em;
+    font-size: 1em;
+}
+
+.works main > section:nth-of-type(1) > ul {
+    display: flex;
+    font-size: 1em;
+}
+
+.works main > section:nth-of-type(1) > ul > li {
+    display: flex;
+    align-items: center; /* 垂直方向中央揃え */
+    justify-content: center; /* 水平方向中央揃え */
+    margin-inline: 0.8em;
+}
+
+/* 作品
+===================================================================== */
+
+.works main > section:not(:nth-of-type(1)) > article {
     display: grid;
-    grid-template-rows: repeat(1, 1fr);
-    row-gap: 0;
+    grid-template-areas:
+        'THUMB'
+        'TITLE'
+        'DESC'
+        'DETAIL'
+        'dl';
+    margin-block: 8em;
 }
 
-.works main > div > article {
-    border: 1px solid rgba(0 0 0 / 15%);
+.works main > section:not(:nth-of-type(1)) > article > :is(a, div) {
+    grid-area: THUMB;
 }
 
-.works main > div > article > h2 {
-    display: none;
-}
-
-.works main > div > article > figure > img {
+.works main > section:not(:nth-of-type(1)) > article > :is(a, div) > img {
     inline-size: 100%;
     aspect-ratio: 3/2;
     object-fit: cover;
 }
 
-.works main > div > article > figure > figcaption > p {
-    margin-block-end: 1em;
+.works main > section:not(:nth-of-type(1)) > article > h3 {
+    grid-area: TITLE;
+    margin-block: 1.5em 0.5em;
+    font-size: 0.8em;
+}
+
+.works main > section:not(:nth-of-type(1)) > article > p:nth-of-type(1) {
+    grid-area: DESC;
+    margin-block: 0.5em;
     font-weight: bold;
 }
 
-.works main > div > article > figure > figcaption > dl {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 0.8em;
+.works main > section:not(:nth-of-type(1)) > article > p:nth-of-type(2) {
+    grid-area: DETAIL;
 }
 
-.works main > div > article > figure > figcaption > dl > dt {
-    inline-size: 35%;
-    margin-block: 0.5em;
-    line-height: 1.6em;
-}
-
-.works main > div > article > figure > figcaption > dl > dd {
-    inline-size: 65%;
-    margin-block: 0.5em;
-    line-height: 1.6em;
-}
-
-.works main > div > article > figure > figcaption > dl > dt::after {
-    content: '：';
-}
-
-.works main > div > article > ul {
-    display: flex;
+.works main > section:not(:nth-of-type(1)) > article > dl {
+    display: grid;
+    grid-area: dl;
+    grid-template-columns: 25% 70%;
+    gap: 0.1em 2em;
+    padding-block: 0.5em;
     margin-block: 1em;
-    margin-inline: 1em;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
-.works main > div > article > ul > li {
-    margin-inline-end: 1.5em;
+.works main > section:not(:nth-of-type(1)) > article > dl > :is(dt, dd) {
+    font-size: 0.9em;
+    line-height: 1.8em;
 }
 
-.works main > div > article > ul > li > i {
-    font-size: 0.8em;
-    color: var(--color-link);
+.works main > section:not(:nth-of-type(1)) > article > dl > dd:last-of-type > a {
+    padding-inline-end: 1.5em;
 }
 
-.works main > div > article > ul > li > a {
-    margin-inline-start: 0.2em;
-    font-size: 0.8em;
+/* 詳細はお問い合わせください
+===================================================================== */
+
+.works main > p {
+    margin-block: auto 3em;
+    text-align: left;
 }
 
 /* =====================================================================
-** MEDIA QUERY DESIGN B(Tablet)
+** confirm.php
 ===================================================================== */
 
-@media screen and (min-width: 600px) {
+.confirm main {
+    padding-inline: 1em;
+    margin-inline: auto;
+    min-block-size: calc(100vh - 5em); /* header 5em */
+}
+
+.confirm main > h1 {
+    display: none;
+}
+
+/* --------------- メッセージ --------------- */
+.confirm main > p {
+    padding-block-start: calc(5em + 3em); /* header 5em ＋　余白3em */
+}
+
+/* --------------- 入力内容の表示 --------------- */
+.confirm main > dl {
+    margin-block: 2em;
+}
+
+/* ラベル */
+.confirm main > dl > dt {
+    margin-block: 1em 0.3em;
+}
+
+/* 入力した内容 */
+.confirm main > dl > dd {
+    padding: 0.5em;
+    line-height: 2em;
+    border: 1px solid var(--color-border);
+}
+
+/* --------------- ボタン --------------- */
+
+.confirm main > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block-end: 3em; /* footerとの間の余白 */
+}
+
+.confirm .btn02 {
+    margin: 2em 1em;
+}
+
+/* =====================================================================
+** complete.php
+===================================================================== */
+
+.complete main {
+    padding-inline: 1em;
+    margin-inline: auto;
+    min-block-size: calc(100vh - 5em); /* header 5em */
+}
+
+.complete main > h1 {
+    display: none;
+}
+
+/* --------------- メッセージ --------------- */
+.complete main > p:nth-of-type(1) {
+    padding-block-start: calc(5em + 3em); /* header 5em ＋　余白3em */
+}
+
+.complete .btn01 > a {
+    inline-size: calc(var(--logic-px) * 300);
+    margin-block-start: 5em;
+}
+
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+** MEDIA QUERY DESIGN B(dlt)
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+@media screen and (width >= 600px) {
     /* タブレット用レイアウト 600px以上の範囲に収めるデザインはこの中に記述 */
 
-    /* TOP
-    ========================================================= */
+    /* =====================================================================
+    ** TOP
+    ===================================================================== */
 
-    /* ------------------ WORKS ------------------ */
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
+        font-size: 2.4em;
+    }
 
-    .top main > section:nth-of-type(4) > div {
+    /* job description */
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > br {
+        display: none;
+    }
+
+    /* CONCEPT
+    ===================================================================== */
+    .top main > section:nth-of-type(2) {
+        inline-size: min(var(--size-inline-wrapper), 75%);
+        padding-inline: unset;
+        margin-block-start: 5em;
+        margin-inline: auto;
+    }
+
+    /* WORKS
+    ===================================================================== */
+
+    .top main > section:nth-of-type(3) {
+        inline-size: min(80%, 690px);
+        margin-inline: auto;
+    }
+
+    .top main > section:nth-of-type(3) > article > ul {
+        display: flex;
+    }
+
+    .top main > section:nth-of-type(3) > article > ul > * {
+        margin-inline-end: 1em;
+    }
+
+    /* カテゴリー */
+    .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(1) {
+        grid-area: CATEGORY;
+        padding-inline: 0.5em;
+        background-color: var(--color-bg-gray);
+    }
+
+    /* 作品名 */
+    .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(2) {
+        display: inline;
+        margin-block: 0;
+        font-weight: bold;
+    }
+
+    /* リンク */
+    .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(3) {
+        grid-area: CATEGORY;
+    }
+
+    /* GitHub */
+    .top main > section:nth-of-type(3) > article > ul > li:nth-of-type(4) {
+        grid-area: CATEGORY;
+    }
+
+    /* SERVICE
+    ===================================================================== */
+    .top main > section:nth-of-type(5) > div {
         display: grid;
+        grid-area: SERVICE;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .top main > section:nth-of-type(5) > div > section > h3 {
+        font-size: 1.2em;
+    }
+
+    /* CONTACT
+    ===================================================================== */
+    .top main > section:nth-of-type(6) > div {
+        display: grid;
+        grid-template-areas: 'MSG FORM';
+        grid-template-rows: 1fr;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 1em;
+        gap: 3em;
     }
 
-    /* ------------------ CONTACT ------------------ */
-    .top main > section:nth-of-type(5) > p > br {
-        display: none;
+    .top main > section:nth-of-type(6) > div > section:nth-of-type(1) {
+        grid-area: MSG;
     }
 
-    /* ------------------ ABOUT job ------------------ */
-
-    .about main > article:nth-of-type(1) > p:nth-of-type(2) > br {
-        display: none;
+    .top main > section:nth-of-type(6) > div > section:nth-of-type(2) {
+        grid-area: FORM;
     }
 
-    /* ------------------ 経歴 ------------------ */
-    .about main > article:nth-of-type(3) {
+    /* =====================================================================
+    ** ABOUT
+    ===================================================================== */
+
+    .about main > section:not(:nth-of-type(2)) {
+        margin-inline: 10%; /* ABOUTページのmargin */
+    }
+
+    /* 概要
+    ===================================================================== */
+
+    .about main > section:nth-of-type(1) > ul {
+        display: grid;
+        grid-template-areas:
+            'PIC NAME'
+            'PIC JOB'
+            'PIC PLACE';
+        gap: 2em;
+        place-content: center;
+        align-items: unset;
+        justify-items: unset;
+        margin-block-start: -10em;
+        text-align: unset;
+    }
+
+    /* 特徴
+    ===================================================================== */
+
+    .about main > section:nth-of-type(2) {
+        padding-inline-start: 10%; /* ABOUTページのmargin */
+    }
+
+    /* 背景 */
+    .about main > section:nth-of-type(2) > section:nth-of-type(2)::before {
+        width: 60%; /* 背景の幅を変更 */
+    }
+
+    .about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
+        inline-size: 65%;
+    }
+
+    .about main > section:nth-of-type(2) > section:nth-of-type(2) > p > br {
+        display: inline;
+    }
+
+    /* 経歴
+    ===================================================================== */
+    .about main > section:nth-of-type(3) {
         display: grid;
         justify-content: center;
     }
 
-    /* ------------------ 趣味 ------------------ */
+    /* 趣味
+    ===================================================================== */
 
-    .about main > article:nth-of-type(4) > section:nth-of-type(2n + 1) {
-        grid-template-columns: 30% 70%;
+    .about main > section:nth-of-type(6) > section:nth-of-type(2n + 1) {
+        grid-template-columns: 15% auto;
     }
 
-    .about main > article:nth-of-type(4) > section:nth-of-type(2n) {
+    .about main > section:nth-of-type(6) > section:nth-of-type(2n) {
         grid-template-areas:
             'icon title'
             'icon text';
-        grid-template-columns: 30% 70%;
+        grid-template-columns: 15% auto;
         text-align: start;
     }
 
-    .about main > article:nth-of-type(4) > section > i {
-        margin-inline-end: 2em;
-        text-align: end;
+    .about main > section:nth-of-type(6) > section > i {
+        text-align: start;
     }
 
-    /* WORKS
-    ========================================================= */
+    .about main > section:nth-of-type(6) > section > p {
+        inline-size: 100%;
+    }
 
-    .works main > div {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 1em;
+    /* =====================================================================
+    ** WORKS
+    ===================================================================== */
+
+    .works main > section:not(:nth-of-type(1)), .works main > p {
+        inline-size: clamp(0px, 80%, 780px);
+        margin-inline: auto;
+    }
+
+    .works main > section:nth-of-type(1) > h2 {
+        font-size: 1.1em;
+    }
+
+    .works main > section:nth-of-type(1) > ul {
+        font-size: 1.1em;
+    }
+
+    .works main > section:nth-of-type(1) > ul > li {
+        margin-inline: 1em;
+    }
+
+    /* =====================================================================
+    ** confirm.php / complete.php
+    ===================================================================== */
+
+    .confirm main, .complete main {
+        inline-size: min(80%, calc(var(--logic-px) * 780));
     }
 }
 
-/* =====================================================================
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ** MEDIA QUERY DESIGN C(PC)
-===================================================================== */
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-@media screen and (min-width: 1025px) {
-    .skill-grid section {
-        grid-template-columns: 75%;
+@media screen and (width >= 1025px) {
+    /* =====================================================================
+    ** TOP
+    ===================================================================== */
+    .top {
+        grid-template-areas:
+            'header header header'
+            'main main main'
+            'footer footer footer';
     }
 
-    /* TOP
-    ========================================================= */
     .top main {
+        display: grid;
         grid-template-areas:
             'hero hero hero'
-            '. ABOUT .'
-            '. SKILL .'
+            'CONCEPT CONCEPT CONCEPT'
             '. WORKS .'
+            'ABOUT ABOUT ABOUT'
+            '. SERVICE .'
             '. CONTACT .';
         grid-template-columns: 1fr clamp(1025px, 80%, 1720px) 1fr;
     }
 
-    /* ------------------ WORKS ------------------ */
-
-    .top main > section:nth-of-type(4) > h2,
-    p:last-of-type {
-        grid-column: 1 / span 3;
+    .top main > section:nth-of-type(1) {
+        grid-area: hero;
     }
 
-    .top main > section:nth-of-type(4) div {
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 1em;
+    .movie {
+        display: unset;
     }
 
-    .top
-        main
-        > section:nth-of-type(4)
-        > div
-        > article
-        > ul:nth-of-type(2)
-        > li {
-        margin-block: 0;
+    .movie-video {
+        object-fit: cover;
+        block-size: unset;
+        inline-size: 100%;
+    }
+
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) {
+        inline-size: min(80%, 1100px);
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) {
+        margin-block: auto;
+        margin-inline: auto 0;
+        font-size: 2.8em;
+    }
+
+    .top main > section:nth-of-type(1) > div:nth-of-type(2) > h2 {
+        text-align: center;
+    }
+
+    /* CONCEPT
+    ===================================================================== */
+    .top main > section:nth-of-type(2) {
+        display: grid;
+        grid-template-areas:
+            'E3 CONCEPTTITLE'
+            'E3 CONCEPTDESC';
+        grid-template-columns: min(80vh, 50%) auto;
+        column-gap: 2em;
+        inline-size: var(--size-inline-wrapper);
+        margin-block-start: 10em;
+    }
+
+    .top main > section:nth-of-type(2) > h2 {
+        margin-block: unset;
     }
 
     /* ABOUT
-    ========================================================= */
-
-    /* ------------------ 自己PR ------------------ */
-
-    .about main > article:nth-of-type(2) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 2em;
-    }
-
-    .about main > article:nth-of-type(2) > h2 {
-        grid-column: 1 / span 3;
-    }
-
-    /* ------------------ 経歴 ------------------ */
-
-    .about main > article:nth-of-type(3) {
-        display: block;
-        inline-size: 800px;
+    ===================================================================== */
+    .top main > section:nth-of-type(4) > * {
+        inline-size: var(--size-inline-wrapper);
         margin-inline: auto;
     }
 
-    .about main > article:nth-of-type(3) > div::before {
-        left: 50%;
+    /* SERVICE
+    ===================================================================== */
+
+    .top main > section:nth-of-type(5) > div > section > h3 {
+        font-size: 1.2em;
     }
 
-    .about main > article:nth-of-type(3) > div > dl:nth-of-type(2n + 1) {
+    .top main > section:nth-of-type(5) > div > section > h3 > br {
+        display: none;
+    }
+
+    /* =====================================================================
+    ** ABOUT
+    ===================================================================== */
+
+    /* 特徴
+    ===================================================================== */
+
+    .about main > section:nth-of-type(2) > section:nth-of-type(2) > section {
+        inline-size: 55%;
+    }
+
+    /* 経歴
+    ===================================================================== */
+    .about main > section:nth-of-type(3) {
+        display: block;
+        inline-size: 980px; /* 固定 800px */
+        margin-inline: auto;
+    }
+
+    .about main > section:nth-of-type(3) > div::before {
+        inset-inline-start: 50%;
+    }
+
+    .about main > section:nth-of-type(3) > div > dl {
+        padding-inline-start: 0;
+    }
+
+    .about main > section:nth-of-type(3) > div > dl:nth-of-type(2n + 1) {
         padding-inline-start: 55%;
     }
 
-    .about main > article:nth-of-type(3) > div > dl:nth-of-type(2n) {
+    .about main > section:nth-of-type(3) > div > dl:nth-of-type(2n) {
         padding-inline-end: 55%;
         text-align: end;
     }
 
-    .about main > article:nth-of-type(3) > div > dl::before {
+    .about main > section:nth-of-type(3) > div > dl::before {
         inset-inline-start: calc(50% - 10px);
     }
 
-    /* WORKS
-    ========================================================= */
+    /* =====================================================================
+    ** WORKS
+    ===================================================================== */
 
-    .works main > div {
-        grid-template-columns: repeat(3, 1fr);
+    .works main > section:not(:nth-of-type(1)) > article {
+        display: grid;
+        grid-template-areas:
+            'THUMB TITLE'
+            'THUMB DESC'
+            'THUMB DETAIL'
+            'dl dl';
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1em;
+        inline-size: 100%;
+    }
+
+    .works main > section:not(:nth-of-type(1)) > article > dl {
+        grid-template-columns: 10% 85%;
+    }
+
+    /* 詳細はお問い合わせください
+    ===================================================================== */
+
+    .works main > p {
+        text-align: center;
     }
 }
