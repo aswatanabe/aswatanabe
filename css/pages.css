@@ -458,7 +458,7 @@
     align-items: center; /* テキストを上下中央に */
     justify-content: center; /* テキストを上下中央に */
     margin-block: 0.5em;
-    font-size: 0.7em;
+    font-size: 1.1em;
     line-height: normal;
     block-size: 2.5em;
 }
@@ -1072,11 +1072,10 @@
         display: grid;
         grid-area: SERVICE;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1em 2em;
     }
 
     .top main > section:nth-of-type(5) > div > section > h3 {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
     /* CONTACT
@@ -1288,6 +1287,10 @@
 
     .top main > section:nth-of-type(5) > div > section > h3 {
         font-size: 1.2em;
+    }
+
+    .top main > section:nth-of-type(5) > div > section > h3 > br {
+        display: none;
     }
 
     /* =====================================================================
