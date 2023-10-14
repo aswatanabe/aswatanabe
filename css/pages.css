@@ -157,25 +157,21 @@
 ===================================================================== */
 
 .top main > section:nth-of-type(2) {
-    display: grid;
     grid-area: CONCEPT;
-    grid-template-areas:
-        'CONCEPTTITLE'
-        'E3'
-        'CONCEPTDESC';
-    inline-size: 100%;
-    padding-block: 5em 4em;
-    background: no-repeat center/70% 100% url('../images/white-simple-textured-design-background.jpg');
 }
 
 .top main > section:nth-of-type(2) > h2 {
-    grid-area: CONCEPTTITLE;
-    align-self: center; /* 中央寄せにする */
+    margin-block: 1em 3em;
+    font-size: 1.4em;
+    font-weight: normal;
 }
 
 .top main > section:nth-of-type(2) > ul {
-    grid-area: E3;
-    block-size: 75vh;
+    margin-inline: auto; /* 中央寄せ*/
+    margin-block: 3em;
+    inline-size: min(100%, 650px);
+    block-size: 25vh;
+    text-align: center; /* 中央寄せ */
 }
 
 .top main > section:nth-of-type(2) > ul > li {
@@ -184,19 +180,17 @@
     align-items: center; /* テキストを中央寄せ */
     justify-content: center; /* テキストを中央寄せ */
     font-family: 'Times New Roman', Georgia, serif; /* タイプライターと同じ */
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: bold;
+
+    inline-size: 35%; /*楕円の横幅*/
+    min-block-size: 100%; /*楕円の高さ*/
 }
 
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(1) {
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    min-inline-size: 55%;
-
-    /* background: #dfe0e2; */
-    background: #3d3fba;
-    animation: fluidrotate1 35s ease 0s infinite; /* アニメーションの設定 */
-    min-block-size: 55%;
+    inset-inline-start: 0%;
+    background: rgba(204, 82, 129); /* #cc5281 */
+    animation: fluidrotate1 25s ease 0s infinite; /* アニメーションの設定 */
 }
 
 @keyframes fluidrotate1 {
@@ -230,14 +224,9 @@
 }
 
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(2) {
-    inset-block-start: 50%;
-    inset-inline-start: 20%;
-    min-inline-size: 50%;
-
-    /* background: #e5e3d8; */
+    inset-inline-start: 32.5%; 
     background: #ffac42;
-    animation: fluidrotate2 45s ease 0s infinite; /* アニメーションの設定 */
-    min-block-size: 50%;
+    animation: fluidrotate2 35s ease 0s infinite; /* アニメーションの設定 */
 }
 
 @keyframes fluidrotate2 {
@@ -271,14 +260,9 @@
 }
 
 .top main > section:nth-of-type(2) > ul > li:nth-of-type(3) {
-    inset-block-start: 20%;
-    inset-inline-start: 45%;
-    min-inline-size: 50%;
-
-    /* background: #eae1e4; */
-    background: #cb3664;
-    animation: fluidrotate3 40s ease 0s infinite; /* アニメーションの設定 */
-    min-block-size: 50%;
+    inset-inline-start: 65%;
+    background: rgba(98, 100, 196); /* #6264c4 */ 
+    animation: fluidrotate3 30s ease 0s infinite; /* アニメーションの設定 */
 }
 
 @keyframes fluidrotate3 {
@@ -312,8 +296,7 @@
 }
 
 .top main > section:nth-of-type(2) > p {
-    grid-area: CONCEPTDESC;
-    line-height: 2.5em;
+    line-height: 2em;
 }
 
 /* WORKS
@@ -1017,15 +1000,6 @@
         display: none;
     }
 
-    /* CONCEPT
-    ===================================================================== */
-    .top main > section:nth-of-type(2) {
-        inline-size: min(var(--size-inline-wrapper), 75%);
-        padding-inline: unset;
-        margin-block-start: 5em;
-        margin-inline: auto;
-    }
-
     /* WORKS
     ===================================================================== */
 
@@ -1261,18 +1235,12 @@
     /* CONCEPT
     ===================================================================== */
     .top main > section:nth-of-type(2) {
-        display: grid;
-        grid-template-areas:
-            'E3 CONCEPTTITLE'
-            'E3 CONCEPTDESC';
-        grid-template-columns: min(80vh, 50%) auto;
-        column-gap: 2em;
         inline-size: var(--size-inline-wrapper);
-        margin-block-start: 10em;
+        margin-inline: auto;
     }
-
-    .top main > section:nth-of-type(2) > h2 {
-        margin-block: unset;
+    
+    .top main > section:nth-of-type(2) > ul > li {
+        font-size: 1.5em;
     }
 
     /* ABOUT
