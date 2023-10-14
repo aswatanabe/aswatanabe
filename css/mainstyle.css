@@ -47,7 +47,8 @@ input[type="submit"] {
     --color-warning: #CC4E69;
     --size-inline-wrapper: min(80%, calc(var(--logic-px) * 1100));
 
-    font-family: Verdana, '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+    /* font-family: Verdana, '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif; */
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", ヒラギノ角ゴシック, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", Roboto, メイリオ, Meiryo, "ＭＳ Ｐゴシック", sans-serif;
     font-size: max(calc(var(--logic-px) * 16), 14px);
     line-height: 1.5em;
     scroll-behavior: smooth;
